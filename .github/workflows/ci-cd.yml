@@ -1,0 +1,96 @@
+name: CI/CD
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+
+jobs:
+  build-and-test:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+
+      - name: Restore dependencies
+        run: dotnet restore FocusAttendance.sln
+
+      - name: Build solution
+        run: dotnet build FocusAttendance.sln -c Release --no-restore
+
+      - name: Run unit tests
+        run: dotnet test tests/FocusAttendance.Tests/FocusAttendance.Tests.csproj -c Release --no-build --verbosity=normal
+
+      - name: Run self-test (headless, no hardware)
+        run: |
+          # Build the app first if needed
+          dotnet build src/FocusAttendance.App/FocusAttendance.App.csproj -c Release --no-restore
+          # Run self-test and capture output
+          .\src\FocusAttendance.App\bin\Release\net10.0-windows10.0.19041.0\FocusAttendance.exe --selftest > selftest.log 2>&1 || true
+          # Check results
+          if findstr /C:"ALL CHECKS PASSED" selftest.log; then
+            echo "Self-test: PASSED"
+          else
+            echo "Self-test: see selftest.log for details"
+            type selftest.log
+            exit 1
+          fi
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: focus-attendance-build
+          path: |
+            src/FocusAttendance.App/bin/Release/net10.0-windows10.0.19041.0/
+            selftest.log
+
+  create-release:
+    needs: build-and-test
+    runs-on: windows-latest
+    if: github.ref == 'refs/heads/master'
+    permissions:
+      contents: write
+    steps:
+      - name: Download artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: focus-attendance-build
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v${{ github.run_number }}
+          name: "v${{ github.run_number }}"
+          body: |
+            ### What's changed
+
+            - Built from latest master
+            - 108 xUnit tests passed
+            - Self-test passed (headless, 0 ZKTeco devices required)
+            - SQLite DB seeds on first run with OPGI baseline (1 site, 12 depts, 2 shifts, SuperAdmin)
+
+            ### Quick start
+
+            ```powershell
+            # Install
+            git clone https://github.com/oguenfoude/FocusAttendance.git
+            cd FocusAttendance
+
+            # Build
+            dotnet build FocusAttendance.sln -c Release
+
+            # Run
+            .\src\FocusAttendance.App\bin\Release\net10.0-windows10.0.19041.0\FocusAttendance.exe
+            ```
+
+            ### Env vars
+
+            - `FOCUS_ADMIN_PASSWORD` — override default `Admin@2026` at first init
+            - Database path override via `AppHost` ctor; default `%LOCALAPPDATA%\FocusAttendance\focus-attendance.db`

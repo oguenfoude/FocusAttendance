@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <RootNamespace>FocusAttendance.Application</RootNamespace>
+    <AssemblyName>FocusAttendance.Application</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\FocusAttendance.Domain\FocusAttendance.Domain.csproj" />
+    <ProjectReference Include="..\FocusAttendance.Data\FocusAttendance.Data.csproj" />
+    <ProjectReference Include="..\FocusAttendance.Hardware\FocusAttendance.Hardware.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <InternalsVisibleTo Include="FocusAttendance.Tests" />
+  </ItemGroup>
+
+</Project>

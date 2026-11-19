@@ -1,0 +1,461 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - generic [ref=e4]:
+      - list [ref=e5]:
+        - listitem [ref=e6]:
+          - link "Investor Relations" [ref=e7] [cursor=pointer]:
+            - /url: /en/investor_relations
+        - listitem [ref=e8]:
+          - link "About Us" [ref=e9] [cursor=pointer]:
+            - /url: /en/about_us
+        - listitem [ref=e10]:
+          - link "News Center" [ref=e11] [cursor=pointer]:
+            - /url: /en/news_center
+        - listitem [ref=e12]:
+          - link "Contact Us" [ref=e13] [cursor=pointer]:
+            - /url: /en/contact
+      - paragraph [ref=e15] [cursor=pointer]: Language/Region
+      - generic [ref=e16]:
+        - link [ref=e17] [cursor=pointer]:
+          - /url: https://www.linkedin.com/company/zktecoltd
+        - link [ref=e18] [cursor=pointer]:
+          - /url: "https://www.facebook.com/zktecoelectronic "
+        - link [ref=e19] [cursor=pointer]:
+          - /url: https://twitter.com/ZKTeco
+        - link [ref=e20] [cursor=pointer]:
+          - /url: "https://www.youtube.com/ZKTeco "
+        - link [ref=e21] [cursor=pointer]:
+          - /url: https://www.tiktok.com/@zkteco.global?lang=en
+      - generic [ref=e22]:
+        - link [ref=e24] [cursor=pointer]:
+          - /url: ""
+        - link "Login" [ref=e26] [cursor=pointer]:
+          - /url: /en/member/index/login
+        - link "Register" [ref=e28] [cursor=pointer]:
+          - /url: /en/member/index/register
+    - generic [ref=e30]:
+      - link [ref=e31] [cursor=pointer]:
+        - /url: /en/
+        - img "熵基" [ref=e33]
+      - generic [ref=e34]:
+        - list [ref=e35]:
+          - listitem [ref=e36]:
+            - link "Product" [ref=e37] [cursor=pointer]:
+              - /url: /en/Product
+          - listitem [ref=e38]:
+            - link "Solution" [ref=e39] [cursor=pointer]:
+              - /url: /en/solution
+          - listitem [ref=e40]:
+            - link "Case" [ref=e41] [cursor=pointer]:
+              - /url: /en/case
+          - listitem [ref=e42]:
+            - link "Technology" [ref=e43] [cursor=pointer]:
+              - /url: /en/technologies
+          - listitem [ref=e44]:
+            - link "Support" [ref=e45] [cursor=pointer]:
+              - /url: /en/support
+        - list:
+          - listitem [ref=e46]:
+            - link "Product >" [ref=e48] [cursor=pointer]:
+              - /url: javascript:;
+              - text: Product
+              - generic [ref=e49]: ">"
+          - listitem [ref=e50]:
+            - link "Solution" [ref=e51] [cursor=pointer]:
+              - /url: /en/solution
+          - listitem [ref=e52]:
+            - link "Case" [ref=e53] [cursor=pointer]:
+              - /url: /en/case
+          - listitem [ref=e54]:
+            - link "Technology" [ref=e55] [cursor=pointer]:
+              - /url: /en/technologies
+          - listitem [ref=e56]:
+            - link "Support" [ref=e57] [cursor=pointer]:
+              - /url: /en/support
+        - generic [ref=e59] [cursor=pointer]
+  - generic [ref=e62]:
+    - img "Download Center" [ref=e63]
+    - generic [ref=e65]:
+      - heading "Download Center" [level=2] [ref=e66]
+      - generic [ref=e67]:
+        - textbox "Search file name" [ref=e68]
+        - button [ref=e69] [cursor=pointer]
+  - paragraph [ref=e73]:
+    - link "Home" [ref=e74] [cursor=pointer]:
+      - /url: /en/
+    - text: ">"
+    - link "Support" [ref=e75] [cursor=pointer]:
+      - /url: /en/support
+    - text: ">"
+    - link "Download Center" [ref=e76] [cursor=pointer]:
+      - /url: /en/download_center
+    - text: ">"
+    - link "SDK" [ref=e77] [cursor=pointer]:
+      - /url: /en/SDK
+  - generic [ref=e79]:
+    - list [ref=e80]:
+      - listitem [ref=e81]:
+        - link "Datasheet" [ref=e82] [cursor=pointer]:
+          - /url: javascript:void(0);
+      - listitem [ref=e83]:
+        - link "Software" [ref=e84] [cursor=pointer]:
+          - /url: javascript:void(0);
+      - listitem [ref=e85]:
+        - link "User Manual" [ref=e86] [cursor=pointer]:
+          - /url: javascript:void(0);
+      - listitem [ref=e87]:
+        - link "Installation Guide" [ref=e88] [cursor=pointer]:
+          - /url: javascript:void(0);
+      - listitem [ref=e89]:
+        - link "Quick Use Guide" [ref=e90] [cursor=pointer]:
+          - /url: javascript:void(0);
+      - listitem [ref=e91]:
+        - link "SDK" [ref=e92] [cursor=pointer]:
+          - /url: javascript:void(0);
+      - listitem [ref=e93]:
+        - link "A&E Specifications" [ref=e94] [cursor=pointer]:
+          - /url: javascript:void(0);
+      - listitem [ref=e95]:
+        - link "Solutions" [ref=e96] [cursor=pointer]:
+          - /url: javascript:void(0);
+      - listitem [ref=e97]:
+        - link "Case Studies" [ref=e98] [cursor=pointer]:
+          - /url: javascript:void(0);
+      - listitem [ref=e99]:
+        - link "Biometrics Technology" [ref=e100] [cursor=pointer]:
+          - /url: javascript:void(0);
+      - listitem [ref=e101]:
+        - link "Catalog" [ref=e102] [cursor=pointer]:
+          - /url: javascript:void(0);
+      - listitem [ref=e103]:
+        - link "Others" [ref=e104] [cursor=pointer]:
+          - /url: javascript:void(0);
+      - listitem [ref=e105]:
+        - link "Online Training" [ref=e106] [cursor=pointer]:
+          - /url: javascript:void(0);
+      - listitem [ref=e107]:
+        - link "Guideline" [ref=e108] [cursor=pointer]:
+          - /url: javascript:void(0);
+    - list [ref=e109]:
+      - listitem [ref=e110]: Display
+      - listitem [ref=e111]: File Type
+      - listitem [ref=e112]: Size
+      - listitem [ref=e113]: Upload Time
+      - listitem [ref=e114]: Download
+    - list [ref=e115]:
+      - listitem [ref=e116]:
+        - generic [ref=e117]:
+          - generic [ref=e118]:
+            - paragraph [ref=e119]: pdf
+            - paragraph [ref=e120]: Protection Box
+          - paragraph [ref=e122]: pdf
+          - paragraph [ref=e124]: 296.92KB
+          - paragraph [ref=e126]: 2015-11-19
+          - link "Download" [ref=e128] [cursor=pointer]:
+            - /url: javascript:downloadFile(1043);
+      - listitem [ref=e131]:
+        - generic [ref=e132]:
+          - generic [ref=e133]:
+            - paragraph [ref=e134]: pdf
+            - paragraph [ref=e135]: DL-859W17D-S-FS_Datasheet_20261111
+          - paragraph [ref=e137]: pdf
+          - paragraph [ref=e139]: 323.88KB
+          - paragraph [ref=e141]: 2026-11-16
+          - link "Download" [ref=e143] [cursor=pointer]:
+            - /url: javascript:downloadFile(3720);
+      - listitem [ref=e146]:
+        - generic [ref=e147]:
+          - generic [ref=e148]:
+            - paragraph [ref=e149]: pdf
+            - paragraph [ref=e150]: FaceKiosk-H13D_Datasheet_20261113
+          - paragraph [ref=e152]: pdf
+          - paragraph [ref=e154]: 1.42MB
+          - paragraph [ref=e156]: 2026-11-16
+          - link "Download" [ref=e158] [cursor=pointer]:
+            - /url: javascript:downloadFile(3717);
+      - listitem [ref=e161]:
+        - generic [ref=e162]:
+          - generic [ref=e163]:
+            - paragraph [ref=e164]: pdf
+            - paragraph [ref=e165]: SC02-I3 Series_Datasheet_20261112
+          - paragraph [ref=e167]: pdf
+          - paragraph [ref=e169]: 427.16KB
+          - paragraph [ref=e171]: 2026-11-13
+          - link "Download" [ref=e173] [cursor=pointer]:
+            - /url: javascript:downloadFile(3714);
+      - listitem [ref=e176]:
+        - generic [ref=e177]:
+          - generic [ref=e178]:
+            - paragraph [ref=e179]: pdf
+            - paragraph [ref=e180]: ES-855W27P-S-FS_Datasheet_20261111
+          - paragraph [ref=e182]: pdf
+          - paragraph [ref=e184]: 316.56KB
+          - paragraph [ref=e186]: 2026-11-13
+          - link "Download" [ref=e188] [cursor=pointer]:
+            - /url: javascript:downloadFile(3712);
+      - listitem [ref=e191]:
+        - generic [ref=e192]:
+          - generic [ref=e193]:
+            - paragraph [ref=e194]: pdf
+            - paragraph [ref=e195]: BS-855W27P-S-FS_Datasheet_20261111
+          - paragraph [ref=e197]: pdf
+          - paragraph [ref=e199]: 276.39KB
+          - paragraph [ref=e201]: 2026-11-13
+          - link "Download" [ref=e203] [cursor=pointer]:
+            - /url: javascript:downloadFile(3711);
+      - listitem [ref=e206]:
+        - generic [ref=e207]:
+          - generic [ref=e208]:
+            - paragraph [ref=e209]: pdf
+            - paragraph [ref=e210]: DL-858M22U-S8-S_Datasheet_20261111
+          - paragraph [ref=e212]: pdf
+          - paragraph [ref=e214]: 330.49KB
+          - paragraph [ref=e216]: 2026-11-13
+          - link "Download" [ref=e218] [cursor=pointer]:
+            - /url: javascript:downloadFile(3709);
+      - listitem [ref=e221]:
+        - generic [ref=e222]:
+          - generic [ref=e223]:
+            - paragraph [ref=e224]: pdf
+            - paragraph [ref=e225]: BL-858M22U-S8-S_Datasheet_20261111
+          - paragraph [ref=e227]: pdf
+          - paragraph [ref=e229]: 512.89KB
+          - paragraph [ref=e231]: 2026-11-13
+          - link "Download" [ref=e233] [cursor=pointer]:
+            - /url: javascript:downloadFile(3708);
+      - listitem [ref=e236]:
+        - generic [ref=e237]:
+          - generic [ref=e238]:
+            - paragraph [ref=e239]: pdf
+            - paragraph [ref=e240]: SenseFace T3_Datasheet_20261106
+          - paragraph [ref=e242]: pdf
+          - paragraph [ref=e244]: 2MB
+          - paragraph [ref=e246]: 2026-11-06
+          - link "Download" [ref=e248] [cursor=pointer]:
+            - /url: javascript:downloadFile(3701);
+      - listitem [ref=e251]:
+        - generic [ref=e252]:
+          - generic [ref=e253]:
+            - paragraph [ref=e254]: pdf
+            - paragraph [ref=e255]: CVEdge160_Datasheet_20261015
+          - paragraph [ref=e257]: pdf
+          - paragraph [ref=e259]: 1.57MB
+          - paragraph [ref=e261]: 2026-10-20
+          - link "Download" [ref=e263] [cursor=pointer]:
+            - /url: javascript:downloadFile(3690);
+      - listitem [ref=e266]:
+        - generic [ref=e267]:
+          - generic [ref=e268]:
+            - paragraph [ref=e269]: pdf
+            - paragraph [ref=e270]: SenseFace 3 Series_Entry Version_Datasheet_20261015
+          - paragraph [ref=e272]: pdf
+          - paragraph [ref=e274]: 1.3MB
+          - paragraph [ref=e276]: 2026-10-20
+          - link "Download" [ref=e278] [cursor=pointer]:
+            - /url: javascript:downloadFile(3689);
+      - listitem [ref=e281]:
+        - generic [ref=e282]:
+          - generic [ref=e283]:
+            - paragraph [ref=e284]: pdf
+            - paragraph [ref=e285]: Saturn-T1000_Datasheet_20260917
+          - paragraph [ref=e287]: pdf
+          - paragraph [ref=e289]: 586.47KB
+          - paragraph [ref=e291]: 2026-09-20
+          - link "Download" [ref=e293] [cursor=pointer]:
+            - /url: javascript:downloadFile(3685);
+      - listitem [ref=e296]:
+        - generic [ref=e297]:
+          - generic [ref=e298]:
+            - paragraph [ref=e299]: pdf
+            - paragraph [ref=e300]: GL_FaceTima 8_Datasheet_20260917
+          - paragraph [ref=e302]: pdf
+          - paragraph [ref=e304]: 1.19MB
+          - paragraph [ref=e306]: 2026-09-18
+          - link "Download" [ref=e308] [cursor=pointer]:
+            - /url: javascript:downloadFile(3681);
+      - listitem [ref=e311]:
+        - generic [ref=e312]:
+          - generic [ref=e313]:
+            - paragraph [ref=e314]: pdf
+            - paragraph [ref=e315]: ZKBio Time 9.0_Datasheet_20260910
+          - paragraph [ref=e317]: pdf
+          - paragraph [ref=e319]: 547.84KB
+          - paragraph [ref=e321]: 2026-09-11
+          - link "Download" [ref=e323] [cursor=pointer]:
+            - /url: javascript:downloadFile(3677);
+      - listitem [ref=e326]:
+        - generic [ref=e327]:
+          - generic [ref=e328]:
+            - paragraph [ref=e329]: pdf
+            - paragraph [ref=e330]: ZKBio WDMS 9.0_Datasheet_20260910
+          - paragraph [ref=e332]: pdf
+          - paragraph [ref=e334]: 366.46KB
+          - paragraph [ref=e336]: 2026-09-11
+          - link "Download" [ref=e338] [cursor=pointer]:
+            - /url: javascript:downloadFile(3676);
+      - listitem [ref=e341]:
+        - generic [ref=e342]:
+          - generic [ref=e343]:
+            - paragraph [ref=e344]: pdf
+            - paragraph [ref=e345]: SensePalm T1 & SensePalm T2_Datasheet_20260910
+          - paragraph [ref=e347]: pdf
+          - paragraph [ref=e349]: 878.09KB
+          - paragraph [ref=e351]: 2026-09-11
+          - link "Download" [ref=e353] [cursor=pointer]:
+            - /url: javascript:downloadFile(3672);
+      - listitem [ref=e356]:
+        - generic [ref=e357]:
+          - generic [ref=e358]:
+            - paragraph [ref=e359]: pdf
+            - paragraph [ref=e360]: SenseFace T1&T2_Entry Version_Datasheet_20260804
+          - paragraph [ref=e362]: pdf
+          - paragraph [ref=e364]: 946.68KB
+          - paragraph [ref=e366]: 2026-09-10
+          - link "Download" [ref=e368] [cursor=pointer]:
+            - /url: javascript:downloadFile(3671);
+      - listitem [ref=e371]:
+        - generic [ref=e372]:
+          - generic [ref=e373]:
+            - paragraph [ref=e374]: pdf
+            - paragraph [ref=e375]: MK2-V & MK2-H_Datasheet_20260901
+          - paragraph [ref=e377]: pdf
+          - paragraph [ref=e379]: 887KB
+          - paragraph [ref=e381]: 2026-09-02
+          - link "Download" [ref=e383] [cursor=pointer]:
+            - /url: javascript:downloadFile(3669);
+      - listitem [ref=e386]:
+        - generic [ref=e387]:
+          - generic [ref=e388]:
+            - paragraph [ref=e389]: pdf
+            - paragraph [ref=e390]: SenseFace 2A_Access Control Device Kit_Entry Version_20260826
+          - paragraph [ref=e392]: pdf
+          - paragraph [ref=e394]: 4.13MB
+          - paragraph [ref=e396]: 2026-09-01
+          - link "Download" [ref=e398] [cursor=pointer]:
+            - /url: javascript:downloadFile(3668);
+      - listitem [ref=e401]:
+        - generic [ref=e402]:
+          - generic [ref=e403]:
+            - paragraph [ref=e404]: pdf
+            - paragraph [ref=e405]: SL02-LH190H_Datasheet_20260901
+          - paragraph [ref=e407]: pdf
+          - paragraph [ref=e409]: 698.53KB
+          - paragraph [ref=e411]: 2026-09-01
+          - link "Download" [ref=e413] [cursor=pointer]:
+            - /url: javascript:downloadFile(3667);
+    - link "Expand More" [ref=e416] [cursor=pointer]:
+      - /url: javascript:;
+  - generic [ref=e419]:
+    - generic [ref=e421]:
+      - generic [ref=e422]:
+        - generic [ref=e423]:
+          - link "About Us" [ref=e424] [cursor=pointer]:
+            - /url: /en/about_us
+          - text: 
+        - list [ref=e425]:
+          - listitem [ref=e426]:
+            - link "Investor Relations" [ref=e427] [cursor=pointer]:
+              - /url: /en/investor_relations
+          - listitem [ref=e428]:
+            - link "Company Profile" [ref=e429] [cursor=pointer]:
+              - /url: /en/about
+          - listitem [ref=e430]:
+            - link "ZKTeco Culture" [ref=e431] [cursor=pointer]:
+              - /url: /en/culture
+          - listitem [ref=e432]:
+            - link "Corporate Values" [ref=e433] [cursor=pointer]:
+              - /url: /en/Corporate_Values
+      - generic [ref=e434]:
+        - generic [ref=e435]:
+          - link "News Center" [ref=e436] [cursor=pointer]:
+            - /url: /en/news_center
+          - text: 
+        - list [ref=e437]:
+          - listitem [ref=e438]:
+            - link "News" [ref=e439] [cursor=pointer]:
+              - /url: /en/News
+          - listitem [ref=e440]:
+            - link "Notices" [ref=e441] [cursor=pointer]:
+              - /url: /en/notices
+          - listitem [ref=e442]:
+            - link "Event" [ref=e443] [cursor=pointer]:
+              - /url: /en/event
+          - listitem [ref=e444]:
+            - link "Newsletter" [ref=e445] [cursor=pointer]:
+              - /url: /en/newsletter
+          - listitem [ref=e446]:
+            - link "New Launches" [ref=e447] [cursor=pointer]:
+              - /url: /en/New_Launches
+      - generic [ref=e448]:
+        - generic [ref=e449]:
+          - link "Contact Us" [ref=e450] [cursor=pointer]:
+            - /url: /en/contact
+          - text: 
+        - list [ref=e451]:
+          - listitem [ref=e452]:
+            - link "Project Consultation" [ref=e453] [cursor=pointer]:
+              - /url: /en/member/centre/project_inquiry
+          - listitem [ref=e454]:
+            - link "Online Purchase" [ref=e455] [cursor=pointer]:
+              - /url: /en/contact
+          - listitem [ref=e456]:
+            - link "Sales Consultation" [ref=e457] [cursor=pointer]:
+              - /url: /en/support
+      - generic [ref=e458]:
+        - generic [ref=e459]:
+          - link "Support" [ref=e460] [cursor=pointer]:
+            - /url: /en/support
+          - text: 
+        - list [ref=e461]:
+          - listitem [ref=e462]:
+            - link "Training Center" [ref=e463] [cursor=pointer]:
+              - /url: /en/training
+          - listitem [ref=e464]:
+            - link "Download Center" [ref=e465] [cursor=pointer]:
+              - /url: /en/download_center
+          - listitem [ref=e466]:
+            - link "Security Center" [ref=e467] [cursor=pointer]:
+              - /url: /en/announcement
+      - generic [ref=e468]:
+        - paragraph [ref=e470]: Follow Us
+        - generic [ref=e471]:
+          - link [ref=e472] [cursor=pointer]:
+            - /url: https://www.linkedin.com/company/zktecoltd
+          - link [ref=e473] [cursor=pointer]:
+            - /url: "https://www.facebook.com/zktecoelectronic "
+          - link [ref=e474] [cursor=pointer]:
+            - /url: https://twitter.com/ZKTeco
+          - link [ref=e475] [cursor=pointer]:
+            - /url: "https://www.youtube.com/ZKTeco "
+          - link [ref=e476] [cursor=pointer]:
+            - /url: https://www.tiktok.com/@zkteco.global?lang=en
+        - link "Consultation" [ref=e477] [cursor=pointer]:
+          - /url: javascript:void(0)
+    - generic [ref=e482]:
+      - paragraph [ref=e484]: Copyright © 2026 ZKTECO CO., LTD. All rights reserved.
+      - generic [ref=e485]:
+        - link "Legal Notices" [ref=e486] [cursor=pointer]:
+          - /url: /en/legal_notices
+        - link "Privacy Policy" [ref=e487] [cursor=pointer]:
+          - /url: /en/privacy_policy
+        - link "Terms of Use" [ref=e488] [cursor=pointer]:
+          - /url: /en/terms_of_use
+        - link "Sitemap" [ref=e489] [cursor=pointer]:
+          - /url: /en/sitemap
+        - link "Cookie Policy" [ref=e490] [cursor=pointer]:
+          - /url: /en/cookie_policy
+  - generic [ref=e491]:
+    - generic [ref=e492] [cursor=pointer]
+    - generic [ref=e493] [cursor=pointer]
+  - generic [ref=e496]:
+    - paragraph [ref=e497]:
+      - text: This website uses cookies to store information on your device, cookies can enhance your user experience and help our website work normally. For more information, please read our
+      - link "Cookie Policy" [ref=e498] [cursor=pointer]:
+        - /url: /en/cookie_policy
+      - text: and
+      - link "Privacy Policy" [ref=e499] [cursor=pointer]:
+        - /url: /en/privacy_policy
+      - text: .
+    - generic [ref=e500] [cursor=pointer]: Accept
+    - generic [ref=e502] [cursor=pointer]
+  - text: 💡 💡 💡 💡 💡

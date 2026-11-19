@@ -1,0 +1,11 @@
+bin/
+obj/
+.vs/
+*.user
+*.suo
+*.log
+TestResults/
+tools/UiRender/bin/
+tools/UiRender/obj/
+tools/shots/
+tools/*.png

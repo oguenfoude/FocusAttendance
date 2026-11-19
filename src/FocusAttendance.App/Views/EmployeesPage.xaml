@@ -1,0 +1,394 @@
+<UserControl x:Class="FocusAttendance.App.Views.EmployeesPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+             xmlns:controls="clr-namespace:FocusAttendance.App.Controls"
+             xmlns:loc="clr-namespace:FocusAttendance.App.Infrastructure">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <!-- Header -->
+        <Grid Grid.Row="0" Margin="0,0,0,12">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <StackPanel>
+                <TextBlock Text="{DynamicResource Employees.Title}" Style="{StaticResource PageTitle}" />
+                <StackPanel Orientation="Horizontal" Margin="0,3,0,0">
+                    <TextBlock Text="{DynamicResource Employees.Subtitle}" Style="{StaticResource PageSubtitle}" VerticalAlignment="Center" />
+                    <Border Style="{StaticResource Pill}" Margin="12,0,0,0">
+                        <TextBlock Text="{Binding CountText}" Style="{StaticResource PillText}" />
+                    </Border>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center">
+                <Button Style="{StaticResource SecondaryAction}" Command="{Binding ImportFromDeviceCommand}" Margin="0,0,8,0">
+                    <StackPanel Orientation="Horizontal">
+                        <ui:SymbolIcon Symbol="ArrowDownload24" FontSize="14" Margin="0,0,8,0" />
+                        <TextBlock Text="{DynamicResource Employees.Import}" />
+                    </StackPanel>
+                </Button>
+                <Button Style="{StaticResource SecondaryAction}" Click="OnExportClick" Margin="0,0,8,0">
+                    <StackPanel Orientation="Horizontal">
+                        <ui:SymbolIcon Symbol="DocumentText24" FontSize="14" Margin="0,0,8,0" />
+                        <TextBlock Text="{DynamicResource App.Export}" />
+                    </StackPanel>
+                </Button>
+                <Button Style="{StaticResource SecondaryAction}" Command="{Binding ManageDepartmentsCommand}" Margin="0,0,8,0">
+                    <StackPanel Orientation="Horizontal">
+                        <ui:SymbolIcon Symbol="Building24" FontSize="14" Margin="0,0,8,0" />
+                        <TextBlock Text="{DynamicResource Employees.Manage}" />
+                    </StackPanel>
+                </Button>
+                <Button Style="{StaticResource PrimaryAction}" Command="{Binding NewCommand}" AutomationProperties.AutomationId="NewEmployeeButton">
+                    <StackPanel Orientation="Horizontal">
+                        <ui:SymbolIcon Symbol="PersonAdd24" FontSize="14" Margin="0,0,8,0" />
+                        <TextBlock Text="{DynamicResource Employees.Add}" />
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+        </Grid>
+
+        <!-- Filters -->
+        <Border Grid.Row="1" Style="{StaticResource FilterBar}" Margin="0,0,0,12">
+            <WrapPanel>
+                <ui:TextBox Text="{Binding Search, UpdateSourceTrigger=PropertyChanged}" Width="230" MinHeight="34"
+                            PlaceholderText="{DynamicResource Employees.SearchPlaceholder}" Margin="0,0,8,0" />
+                <ComboBox ItemsSource="{Binding Departments}" DisplayMemberPath="Display"
+                          SelectedItem="{Binding SelectedDepartment}" MinWidth="170" MinHeight="34" Margin="0,0,8,0" />
+                <ComboBox ItemsSource="{Binding Devices}" DisplayMemberPath="Display"
+                          SelectedItem="{Binding SelectedDevice}" MinWidth="160" MinHeight="34" Margin="0,0,8,0" />
+                <ComboBox ItemsSource="{Binding Shifts}" DisplayMemberPath="Display"
+                          SelectedItem="{Binding SelectedShift}" MinWidth="180" MinHeight="34" Margin="0,0,8,0" />
+                <ComboBox ItemsSource="{Binding DayOptions}" DisplayMemberPath="Display"
+                          SelectedIndex="{Binding SelectedDayIndex}" MinWidth="120" MinHeight="34" Margin="0,0,8,0" />
+                <CheckBox Content="{DynamicResource Employees.ShowArchived}" IsChecked="{Binding ShowArchived}"
+                          VerticalAlignment="Center" Margin="0,0,10,0" FontSize="11.5" />
+                <Button Style="{StaticResource GhostAction}" Command="{Binding ClearFiltersCommand}"
+                        Content="{DynamicResource App.Clear}" />
+            </WrapPanel>
+        </Border>
+
+        <!-- Directory -->
+        <Border Grid.Row="2" Style="{StaticResource FluentCard}" Padding="0">
+            <Grid>
+                <DataGrid x:Name="EmployeeGrid" Style="{StaticResource FlatGrid}" ItemsSource="{Binding Employees}"
+                          Margin="4,0,4,8" MouseDoubleClick="OnGridDoubleClick">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="{Binding [App.Name], Source={x:Static loc:Localized.Instance}}" Binding="{Binding Name}" Width="1.7*" />
+                        <DataGridTextColumn Header="{Binding [App.Matricule], Source={x:Static loc:Localized.Instance}}" Binding="{Binding Matricule}" Width="95" />
+                        <DataGridTextColumn Header="{Binding [App.Pin], Source={x:Static loc:Localized.Instance}}" Binding="{Binding Pin}" Width="70" />
+                        <DataGridTextColumn Header="{Binding [App.Department], Source={x:Static loc:Localized.Instance}}" Binding="{Binding Department}" Width="1.4*" />
+                        <DataGridTextColumn Header="{Binding [App.Shift], Source={x:Static loc:Localized.Instance}}" Binding="{Binding Shift}" Width="1.3*" />
+                        <DataGridTextColumn Header="{Binding [App.Device], Source={x:Static loc:Localized.Instance}}" Binding="{Binding Device}" Width="1.1*" />
+                        <DataGridTextColumn Header="{Binding [App.Days], Source={x:Static loc:Localized.Instance}}" Binding="{Binding Days}" Width="130" />
+                        <DataGridTextColumn Header="{Binding [App.Phone], Source={x:Static loc:Localized.Instance}}" Binding="{Binding Phone}" Width="110" />
+                        <DataGridTextColumn Header="{Binding [App.Salary], Source={x:Static loc:Localized.Instance}}" Binding="{Binding SalaryText}" Width="110" />
+                        <DataGridTemplateColumn Header="{Binding [App.Status], Source={x:Static loc:Localized.Instance}}" Width="88">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Border Style="{StaticResource Pill}">
+                                        <TextBlock Text="{Binding StatusText}" Style="{StaticResource PillText}" />
+                                    </Border>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTemplateColumn Width="46">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Style="{StaticResource IconAction}" Click="OnEditRowClick"
+                                            AutomationProperties.AutomationId="EditEmployeeButton"
+                                            ToolTip="{DynamicResource App.Edit}">
+                                        <ui:SymbolIcon Symbol="Edit24" FontSize="13" />
+                                    </Button>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+                <TextBlock Text="{DynamicResource Employees.NoEmployees}" Style="{StaticResource EmptyStateText}"
+                           Visibility="{Binding Employees.Count, Converter={StaticResource ZeroCountToVisibility}}" />
+            </Grid>
+        </Border>
+
+        <!-- Drawer -->
+        <controls:SlideOver Grid.RowSpan="3" IsOpen="{Binding IsDrawerOpen}" Title="{Binding DrawerTitle}"
+                            Subtitle="{Binding EditingSubtitle}" CloseCommand="{Binding CloseDrawerCommand}">
+            <controls:SlideOver.DrawerContent>
+                <StackPanel DataContext="{Binding}">
+                    <!-- Identity -->
+                    <Border Style="{StaticResource DrawerSection}">
+                        <StackPanel>
+                            <TextBlock Text="{DynamicResource Employees.Identity}" Style="{StaticResource SectionTitle}" Margin="0,0,0,12" />
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="12" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <StackPanel>
+                                    <TextBlock Text="{DynamicResource App.Matricule}" Style="{StaticResource FieldLabel}" />
+                                    <ui:TextBox AutomationProperties.AutomationId="EmployeeMatricule" Text="{Binding Editing.Matricule, UpdateSourceTrigger=PropertyChanged}"
+                                                IsReadOnly="{Binding CanEditMatricule, Converter={StaticResource InverseBool}}"
+                                                MinHeight="34" Margin="0,0,0,10" />
+                                </StackPanel>
+                                <StackPanel Grid.Column="2">
+                                    <TextBlock Text="{DynamicResource App.Pin}" Style="{StaticResource FieldLabel}" />
+                                    <ui:TextBox AutomationProperties.AutomationId="EmployeePin" Text="{Binding Editing.DevicePin, UpdateSourceTrigger=PropertyChanged}" MinHeight="34" Margin="0,0,0,10" />
+                                </StackPanel>
+                            </Grid>
+                            <TextBlock Text="{DynamicResource Employees.FullNameAr}" Style="{StaticResource FieldLabel}" />
+                            <ui:TextBox AutomationProperties.AutomationId="EmployeeNameAr" Text="{Binding Editing.FullNameAr, UpdateSourceTrigger=PropertyChanged}" MinHeight="34" Margin="0,0,0,10" />
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="12" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <StackPanel>
+                                    <TextBlock Text="{DynamicResource Employees.FirstNameFr}" Style="{StaticResource FieldLabel}" />
+                                    <ui:TextBox AutomationProperties.AutomationId="EmployeeFirstName" Text="{Binding Editing.FirstNameFr, UpdateSourceTrigger=PropertyChanged}" MinHeight="34" Margin="0,0,0,10" />
+                                </StackPanel>
+                                <StackPanel Grid.Column="2">
+                                    <TextBlock Text="{DynamicResource Employees.LastNameFr}" Style="{StaticResource FieldLabel}" />
+                                    <ui:TextBox AutomationProperties.AutomationId="EmployeeLastName" Text="{Binding Editing.LastNameFr, UpdateSourceTrigger=PropertyChanged}" MinHeight="34" Margin="0,0,0,10" />
+                                </StackPanel>
+                            </Grid>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="12" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <StackPanel>
+                                    <TextBlock Text="{DynamicResource Employees.JobAr}" Style="{StaticResource FieldLabel}" />
+                                    <ui:TextBox Text="{Binding Editing.JobTitleAr, UpdateSourceTrigger=PropertyChanged}" MinHeight="34" Margin="0,0,0,10" />
+                                </StackPanel>
+                                <StackPanel Grid.Column="2">
+                                    <TextBlock Text="{DynamicResource Employees.JobFr}" Style="{StaticResource FieldLabel}" />
+                                    <ui:TextBox Text="{Binding Editing.JobTitleFr, UpdateSourceTrigger=PropertyChanged}" MinHeight="34" Margin="0,0,0,10" />
+                                </StackPanel>
+                            </Grid>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="12" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <StackPanel>
+                                    <TextBlock Text="{DynamicResource App.Phone}" Style="{StaticResource FieldLabel}" />
+                                    <ui:TextBox Text="{Binding Editing.Phone, UpdateSourceTrigger=PropertyChanged}" MinHeight="34" Margin="0,0,0,10" />
+                                </StackPanel>
+                                <StackPanel Grid.Column="2">
+                                    <TextBlock Text="{DynamicResource Employees.StatusNote}" Style="{StaticResource FieldLabel}" />
+                                    <ui:TextBox Text="{Binding Editing.StatusNote, UpdateSourceTrigger=PropertyChanged}" MinHeight="34" Margin="0,0,0,10" />
+                                </StackPanel>
+                            </Grid>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="8" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="8" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <StackPanel>
+                                    <TextBlock Text="{DynamicResource Employees.Birth}" Style="{StaticResource FieldLabel}" />
+                                    <DatePicker SelectedDate="{Binding Editing.BirthDate}" MinHeight="34" Margin="0,0,0,6" />
+                                </StackPanel>
+                                <StackPanel Grid.Column="2">
+                                    <TextBlock Text="{DynamicResource Employees.Hire}" Style="{StaticResource FieldLabel}" />
+                                    <DatePicker SelectedDate="{Binding Editing.HireDate}" MinHeight="34" Margin="0,0,0,6" />
+                                </StackPanel>
+                                <StackPanel Grid.Column="4">
+                                    <TextBlock Text="{DynamicResource Employees.End}" Style="{StaticResource FieldLabel}" />
+                                    <DatePicker SelectedDate="{Binding Editing.EndDate}" MinHeight="34" Margin="0,0,0,6" />
+                                </StackPanel>
+                            </Grid>
+                        </StackPanel>
+                    </Border>
+
+                    <!-- Assignment -->
+                    <Border Style="{StaticResource DrawerSection}">
+                        <StackPanel>
+                            <TextBlock Text="{DynamicResource Employees.Assignment}" Style="{StaticResource SectionTitle}" Margin="0,0,0,12" />
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="12" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <StackPanel>
+                                    <TextBlock Text="{DynamicResource App.Department}" Style="{StaticResource FieldLabel}" />
+                                    <ComboBox ItemsSource="{Binding DepartmentOptions}" DisplayMemberPath="Display"
+                                              SelectedValuePath="Id" SelectedValue="{Binding Editing.DepartmentId}"
+                                              MinHeight="34" Margin="0,0,0,10" />
+                                </StackPanel>
+                                <StackPanel Grid.Column="2">
+                                    <TextBlock Text="{DynamicResource App.Shift}" Style="{StaticResource FieldLabel}" />
+                                    <ComboBox ItemsSource="{Binding ShiftOptions}" DisplayMemberPath="Display"
+                                              SelectedValuePath="Id" SelectedValue="{Binding Editing.WorkRuleId}"
+                                              MinHeight="34" Margin="0,0,0,10" />
+                                </StackPanel>
+                            </Grid>
+                            <TextBlock Text="{DynamicResource Employees.WorkDays}" Style="{StaticResource FieldLabel}" />
+                            <UniformGrid Columns="7" Margin="0,4,0,4">
+                                <CheckBox Content="{DynamicResource Day.Sun}" IsChecked="{Binding Sun}" Style="{StaticResource DayCheck}" />
+                                <CheckBox Content="{DynamicResource Day.Mon}" IsChecked="{Binding Mon}" Style="{StaticResource DayCheck}" />
+                                <CheckBox Content="{DynamicResource Day.Tue}" IsChecked="{Binding Tue}" Style="{StaticResource DayCheck}" />
+                                <CheckBox Content="{DynamicResource Day.Wed}" IsChecked="{Binding Wed}" Style="{StaticResource DayCheck}" />
+                                <CheckBox Content="{DynamicResource Day.Thu}" IsChecked="{Binding Thu}" Style="{StaticResource DayCheck}" />
+                                <CheckBox Content="{DynamicResource Day.Fri}" IsChecked="{Binding Fri}" Style="{StaticResource DayCheck}" />
+                                <CheckBox Content="{DynamicResource Day.Sat}" IsChecked="{Binding Sat}" Style="{StaticResource DayCheck}" />
+                            </UniformGrid>
+                        </StackPanel>
+                    </Border>
+
+                    <!-- Salary -->
+                    <Border Style="{StaticResource DrawerSection}">
+                        <StackPanel>
+                            <TextBlock Text="{DynamicResource Employees.SalarySection}" Style="{StaticResource SectionTitle}" Margin="0,0,0,12" />
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="12" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <StackPanel>
+                                    <TextBlock Text="{DynamicResource Employees.BaseSalary}" Style="{StaticResource FieldLabel}" />
+                                    <ui:TextBox Text="{Binding Editing.BaseSalaryDzd, UpdateSourceTrigger=LostFocus}" MinHeight="34" Margin="0,0,0,10" />
+                                </StackPanel>
+                                <StackPanel Grid.Column="2">
+                                    <TextBlock Text="{DynamicResource Employees.DailyRate}" Style="{StaticResource FieldLabel}" />
+                                    <ui:TextBox Text="{Binding Editing.DailyRateDzd, UpdateSourceTrigger=LostFocus}" MinHeight="34" Margin="0,0,0,10" />
+                                </StackPanel>
+                            </Grid>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="12" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <StackPanel>
+                                    <TextBlock Text="{DynamicResource Employees.HourlyRate}" Style="{StaticResource FieldLabel}" />
+                                    <ui:TextBox Text="{Binding Editing.HourlyRateDzd, UpdateSourceTrigger=LostFocus}" MinHeight="34" Margin="0,0,0,10" />
+                                </StackPanel>
+                                <StackPanel Grid.Column="2">
+                                    <TextBlock Text="{DynamicResource Employees.Overtime}" Style="{StaticResource FieldLabel}" />
+                                    <ui:TextBox Text="{Binding Editing.OvertimeMultiplier, UpdateSourceTrigger=LostFocus}" MinHeight="34" Margin="0,0,0,10" />
+                                </StackPanel>
+                            </Grid>
+                            <TextBlock Text="{DynamicResource Employees.Account}" Style="{StaticResource FieldLabel}" />
+                            <ui:TextBox Text="{Binding Editing.PaymentAccount, UpdateSourceTrigger=PropertyChanged}" MinHeight="34" />
+                        </StackPanel>
+                    </Border>
+
+                    <!-- Enrollment -->
+                    <Border Style="{StaticResource DrawerSection}">
+                        <StackPanel>
+                            <TextBlock Text="{DynamicResource Employees.Enrollment}" Style="{StaticResource SectionTitle}" Margin="0,0,0,12" />
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="12" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <StackPanel>
+                                    <TextBlock Text="{DynamicResource Employees.PrimaryDevice}" Style="{StaticResource FieldLabel}" />
+                                    <ComboBox ItemsSource="{Binding DeviceOptions}" DisplayMemberPath="Display"
+                                              SelectedValuePath="Id" SelectedValue="{Binding Editing.PrimaryDeviceId}"
+                                              MinHeight="34" Margin="0,0,0,10" />
+                                </StackPanel>
+                                <StackPanel Grid.Column="2">
+                                    <TextBlock Text="{DynamicResource Devices.Privilege}" Style="{StaticResource FieldLabel}" />
+                                    <ComboBox ItemsSource="{Binding PrivilegeOptions}" DisplayMemberPath="Display"
+                                              SelectedValuePath="Value" SelectedValue="{Binding Editing.DevicePrivilege}"
+                                              MinHeight="34" Margin="0,0,0,10" />
+                                </StackPanel>
+                            </Grid>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="8" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="8" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <StackPanel>
+                                    <TextBlock Text="{DynamicResource Employees.Card}" Style="{StaticResource FieldLabel}" />
+                                    <ui:TextBox Text="{Binding Editing.CardNumber, UpdateSourceTrigger=LostFocus}" MinHeight="34" Margin="0,0,0,4" />
+                                </StackPanel>
+                                <StackPanel Grid.Column="2">
+                                    <TextBlock Text="{DynamicResource Employees.Fp}" Style="{StaticResource FieldLabel}" />
+                                    <ui:TextBox Text="{Binding Editing.FpCount, UpdateSourceTrigger=LostFocus}" MinHeight="34" Margin="0,0,0,4" />
+                                </StackPanel>
+                                <StackPanel Grid.Column="4">
+                                    <TextBlock Text="{DynamicResource Employees.Face}" Style="{StaticResource FieldLabel}" />
+                                    <ui:TextBox Text="{Binding Editing.FaceCount, UpdateSourceTrigger=LostFocus}" MinHeight="34" Margin="0,0,0,4" />
+                                </StackPanel>
+                            </Grid>
+                            <TextBlock Text="{DynamicResource Employees.DevicePassword}" Style="{StaticResource FieldLabel}" Margin="0,10,0,4" />
+                            <ui:TextBox Text="{Binding Editing.DevicePassword, UpdateSourceTrigger=PropertyChanged}" MinHeight="34" />
+                        </StackPanel>
+                    </Border>
+
+                    <!-- Actions -->
+                    <StackPanel Margin="0,4,0,0">
+                        <Button Style="{StaticResource PrimaryAction}" Command="{Binding SaveCommand}" Margin="0,0,0,8" AutomationProperties.AutomationId="SaveEmployeeButton">
+                            <StackPanel Orientation="Horizontal">
+                                <ui:SymbolIcon Symbol="Save24" FontSize="14" Margin="0,0,8,0" />
+                                <TextBlock Text="{DynamicResource App.Save}" />
+                            </StackPanel>
+                        </Button>
+                        <Grid Margin="0,0,0,8">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="8" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Button Style="{StaticResource SecondaryAction}" Click="OnPushClick">
+                                <StackPanel Orientation="Horizontal">
+                                    <ui:SymbolIcon Symbol="ArrowUpload24" FontSize="14" Margin="0,0,8,0" />
+                                    <TextBlock Text="{DynamicResource Employees.Push}" />
+                                </StackPanel>
+                            </Button>
+                            <Button Grid.Column="2" Style="{StaticResource DangerAction}" Click="OnDeleteDeviceClick">
+                                <StackPanel Orientation="Horizontal">
+                                    <ui:SymbolIcon Symbol="Delete24" FontSize="14" Margin="0,0,8,0" />
+                                    <TextBlock Text="{DynamicResource App.Delete}" />
+                                </StackPanel>
+                            </Button>
+                        </Grid>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="8" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Button Style="{StaticResource DangerAction}" Click="OnArchiveClick"
+                                    Visibility="{Binding Editing.IsArchived, Converter={StaticResource InverseBoolToVisibility}}">
+                                <StackPanel Orientation="Horizontal">
+                                    <ui:SymbolIcon Symbol="ArchiveArrowBack24" FontSize="14" Margin="0,0,8,0" />
+                                    <TextBlock Text="{DynamicResource App.Archive}" />
+                                </StackPanel>
+                            </Button>
+                            <Button Grid.Column="2" Style="{StaticResource SecondaryAction}" Command="{Binding RestoreCommand}"
+                                    Visibility="{Binding Editing.IsArchived, Converter={StaticResource BoolToVisibility}}">
+                                <StackPanel Orientation="Horizontal">
+                                    <ui:SymbolIcon Symbol="ArrowClockwise24" FontSize="14" Margin="0,0,8,0" />
+                                    <TextBlock Text="{DynamicResource App.Restore}" />
+                                </StackPanel>
+                            </Button>
+                        </Grid>
+                    </StackPanel>
+                </StackPanel>
+            </controls:SlideOver.DrawerContent>
+        </controls:SlideOver>
+    </Grid>
+</UserControl>

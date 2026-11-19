@@ -1,0 +1,523 @@
+<UserControl x:Class="FocusAttendance.App.Views.DevicesPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+             xmlns:controls="clr-namespace:FocusAttendance.App.Controls"
+             xmlns:loc="clr-namespace:FocusAttendance.App.Infrastructure">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <!-- Header -->
+        <Grid Grid.Row="0" Margin="0,0,0,12">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <StackPanel>
+                <TextBlock Text="{DynamicResource Devices.Title}" Style="{StaticResource PageTitle}" />
+                <TextBlock Text="{DynamicResource Devices.Subtitle}" Style="{StaticResource PageSubtitle}" Margin="0,3,0,0" />
+            </StackPanel>
+            <StackPanel Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Right">
+                <TextBlock Text="{DynamicResource Devices.SdkStatus}" Style="{StaticResource Eyebrow}" HorizontalAlignment="Right" />
+                <Border Style="{StaticResource Pill}" Margin="0,4,0,0" HorizontalAlignment="Right">
+                    <TextBlock Text="{Binding SdkStatus}" Style="{StaticResource PillText}" />
+                </Border>
+            </StackPanel>
+        </Grid>
+
+        <!-- Toolbar -->
+        <Border Grid.Row="1" Style="{StaticResource FilterBar}" Margin="0,0,0,12">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <StackPanel Orientation="Horizontal">
+                    <Button Style="{StaticResource PrimaryAction}" Click="OnOpenScannerClick" Margin="0,0,8,0" AutomationProperties.AutomationId="DeviceScanButton">
+                        <StackPanel Orientation="Horizontal">
+                            <ui:SymbolIcon Symbol="Scan24" FontSize="14" Margin="0,0,8,0" />
+                            <TextBlock Text="{DynamicResource Devices.Scan}" />
+                        </StackPanel>
+                    </Button>
+                    <Button Style="{StaticResource SecondaryAction}" Command="{Binding AddByIpCommand}" Margin="0,0,8,0" AutomationProperties.AutomationId="DeviceAddByIpButton">
+                        <StackPanel Orientation="Horizontal">
+                            <ui:SymbolIcon Symbol="Add24" FontSize="14" Margin="0,0,8,0" />
+                            <TextBlock Text="{DynamicResource Devices.AddByIp}" />
+                        </StackPanel>
+                    </Button>
+                    <Button Style="{StaticResource SecondaryAction}" Command="{Binding PullAllCommand}" Margin="0,0,8,0" AutomationProperties.AutomationId="DevicePullAllButton">
+                        <StackPanel Orientation="Horizontal">
+                            <ui:SymbolIcon Symbol="ArrowDownload24" FontSize="14" Margin="0,0,8,0" />
+                            <TextBlock Text="{DynamicResource Devices.PullAll}" />
+                        </StackPanel>
+                    </Button>
+                    <Button Style="{StaticResource SecondaryAction}" Command="{Binding SyncAllCommand}" AutomationProperties.AutomationId="DeviceSyncAllButton">
+                        <StackPanel Orientation="Horizontal">
+                            <ui:SymbolIcon Symbol="ArrowSync24" FontSize="14" Margin="0,0,8,0" />
+                            <TextBlock Text="{DynamicResource Devices.SyncAll}" />
+                        </StackPanel>
+                    </Button>
+                </StackPanel>
+                <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
+                    <ProgressBar Width="120" Height="3" IsIndeterminate="True" Margin="0,0,10,0"
+                                 Visibility="{Binding IsScanning, Converter={StaticResource BoolToVisibility}}" />
+                    <TextBlock Text="{Binding StatusMessage}" Style="{StaticResource Caption}" VerticalAlignment="Center" />
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <!-- Scan results -->
+        <Border Grid.Row="2" Style="{StaticResource FluentCard}" Padding="0" Margin="0,0,0,12"
+                Visibility="{Binding ScanResults.Count, Converter={StaticResource CountToVisibility}}">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid Margin="18,12,14,6">
+                    <StackPanel Orientation="Horizontal">
+                        <ui:SymbolIcon Symbol="Wifi124" FontSize="15" Foreground="{DynamicResource PrimaryBrush}" />
+                        <TextBlock Text="{DynamicResource Devices.Discovered}" Style="{StaticResource SectionTitle}" Margin="8,0,0,0" />
+                        <Border Style="{StaticResource Pill}" Margin="8,0,0,0">
+                            <TextBlock Text="{Binding ScanResults.Count}" Style="{StaticResource PillText}" />
+                        </Border>
+                    </StackPanel>
+                    <Button Style="{StaticResource PrimaryAction}" HorizontalAlignment="Right"
+                            Command="{Binding AddDiscoveredCommand}" Padding="12,6" AutomationProperties.AutomationId="DeviceAddDiscoveredButton">
+                        <StackPanel Orientation="Horizontal">
+                            <ui:SymbolIcon Symbol="Add24" FontSize="13" Margin="0,0,6,0" />
+                            <TextBlock Text="{DynamicResource App.Add}" />
+                        </StackPanel>
+                    </Button>
+                </Grid>
+                <DataGrid Grid.Row="1" Style="{StaticResource FlatGrid}" ItemsSource="{Binding ScanResults}"
+                          SelectedItem="{Binding SelectedScanResult}" Height="170" Margin="4,0,4,8">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="{Binding [Devices.Ip], Source={x:Static loc:Localized.Instance}}" Binding="{Binding IpAddress}" Width="150" />
+                        <DataGridTextColumn Header="{Binding [Devices.Model], Source={x:Static loc:Localized.Instance}}" Binding="{Binding Model}" Width="*" />
+                        <DataGridTextColumn Header="{Binding [Devices.Serial], Source={x:Static loc:Localized.Instance}}" Binding="{Binding Serial}" Width="160" />
+                        <DataGridTextColumn Header="{Binding [Devices.Users], Source={x:Static loc:Localized.Instance}}" Binding="{Binding Users}" Width="90" />
+                        <DataGridTextColumn Header="{Binding [Devices.Punches], Source={x:Static loc:Localized.Instance}}" Binding="{Binding Punches}" Width="90" />
+                        <DataGridTextColumn Header="{Binding [Devices.Firmware], Source={x:Static loc:Localized.Instance}}" Binding="{Binding Firmware}" Width="140" />
+                        <DataGridTextColumn Header="{Binding [App.Status], Source={x:Static loc:Localized.Instance}}" Binding="{Binding StateText}" Width="130" />
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Grid>
+        </Border>
+
+        <!-- Devices list -->
+        <Border Grid.Row="3" Style="{StaticResource FluentCard}" Padding="10">
+            <Grid>
+                <DataGrid x:Name="DeviceGrid" Style="{StaticResource FlatGrid}" ItemsSource="{Binding Devices}"
+                          SelectedItem="{Binding SelectedDevice}" Margin="2">
+                    <DataGrid.Columns>
+                        <DataGridTemplateColumn Header="{Binding [App.Status], Source={x:Static loc:Localized.Instance}}" Width="130">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                                        <Ellipse Style="{StaticResource DeviceDot}" Margin="0,0,7,0" />
+                                        <TextBlock Text="{Binding StatusText}" FontSize="12" VerticalAlignment="Center" />
+                                    </StackPanel>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTextColumn Header="{Binding [Devices.Name], Source={x:Static loc:Localized.Instance}}" Binding="{Binding Name}" Width="1.4*" MinWidth="160" />
+                        <DataGridTextColumn Header="{Binding [Devices.Ip], Source={x:Static loc:Localized.Instance}}" Binding="{Binding Endpoint}" Width="150" />
+                        <DataGridTextColumn Header="{Binding [Devices.Serial], Source={x:Static loc:Localized.Instance}}" Binding="{Binding Serial}" Width="140" />
+                        <DataGridTextColumn Header="{Binding [Devices.Model], Source={x:Static loc:Localized.Instance}}" Binding="{Binding ModelName}" Width="1*" MinWidth="120" />
+                        <DataGridTextColumn Header="{Binding [Devices.Users], Source={x:Static loc:Localized.Instance}}" Binding="{Binding UsersText}" Width="90" />
+                        <DataGridTextColumn Header="{Binding [Devices.Punches], Source={x:Static loc:Localized.Instance}}" Binding="{Binding PunchCountText}" Width="86" />
+                        <DataGridTextColumn Header="{Binding [Devices.LastSeen], Source={x:Static loc:Localized.Instance}}" Binding="{Binding LastSeenText}" Width="110" />
+                        <DataGridTemplateColumn Width="140">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                                        <Button Style="{StaticResource IconAction}" Click="OnPullRowClick" Margin="0,0,4,0" AutomationProperties.AutomationId="DevicePullButton"
+                                                ToolTip="{DynamicResource Devices.Pull}">
+                                            <ui:SymbolIcon Symbol="ArrowDownload24" FontSize="13" />
+                                        </Button>
+                                        <Button Style="{StaticResource SecondaryAction}" Click="OnOpenConsole" Padding="10,4" FontSize="11.5" AutomationProperties.AutomationId="DeviceConsoleButton">
+                                            <StackPanel Orientation="Horizontal">
+                                                <ui:SymbolIcon Symbol="Settings24" FontSize="12" Margin="0,0,5,0" />
+                                                <TextBlock Text="{DynamicResource Devices.Console}" />
+                                            </StackPanel>
+                                        </Button>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center"
+                            Visibility="{Binding Devices.Count, Converter={StaticResource ZeroCountToVisibility}}">
+                    <ui:SymbolIcon Symbol="Scan24" FontSize="42" Foreground="{DynamicResource TextMutedBrush}" HorizontalAlignment="Center" />
+                    <TextBlock Text="{DynamicResource Devices.Empty}" Style="{StaticResource SectionTitle}" HorizontalAlignment="Center" Margin="0,12,0,0" />
+                    <TextBlock Text="{DynamicResource Devices.EmptyHint}" Style="{StaticResource Caption}" HorizontalAlignment="Center" Margin="0,4,0,0" MaxWidth="380" TextAlignment="Center" />
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <!-- Full identity of the selected terminal -->
+        <Border Grid.Row="4" Style="{StaticResource FluentCard}" Padding="18,14" Margin="0,12,0,0"
+                Visibility="{Binding HasSelection, Converter={StaticResource BoolToVisibility}}">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <Grid Grid.Row="0">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
+                        <ui:SymbolIcon Symbol="HardDrive24" FontSize="15" Foreground="{DynamicResource PrimaryBrush}" />
+                        <TextBlock Text="{Binding SelectedDeviceTitle}" Style="{StaticResource SectionTitle}" Margin="8,0,0,0" VerticalAlignment="Center" />
+                        <Border Style="{StaticResource Pill}" Margin="8,0,0,0">
+                            <TextBlock Text="{Binding SelectedDevice.StatusText}" Style="{StaticResource PillText}" />
+                        </Border>
+                        <TextBlock Text="{Binding SelectedDevice.LatencyText}" Style="{StaticResource Caption}" Margin="8,0,0,0" VerticalAlignment="Center" />
+                        <TextBlock Text="{Binding SelectedDevice.Endpoint}" Style="{StaticResource Caption}" Margin="12,0,0,0" VerticalAlignment="Center" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
+                        <Button Style="{StaticResource SecondaryAction}" Command="{Binding SyncSelectedCommand}" Margin="8,0,0,0"
+                                AutomationProperties.AutomationId="DeviceSyncSelectedButton">
+                            <StackPanel Orientation="Horizontal">
+                                <ui:SymbolIcon Symbol="Clock24" FontSize="13" Margin="0,0,6,0" />
+                                <TextBlock Text="{DynamicResource Devices.SyncClock}" />
+                            </StackPanel>
+                        </Button>
+                        <Button Style="{StaticResource SecondaryAction}" Command="{Binding PullSelectedCommand}" Margin="8,0,0,0"
+                                AutomationProperties.AutomationId="DevicePullSelectedButton">
+                            <StackPanel Orientation="Horizontal">
+                                <ui:SymbolIcon Symbol="ArrowDownload24" FontSize="13" Margin="0,0,6,0" />
+                                <TextBlock Text="{DynamicResource Devices.Pull}" />
+                            </StackPanel>
+                        </Button>
+                        <Button Style="{StaticResource PrimaryAction}" Command="{Binding OpenDeviceCommand}"
+                                CommandParameter="{Binding SelectedDevice}"
+                                AutomationProperties.AutomationId="DeviceOpenConsoleButton">
+                            <StackPanel Orientation="Horizontal">
+                                <ui:SymbolIcon Symbol="Settings24" FontSize="13" Margin="0,0,6,0" />
+                                <TextBlock Text="{DynamicResource Devices.Console}" />
+                            </StackPanel>
+                        </Button>
+                    </StackPanel>
+                </Grid>
+
+                <Grid Grid.Row="1" Margin="0,12,0,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Visibility="{Binding SelectedDevice.Serial, Converter={StaticResource StringEmptyToVisibility}}" Grid.Column="0">
+                        <TextBlock Text="{DynamicResource Devices.Serial}" Style="{StaticResource FieldLabel}" />
+                        <TextBlock Text="{Binding SelectedDevice.Serial}" Foreground="{DynamicResource TextPrimaryBrush}" FontSize="12.5" TextTrimming="CharacterEllipsis" />
+                    </StackPanel>
+                    <StackPanel Visibility="{Binding SelectedDevice.ModelName, Converter={StaticResource StringEmptyToVisibility}}" Grid.Column="1">
+                        <TextBlock Text="{DynamicResource Devices.Model}" Style="{StaticResource FieldLabel}" />
+                        <TextBlock Text="{Binding SelectedDevice.ModelName}" Foreground="{DynamicResource TextPrimaryBrush}" FontSize="12.5" TextTrimming="CharacterEllipsis" />
+                    </StackPanel>
+                    <StackPanel Visibility="{Binding SelectedDevice.Firmware, Converter={StaticResource StringEmptyToVisibility}}" Grid.Column="2">
+                        <TextBlock Text="{DynamicResource Devices.Firmware}" Style="{StaticResource FieldLabel}" />
+                        <TextBlock Text="{Binding SelectedDevice.Firmware}" Foreground="{DynamicResource TextPrimaryBrush}" FontSize="12.5" TextTrimming="CharacterEllipsis" />
+                    </StackPanel>
+                    <StackPanel Visibility="{Binding SelectedDevice.Mac, Converter={StaticResource StringEmptyToVisibility}}" Grid.Column="3">
+                        <TextBlock Text="MAC" Style="{StaticResource FieldLabel}" />
+                        <TextBlock Text="{Binding SelectedDevice.Mac}" Foreground="{DynamicResource TextPrimaryBrush}" FontSize="12.5" TextTrimming="CharacterEllipsis" />
+                    </StackPanel>
+                    <StackPanel Visibility="{Binding SelectedDevice.Platform, Converter={StaticResource StringEmptyToVisibility}}" Grid.Column="4">
+                        <TextBlock Text="Platform" Style="{StaticResource FieldLabel}" />
+                        <TextBlock Text="{Binding SelectedDevice.Platform}" Foreground="{DynamicResource TextPrimaryBrush}" FontSize="12.5" TextTrimming="CharacterEllipsis" />
+                    </StackPanel>
+                </Grid>
+
+                <Grid Grid.Row="2" Margin="0,10,0,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Visibility="{Binding SelectedDevice.BiometricsText, Converter={StaticResource StringEmptyToVisibility}}" Grid.Column="0">
+                        <TextBlock Text="FP / Face" Style="{StaticResource FieldLabel}" />
+                        <TextBlock Text="{Binding SelectedDevice.BiometricsText}" Foreground="{DynamicResource TextPrimaryBrush}" FontSize="12.5" />
+                    </StackPanel>
+                    <StackPanel Visibility="{Binding SelectedDevice.ClockText, Converter={StaticResource StringEmptyToVisibility}}" Grid.Column="1">
+                        <TextBlock Text="{DynamicResource Devices.Clock}" Style="{StaticResource FieldLabel}" />
+                        <TextBlock Text="{Binding SelectedDevice.ClockText}" Foreground="{DynamicResource TextPrimaryBrush}" FontSize="12.5" />
+                    </StackPanel>
+                    <StackPanel Visibility="{Binding SelectedDevice.LastSeenText, Converter={StaticResource StringEmptyToVisibility}}" Grid.Column="2">
+                        <TextBlock Text="{DynamicResource Devices.LastSeen}" Style="{StaticResource FieldLabel}" />
+                        <TextBlock Text="{Binding SelectedDevice.LastSeenText}" Foreground="{DynamicResource TextPrimaryBrush}" FontSize="12.5" />
+                    </StackPanel>
+                    <StackPanel Visibility="{Binding SelectedDevice.LastPullText, Converter={StaticResource StringEmptyToVisibility}}" Grid.Column="3">
+                        <TextBlock Text="{DynamicResource Devices.LastPull}" Style="{StaticResource FieldLabel}" />
+                        <TextBlock Text="{Binding SelectedDevice.LastPullText}" Foreground="{DynamicResource TextPrimaryBrush}" FontSize="12.5" />
+                    </StackPanel>
+                    <StackPanel Grid.Column="4">
+                        <TextBlock Text="{DynamicResource Devices.CommKey}" Style="{StaticResource FieldLabel}" />
+                        <TextBlock Text="{Binding SelectedDevice.Model.CommKey}" Foreground="{DynamicResource TextPrimaryBrush}" FontSize="12.5" />
+                    </StackPanel>
+                </Grid>
+
+                <TextBlock Grid.Row="3" Text="{Binding SelectedDevice.StatusSummary}" Style="{StaticResource Caption}"
+                           TextWrapping="Wrap" Margin="0,10,0,0" HorizontalAlignment="Right" MaxWidth="1200"
+                           ToolTip="{Binding SelectedDevice.FullStatusText}" />
+            </Grid>
+        </Border>
+        <!-- Console drawer -->
+        <controls:SlideOver Grid.RowSpan="5" IsOpen="{Binding IsDrawerOpen}" Title="{Binding DrawerTitle}"
+                            Subtitle="{Binding EditIp}" CloseCommand="{Binding CloseDrawerCommand}">
+            <controls:SlideOver.DrawerContent>
+                <StackPanel>
+                    <!-- Identity -->
+                    <Border Style="{StaticResource DrawerSection}">
+                        <StackPanel>
+                            <TextBlock Text="{DynamicResource Devices.Identity}" Style="{StaticResource SectionTitle}" Margin="0,0,0,12" />
+                            <TextBlock Text="{DynamicResource Devices.Name}" Style="{StaticResource FieldLabel}" />
+                            <ui:TextBox Text="{Binding EditName, UpdateSourceTrigger=PropertyChanged}" MinHeight="34" Margin="0,0,0,10" />
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="12" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <StackPanel>
+                                    <TextBlock Text="{DynamicResource Devices.Ip}" Style="{StaticResource FieldLabel}" />
+                                    <ui:TextBox Text="{Binding EditIp, UpdateSourceTrigger=PropertyChanged}" MinHeight="34" Margin="0,0,0,10" IsReadOnly="{Binding IsEditingExisting}" />
+                                </StackPanel>
+                                <StackPanel Grid.Column="2">
+                                    <TextBlock Text="{DynamicResource Devices.Port}" Style="{StaticResource FieldLabel}" />
+                                    <ui:TextBox Text="{Binding EditPort, UpdateSourceTrigger=PropertyChanged}" MinHeight="34" Margin="0,0,0,10" IsReadOnly="{Binding IsEditingExisting}" />
+                                </StackPanel>
+                            </Grid>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="12" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <StackPanel>
+                                    <TextBlock Text="{DynamicResource Devices.CommKey}" Style="{StaticResource FieldLabel}" />
+                                    <ui:TextBox Text="{Binding EditCommKey, UpdateSourceTrigger=PropertyChanged}" MinHeight="34" Margin="0,0,0,10" />
+                                </StackPanel>
+                                <StackPanel Grid.Column="2">
+                                    <TextBlock Text="{DynamicResource Devices.Note}" Style="{StaticResource FieldLabel}" />
+                                    <ui:TextBox Text="{Binding EditNote, UpdateSourceTrigger=PropertyChanged}" MinHeight="34" Margin="0,0,0,10" />
+                                </StackPanel>
+                            </Grid>
+                            <StackPanel Orientation="Horizontal" Margin="0,2,0,0">
+                                <TextBlock Text="{DynamicResource Devices.Serial}" Style="{StaticResource Caption}" Margin="0,0,6,0" />
+                                <TextBlock Text="{Binding SelectedDevice.Serial}" Style="{StaticResource MonoText}" />
+                                <TextBlock Text="{DynamicResource Devices.Firmware}" Style="{StaticResource Caption}" Margin="14,0,6,0" />
+                                <TextBlock Text="{Binding SelectedDevice.Firmware}" Style="{StaticResource MonoText}" />
+                            </StackPanel>
+                            <Button Style="{StaticResource PrimaryAction}" Command="{Binding SaveDeviceCommand}" Margin="0,14,0,0" AutomationProperties.AutomationId="DeviceSaveButton">
+                                <StackPanel Orientation="Horizontal">
+                                    <ui:SymbolIcon Symbol="Save24" FontSize="14" Margin="0,0,8,0" />
+                                    <TextBlock Text="{DynamicResource App.Save}" />
+                                </StackPanel>
+                            </Button>
+                        </StackPanel>
+                    </Border>
+
+                    <!-- Network -->
+                    <Border Style="{StaticResource DrawerSection}"
+                            Visibility="{Binding IsEditingExisting, Converter={StaticResource BoolToVisibility}}">
+                        <StackPanel>
+                            <TextBlock Text="{DynamicResource Devices.Network}" Style="{StaticResource SectionTitle}" Margin="0,0,0,10" />
+                            <TextBlock Text="{DynamicResource Devices.NetworkHint}" Style="{StaticResource Caption}" Margin="0,0,0,12" />
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="12" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <StackPanel>
+                                    <TextBlock Text="{DynamicResource Devices.Ip}" Style="{StaticResource FieldLabel}" />
+                                    <ui:TextBox Text="{Binding EditIp, UpdateSourceTrigger=PropertyChanged}" MinHeight="34" Margin="0,0,0,10" />
+                                </StackPanel>
+                                <StackPanel Grid.Column="2">
+                                    <TextBlock Text="{DynamicResource Devices.Port}" Style="{StaticResource FieldLabel}" />
+                                    <ui:TextBox Text="{Binding EditPort, UpdateSourceTrigger=PropertyChanged}" MinHeight="34" Margin="0,0,0,10" />
+                                </StackPanel>
+                            </Grid>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="12" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <StackPanel>
+                                    <TextBlock Text="{DynamicResource Devices.Mask}" Style="{StaticResource FieldLabel}" />
+                                    <ui:TextBox Text="{Binding EditMask, UpdateSourceTrigger=PropertyChanged}" MinHeight="34" Margin="0,0,0,10" />
+                                </StackPanel>
+                                <StackPanel Grid.Column="2">
+                                    <TextBlock Text="{DynamicResource Devices.Gateway}" Style="{StaticResource FieldLabel}" />
+                                    <ui:TextBox Text="{Binding EditGateway, UpdateSourceTrigger=PropertyChanged}" MinHeight="34" Margin="0,0,0,10" />
+                                </StackPanel>
+                            </Grid>
+                            <Button Style="{StaticResource PrimaryAction}" Click="OnApplyNetworkClick" AutomationProperties.AutomationId="DeviceApplyNetworkButton">
+                                <StackPanel Orientation="Horizontal">
+                                    <ui:SymbolIcon Symbol="ArrowSync24" FontSize="14" Margin="0,0,8,0" />
+                                    <TextBlock Text="{DynamicResource Devices.ApplyNetwork}" />
+                                </StackPanel>
+                            </Button>
+                            <Border Background="{DynamicResource PanelAltBrush}" CornerRadius="8" Padding="10" Margin="0,10,0,0"
+                                    Visibility="{Binding NetworkLog, Converter={StaticResource StringEmptyToVisibility}}">
+                                <ScrollViewer MaxHeight="150" VerticalScrollBarVisibility="Auto">
+                                    <TextBlock Text="{Binding NetworkLog}" Style="{StaticResource MonoText}" TextWrapping="Wrap" />
+                                </ScrollViewer>
+                            </Border>
+                        </StackPanel>
+                    </Border>
+
+                    <!-- Full SDK diagnostic -->
+                    <Border Style="{StaticResource DrawerSection}">
+                        <StackPanel>
+                            <TextBlock Text="{DynamicResource Devices.DumpTitle}" Style="{StaticResource SectionTitle}" Margin="0,0,0,10" />
+                            <TextBlock Text="{DynamicResource Devices.DumpHint}" Style="{StaticResource Caption}"
+                                       Margin="0,0,0,10" TextWrapping="Wrap" />
+                            <Button Style="{StaticResource SecondaryAction}" Command="{Binding DumpInfoCommand}"
+                                    AutomationProperties.AutomationId="DeviceDumpButton">
+                                <StackPanel Orientation="Horizontal">
+                                    <ui:SymbolIcon Symbol="Info24" FontSize="13" Margin="0,0,6,0" />
+                                    <TextBlock Text="{DynamicResource Devices.DumpAction}" />
+                                </StackPanel>
+                            </Button>
+                            <Border Background="{DynamicResource PanelAltBrush}" CornerRadius="8" Padding="10" Margin="0,10,0,0"
+                                    Visibility="{Binding HasInfoDump, Converter={StaticResource BoolToVisibility}}">
+                                <ScrollViewer MaxHeight="260" VerticalScrollBarVisibility="Auto">
+                                    <TextBlock Text="{Binding InfoDump}" Style="{StaticResource MonoText}" TextWrapping="Wrap" />
+                                </ScrollViewer>
+                            </Border>
+                        </StackPanel>
+                    </Border>
+
+                    <!-- Hardware -->
+                    <Border Style="{StaticResource DrawerSection}"
+                            Visibility="{Binding IsEditingExisting, Converter={StaticResource BoolToVisibility}}">
+                        <StackPanel>
+                            <TextBlock Text="{DynamicResource Devices.Hardware}" Style="{StaticResource SectionTitle}" Margin="0,0,0,10" />
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="8" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Button Style="{StaticResource SecondaryAction}" Command="{Binding PullSelectedCommand}" Margin="0,0,0,8">
+                                    <StackPanel Orientation="Horizontal">
+                                        <ui:SymbolIcon Symbol="ArrowDownload24" FontSize="13" Margin="0,0,6,0" />
+                                        <TextBlock Text="{DynamicResource Devices.Pull}" FontSize="11.5" TextWrapping="Wrap" />
+                                    </StackPanel>
+                                </Button>
+                                <Button Grid.Column="2" Style="{StaticResource SecondaryAction}" Command="{Binding SyncSelectedCommand}" Margin="0,0,0,8">
+                                    <StackPanel Orientation="Horizontal">
+                                        <ui:SymbolIcon Symbol="Clock24" FontSize="13" Margin="0,0,6,0" />
+                                        <TextBlock Text="{DynamicResource Devices.SyncClock}" FontSize="11.5" TextWrapping="Wrap" />
+                                    </StackPanel>
+                                </Button>
+                                <Button Grid.Row="1" Style="{StaticResource SecondaryAction}" Click="OnRebootClick" Margin="0,0,0,8" AutomationProperties.AutomationId="DeviceRebootButton">
+                                    <StackPanel Orientation="Horizontal">
+                                        <ui:SymbolIcon Symbol="ArrowClockwise24" FontSize="13" Margin="0,0,6,0" />
+                                        <TextBlock Text="{DynamicResource Devices.Reboot}" FontSize="11.5" />
+                                    </StackPanel>
+                                </Button>
+                                <Button Grid.Row="1" Grid.Column="2" Style="{StaticResource DangerAction}" Click="OnPowerOffClick" Margin="0,0,0,8" AutomationProperties.AutomationId="DevicePowerOffButton">
+                                    <StackPanel Orientation="Horizontal">
+                                        <ui:SymbolIcon Symbol="Power24" FontSize="13" Margin="0,0,6,0" />
+                                        <TextBlock Text="{DynamicResource Devices.PowerOff}" FontSize="11.5" />
+                                    </StackPanel>
+                                </Button>
+                                <Button Grid.Row="2" Style="{StaticResource SecondaryAction}" Click="OnClearAdminsClick" Margin="0,0,0,4" AutomationProperties.AutomationId="DeviceClearAdminsButton">
+                                    <StackPanel Orientation="Horizontal">
+                                        <ui:SymbolIcon Symbol="LockOpen24" FontSize="13" Margin="0,0,6,0" />
+                                        <TextBlock Text="{DynamicResource Devices.ClearAdmins}" FontSize="11.5" TextWrapping="Wrap" />
+                                    </StackPanel>
+                                </Button>
+                                <Button Grid.Row="2" Grid.Column="2" Style="{StaticResource SecondaryAction}" Command="{Binding BeepCommand}" Margin="0,0,0,4" AutomationProperties.AutomationId="DeviceBeepButton">
+                                    <StackPanel Orientation="Horizontal">
+                                        <ui:SymbolIcon Symbol="Speaker224" FontSize="13" Margin="0,0,6,0" />
+                                        <TextBlock Text="{DynamicResource Devices.Beep}" FontSize="11.5" />
+                                    </StackPanel>
+                                </Button>
+                            </Grid>
+                            <Grid Margin="0,10,0,0">
+                                <TextBlock Text="{DynamicResource Devices.Enabled}" Style="{StaticResource Caption}" VerticalAlignment="Center" />
+                                <ui:ToggleSwitch HorizontalAlignment="Right" IsChecked="{Binding SelectedDevice.Model.IsEnabled, Mode=OneWay}"
+                                                 Click="OnToggleEnabledClick" />
+                            </Grid>
+                            <Grid Margin="0,10,0,0">
+                                <Button Style="{StaticResource DangerAction}" Click="OnArchiveDeviceClick" AutomationProperties.AutomationId="DeviceArchiveButton"
+                                        Visibility="{Binding SelectedDevice.Model.IsArchived, Converter={StaticResource InverseBoolToVisibility}}">
+                                    <StackPanel Orientation="Horizontal">
+                                        <ui:SymbolIcon Symbol="ArchiveArrowBack24" FontSize="13" Margin="0,0,6,0" />
+                                        <TextBlock Text="{DynamicResource App.Archive}" />
+                                    </StackPanel>
+                                </Button>
+                                <Button Style="{StaticResource SecondaryAction}" Command="{Binding RestoreCommand}"
+                                        Visibility="{Binding SelectedDevice.Model.IsArchived, Converter={StaticResource BoolToVisibility}}">
+                                    <StackPanel Orientation="Horizontal">
+                                        <ui:SymbolIcon Symbol="ArrowClockwise24" FontSize="13" Margin="0,0,6,0" />
+                                        <TextBlock Text="{DynamicResource App.Restore}" />
+                                    </StackPanel>
+                                </Button>
+                            </Grid>
+                        </StackPanel>
+                    </Border>
+
+                    <!-- Memory -->
+                    <Border Style="{StaticResource DrawerSection}"
+                            Visibility="{Binding IsEditingExisting, Converter={StaticResource BoolToVisibility}}">
+                        <StackPanel>
+                            <TextBlock Text="{DynamicResource Devices.Memory}" Style="{StaticResource SectionTitle}" Margin="0,0,0,10" />
+                            <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                                <Button Style="{StaticResource SecondaryAction}" Command="{Binding ReadUsersCommand}" Margin="0,0,8,0">
+                                    <StackPanel Orientation="Horizontal">
+                                        <ui:SymbolIcon Symbol="Eye24" FontSize="13" Margin="0,0,6,0" />
+                                        <TextBlock Text="{DynamicResource Devices.ReadUsers}" FontSize="11.5" />
+                                    </StackPanel>
+                                </Button>
+                                <Button Style="{StaticResource SecondaryAction}" Click="OnImportAllUsersClick" Margin="0,0,8,0">
+                                    <StackPanel Orientation="Horizontal">
+                                        <ui:SymbolIcon Symbol="ArrowDownload24" FontSize="13" Margin="0,0,6,0" />
+                                        <TextBlock Text="{DynamicResource Devices.ImportAll}" FontSize="11.5" TextWrapping="Wrap" />
+                                    </StackPanel>
+                                </Button>
+                                <Button Style="{StaticResource GhostAction}" Command="{Binding ImportSelectedUserCommand}">
+                                    <TextBlock Text="{DynamicResource Devices.ImportSelected}" FontSize="11.5" />
+                                </Button>
+                            </StackPanel>
+                            <DataGrid Style="{StaticResource FlatGrid}" ItemsSource="{Binding DeviceUsers}"
+                                      SelectedItem="{Binding SelectedDeviceUser}" Height="210">
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Header="{Binding [App.Pin], Source={x:Static loc:Localized.Instance}}" Binding="{Binding Pin}" Width="70" />
+                                    <DataGridTextColumn Header="{Binding [App.Name], Source={x:Static loc:Localized.Instance}}" Binding="{Binding Name}" Width="*" />
+                                    <DataGridTextColumn Header="{Binding [Devices.Privilege], Source={x:Static loc:Localized.Instance}}" Binding="{Binding PrivilegeText}" Width="95" />
+                                    <DataGridTextColumn Header="{Binding [Devices.Card], Source={x:Static loc:Localized.Instance}}" Binding="{Binding CardText}" Width="80" />
+                                    <DataGridTextColumn Header="{Binding [Devices.InDb], Source={x:Static loc:Localized.Instance}}" Binding="{Binding LinkText}" Width="130" />
+                                </DataGrid.Columns>
+                            </DataGrid>
+                        </StackPanel>
+                    </Border>
+                </StackPanel>
+            </controls:SlideOver.DrawerContent>
+        </controls:SlideOver>
+    </Grid>
+</UserControl>

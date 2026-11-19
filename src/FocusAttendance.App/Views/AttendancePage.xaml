@@ -1,0 +1,276 @@
+<UserControl x:Class="FocusAttendance.App.Views.AttendancePage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+             xmlns:controls="clr-namespace:FocusAttendance.App.Controls"
+             xmlns:loc="clr-namespace:FocusAttendance.App.Infrastructure">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <!-- Header -->
+        <Grid Grid.Row="0" Margin="0,0,0,12">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <StackPanel>
+                <TextBlock Text="{DynamicResource Attendance.Title}" Style="{StaticResource PageTitle}" />
+                <StackPanel Orientation="Horizontal" Margin="0,3,0,0">
+                    <TextBlock Text="{DynamicResource Attendance.Subtitle}" Style="{StaticResource PageSubtitle}" VerticalAlignment="Center" />
+                    <Border Style="{StaticResource Pill}" Margin="12,0,0,0">
+                        <TextBlock Text="{Binding RangeText}" Style="{StaticResource PillText}" />
+                    </Border>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center">
+                <Button Style="{StaticResource SecondaryAction}" Click="OnExportCsvClick" Margin="0,0,8,0">
+                    <StackPanel Orientation="Horizontal">
+                        <ui:SymbolIcon Symbol="ArrowDownload24" FontSize="14" Margin="0,0,8,0" />
+                        <TextBlock Text="{DynamicResource Attendance.ExportCsv}" />
+                    </StackPanel>
+                </Button>
+                <Button Style="{StaticResource SecondaryAction}" Click="OnPrintClick" Margin="0,0,8,0">
+                    <StackPanel Orientation="Horizontal">
+                        <ui:SymbolIcon Symbol="Print24" FontSize="14" Margin="0,0,8,0" />
+                        <TextBlock Text="{DynamicResource Attendance.PrintReport}" />
+                    </StackPanel>
+                </Button>
+                <Button Style="{StaticResource PrimaryAction}" Command="{Binding RefreshCommand}">
+                    <StackPanel Orientation="Horizontal">
+                        <ui:SymbolIcon Symbol="ArrowSync24" FontSize="14" Margin="0,0,8,0" />
+                        <TextBlock Text="{DynamicResource App.Refresh}" />
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+        </Grid>
+
+        <!-- Filters -->
+        <Border Grid.Row="1" Style="{StaticResource FilterBar}" Margin="0,0,0,10">
+            <StackPanel>
+                <WrapPanel Margin="0,0,0,8">
+                    <TextBlock Text="{DynamicResource App.From}" Style="{StaticResource Caption}" VerticalAlignment="Center" Margin="0,0,6,0" />
+                    <DatePicker SelectedDate="{Binding FromDate}" Width="130" MinHeight="32" Margin="0,0,12,0" />
+                    <TextBlock Text="{DynamicResource App.To}" Style="{StaticResource Caption}" VerticalAlignment="Center" Margin="0,0,6,0" />
+                    <DatePicker SelectedDate="{Binding ToDate}" Width="130" MinHeight="32" Margin="0,0,12,0" />
+                    <Button Style="{StaticResource SecondaryAction}" Command="{Binding TodayCommand}" Content="{DynamicResource App.Today}" Margin="0,0,6,0" Padding="12,6" />
+                    <Button Style="{StaticResource SecondaryAction}" Command="{Binding WeekCommand}" Content="{DynamicResource App.Week}" Margin="0,0,6,0" Padding="12,6" />
+                    <Button Style="{StaticResource SecondaryAction}" Command="{Binding MonthCommand}" Content="{DynamicResource App.Month}" Padding="12,6" />
+                </WrapPanel>
+                <WrapPanel>
+                    <ComboBox ItemsSource="{Binding Employees}" DisplayMemberPath="Display" SelectedItem="{Binding SelectedEmployee}"
+                              MinWidth="230" MinHeight="32" Margin="0,0,8,0" />
+                    <ComboBox ItemsSource="{Binding Departments}" DisplayMemberPath="Display" SelectedItem="{Binding SelectedDepartment}"
+                              MinWidth="160" MinHeight="32" Margin="0,0,8,0" />
+                    <ComboBox ItemsSource="{Binding Devices}" DisplayMemberPath="Display" SelectedItem="{Binding SelectedDevice}"
+                              MinWidth="150" MinHeight="32" Margin="0,0,8,0" />
+                    <ComboBox ItemsSource="{Binding Shifts}" DisplayMemberPath="Display" SelectedItem="{Binding SelectedShift}"
+                              MinWidth="170" MinHeight="32" Margin="0,0,8,0" />
+                    <ComboBox ItemsSource="{Binding Statuses}" DisplayMemberPath="Display" SelectedItem="{Binding SelectedStatus}"
+                              MinWidth="150" MinHeight="32" Margin="0,0,8,0" />
+                    <Button Style="{StaticResource GhostAction}" Command="{Binding ClearFiltersCommand}" Content="{DynamicResource App.Clear}" />
+                </WrapPanel>
+            </StackPanel>
+        </Border>
+
+        <!-- Summary -->
+        <Border Grid.Row="2" Style="{StaticResource FlatCard}" Padding="14,10" Margin="0,0,0,10">
+            <TextBlock Text="{Binding SummaryText}" Style="{StaticResource Caption}" Foreground="{DynamicResource TextSecondaryBrush}" />
+        </Border>
+
+        <!-- Sheet -->
+        <Border Grid.Row="3" Style="{StaticResource FluentCard}" Padding="0">
+            <Grid>
+                <DataGrid x:Name="SheetGrid" Style="{StaticResource FlatGrid}" ItemsSource="{Binding Rows}"
+                          Margin="4,0,4,8" MouseDoubleClick="OnRowDoubleClick">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="{Binding [App.Date], Source={x:Static loc:Localized.Instance}}" Binding="{Binding DateText}" Width="98" />
+                        <DataGridTextColumn Header="{Binding [App.Day], Source={x:Static loc:Localized.Instance}}" Binding="{Binding DayText}" Width="72" />
+                        <DataGridTextColumn Header="{Binding [App.Matricule], Source={x:Static loc:Localized.Instance}}" Binding="{Binding Matricule}" Width="88" />
+                        <DataGridTextColumn Header="{Binding [App.Pin], Source={x:Static loc:Localized.Instance}}" Binding="{Binding Pin}" Width="64" />
+                        <DataGridTextColumn Header="{Binding [App.Name], Source={x:Static loc:Localized.Instance}}" Binding="{Binding Name}" Width="1.6*" MinWidth="150" />
+                        <DataGridTextColumn Header="{Binding [App.Department], Source={x:Static loc:Localized.Instance}}" Binding="{Binding Department}" Width="1.2*" MinWidth="110" />
+                        <DataGridTextColumn Header="{Binding [App.Shift], Source={x:Static loc:Localized.Instance}}" Binding="{Binding Shift}" Width="1.1*" MinWidth="100" />
+                        <DataGridTextColumn Header="{Binding [App.Device], Source={x:Static loc:Localized.Instance}}" Binding="{Binding Device}" Width="1*" MinWidth="90" />
+                        <DataGridTextColumn Header="{Binding [Attendance.Morning], Source={x:Static loc:Localized.Instance}}" Binding="{Binding MorningIn}" Width="62" />
+                        <DataGridTextColumn Header="{Binding [Attendance.LunchOut], Source={x:Static loc:Localized.Instance}}" Binding="{Binding LunchOut}" Width="74" />
+                        <DataGridTextColumn Header="{Binding [Attendance.LunchIn], Source={x:Static loc:Localized.Instance}}" Binding="{Binding LunchIn}" Width="74" />
+                        <DataGridTextColumn Header="{Binding [Attendance.Evening], Source={x:Static loc:Localized.Instance}}" Binding="{Binding EveningOut}" Width="64" />
+                        <DataGridTextColumn Header="{Binding [Attendance.Scans], Source={x:Static loc:Localized.Instance}}" Binding="{Binding ScansText}" Width="58" />
+                        <DataGridTextColumn Header="{Binding [Attendance.Regular], Source={x:Static loc:Localized.Instance}}" Binding="{Binding RegularText}" Width="68" />
+                        <DataGridTextColumn Header="{Binding [Attendance.Extra], Source={x:Static loc:Localized.Instance}}" Binding="{Binding ExtraText}" Width="68" />
+                        <DataGridTextColumn Header="{Binding [Attendance.Net], Source={x:Static loc:Localized.Instance}}" Binding="{Binding TotalText}" Width="64" />
+                        <DataGridTextColumn Header="{Binding [Attendance.Late], Source={x:Static loc:Localized.Instance}}" Binding="{Binding LateText}" Width="64" />
+                        <DataGridTemplateColumn Header="{Binding [App.Status], Source={x:Static loc:Localized.Instance}}" Width="126">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Border Style="{StaticResource GridStatusPill}">
+                                        <TextBlock Text="{Binding StatusText}" Style="{StaticResource StatusPillText}" />
+                                    </Border>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTextColumn Header="{Binding [Attendance.Earned], Source={x:Static loc:Localized.Instance}}" Binding="{Binding EarnedText}" Width="94" />
+                        <DataGridTextColumn Header="{Binding [Attendance.Deduction], Source={x:Static loc:Localized.Instance}}" Binding="{Binding DeductionText}" Width="94" />
+                    </DataGrid.Columns>
+                </DataGrid>
+                <TextBlock Text="{DynamicResource Attendance.NoRows}" Style="{StaticResource EmptyStateText}"
+                           Visibility="{Binding Rows.Count, Converter={StaticResource ZeroCountToVisibility}}" />
+            </Grid>
+        </Border>
+
+        <!-- Detail drawer -->
+        <controls:SlideOver Grid.RowSpan="4" IsOpen="{Binding IsDetailOpen}" Title="{Binding DetailTitle}"
+                            Subtitle="{Binding DetailSubtitle}" CloseCommand="{Binding CloseDetailCommand}">
+            <controls:SlideOver.DrawerContent>
+                <StackPanel>
+                    <!-- Day summary -->
+                    <Border Style="{StaticResource DrawerSection}">
+                        <StackPanel>
+                            <Border Style="{StaticResource Pill}" HorizontalAlignment="Left" Margin="0,0,0,10">
+                                <TextBlock Text="{Binding DetailStatus}" Style="{StaticResource PillText}" />
+                            </Border>
+                            <TextBlock Text="{Binding DetailTimes}" Style="{StaticResource Caption}" Margin="0,0,0,6" />
+                            <TextBlock Text="{Binding DetailTotals}" Style="{StaticResource Caption}" Margin="0,0,0,6"
+                                       Foreground="{DynamicResource TextSecondaryBrush}" />
+                            <TextBlock Text="{Binding DetailNotes}" Style="{StaticResource Caption}" />
+                        </StackPanel>
+                    </Border>
+
+                    <!-- Raw punches -->
+                    <Border Style="{StaticResource DrawerSection}">
+                        <StackPanel>
+                            <TextBlock Text="{DynamicResource Attendance.RawScans}" Style="{StaticResource SectionTitle}" Margin="0,0,0,10" />
+                            <Grid>
+                                <DataGrid Style="{StaticResource FlatGrid}" ItemsSource="{Binding DetailPunches}" Height="176">
+                                    <DataGrid.Columns>
+                                        <DataGridTextColumn Header="{Binding [Attendance.ManualTime], Source={x:Static loc:Localized.Instance}}" Binding="{Binding Time}" Width="72" />
+                                        <DataGridTextColumn Header="{Binding [Attendance.Source], Source={x:Static loc:Localized.Instance}}" Binding="{Binding Source}" Width="110" />
+                                        <DataGridTextColumn Header="{Binding [Attendance.Verify], Source={x:Static loc:Localized.Instance}}" Binding="{Binding Verify}" Width="90" />
+                                        <DataGridTextColumn Header="{Binding [Attendance.State], Source={x:Static loc:Localized.Instance}}" Binding="{Binding State}" Width="70" />
+                                        <DataGridTextColumn Header="{Binding [App.Device], Source={x:Static loc:Localized.Instance}}" Binding="{Binding Device}" Width="*" />
+                                    </DataGrid.Columns>
+                                </DataGrid>
+                                <TextBlock Text="{DynamicResource Attendance.NoPunches}" Style="{StaticResource EmptyStateText}"
+                                           Visibility="{Binding DetailPunches.Count, Converter={StaticResource ZeroCountToVisibility}}" />
+                            </Grid>
+                        </StackPanel>
+                    </Border>
+
+                    <!-- HR adjustments -->
+                    <Border Style="{StaticResource DrawerSection}">
+                        <StackPanel>
+                            <TextBlock Text="{DynamicResource Attendance.Adjustments}" Style="{StaticResource SectionTitle}" Margin="0,0,0,10" />
+                            <Grid>
+                                <DataGrid Style="{StaticResource FlatGrid}" ItemsSource="{Binding DetailAdjustments}" Height="170">
+                                    <DataGrid.Columns>
+                                        <DataGridTextColumn Header="{Binding [Attendance.Kind], Source={x:Static loc:Localized.Instance}}" Binding="{Binding Kind}" Width="120" />
+                                        <DataGridTextColumn Header="{Binding [Attendance.Range], Source={x:Static loc:Localized.Instance}}" Binding="{Binding Window}" Width="104" />
+                                        <DataGridTextColumn Header="{Binding [Attendance.Minutes], Source={x:Static loc:Localized.Instance}}" Binding="{Binding Minutes}" Width="72" />
+                                        <DataGridTextColumn Header="{Binding [Attendance.Reference], Source={x:Static loc:Localized.Instance}}" Binding="{Binding Reference}" Width="*" />
+                                        <DataGridTemplateColumn Width="40">
+                                            <DataGridTemplateColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <Button Style="{StaticResource IconAction}" Click="OnArchiveAdjustmentClick" Width="26" Height="26">
+                                                        <ui:SymbolIcon Symbol="Delete24" FontSize="12" />
+                                                    </Button>
+                                                </DataTemplate>
+                                            </DataGridTemplateColumn.CellTemplate>
+                                        </DataGridTemplateColumn>
+                                    </DataGrid.Columns>
+                                </DataGrid>
+                                <TextBlock Text="{DynamicResource Attendance.NoExceptions}" Style="{StaticResource EmptyStateText}"
+                                           Visibility="{Binding DetailAdjustments.Count, Converter={StaticResource ZeroCountToVisibility}}" />
+                            </Grid>
+                        </StackPanel>
+                    </Border>
+
+                    <!-- Manual punch -->
+                    <Border Style="{StaticResource DrawerSection}">
+                        <StackPanel>
+                            <TextBlock Text="{DynamicResource Attendance.ManualPunch}" Style="{StaticResource SectionTitle}" Margin="0,0,0,10" />
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="110" />
+                                    <ColumnDefinition Width="10" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <StackPanel>
+                                    <TextBlock Text="{DynamicResource Attendance.ManualTime}" Style="{StaticResource FieldLabel}" />
+                                    <ui:TextBox Text="{Binding ManualTime, UpdateSourceTrigger=PropertyChanged}" MinHeight="34" />
+                                </StackPanel>
+                                <StackPanel Grid.Column="2">
+                                    <TextBlock Text="{DynamicResource Attendance.ManualNote}" Style="{StaticResource FieldLabel}" />
+                                    <ui:TextBox Text="{Binding ManualNote, UpdateSourceTrigger=PropertyChanged}" MinHeight="34" />
+                                </StackPanel>
+                            </Grid>
+                            <Button Style="{StaticResource PrimaryAction}" Command="{Binding AddManualPunchCommand}" Margin="0,10,0,0">
+                                <StackPanel Orientation="Horizontal">
+                                    <ui:SymbolIcon Symbol="Add24" FontSize="14" Margin="0,0,8,0" />
+                                    <TextBlock Text="{DynamicResource Attendance.AddManual}" />
+                                </StackPanel>
+                            </Button>
+                        </StackPanel>
+                    </Border>
+
+                    <!-- Exceptions -->
+                    <Border Style="{StaticResource DrawerSection}">
+                        <StackPanel>
+                            <TextBlock Text="{DynamicResource Attendance.Exceptions}" Style="{StaticResource SectionTitle}" Margin="0,0,0,10" />
+                            <TextBlock Text="{DynamicResource Attendance.Kind}" Style="{StaticResource FieldLabel}" />
+                            <ComboBox ItemsSource="{Binding ExceptionKinds}" DisplayMemberPath="Display"
+                                      SelectedItem="{Binding SelectedExceptionKind}" MinHeight="34" Margin="0,0,0,10" />
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="8" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="8" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <StackPanel>
+                                    <TextBlock Text="{DynamicResource Attendance.Start}" Style="{StaticResource FieldLabel}" />
+                                    <ui:TextBox Text="{Binding ExceptionStart, UpdateSourceTrigger=PropertyChanged}" MinHeight="34" />
+                                </StackPanel>
+                                <StackPanel Grid.Column="2">
+                                    <TextBlock Text="{DynamicResource Attendance.End}" Style="{StaticResource FieldLabel}" />
+                                    <ui:TextBox Text="{Binding ExceptionEnd, UpdateSourceTrigger=PropertyChanged}" MinHeight="34" />
+                                </StackPanel>
+                                <StackPanel Grid.Column="4">
+                                    <TextBlock Text="{DynamicResource Attendance.Minutes}" Style="{StaticResource FieldLabel}" />
+                                    <ui:TextBox Text="{Binding ExceptionMinutes, UpdateSourceTrigger=PropertyChanged}" MinHeight="34" />
+                                </StackPanel>
+                            </Grid>
+                            <Grid Margin="0,10,0,0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="8" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <StackPanel>
+                                    <TextBlock Text="{DynamicResource Attendance.Reference}" Style="{StaticResource FieldLabel}" />
+                                    <ui:TextBox Text="{Binding ExceptionReference, UpdateSourceTrigger=PropertyChanged}" MinHeight="34" />
+                                </StackPanel>
+                                <StackPanel Grid.Column="2">
+                                    <TextBlock Text="{DynamicResource Attendance.ManualNote}" Style="{StaticResource FieldLabel}" />
+                                    <ui:TextBox Text="{Binding ExceptionNote, UpdateSourceTrigger=PropertyChanged}" MinHeight="34" />
+                                </StackPanel>
+                            </Grid>
+                            <Button Style="{StaticResource SecondaryAction}" Command="{Binding AddExceptionCommand}" Margin="0,10,0,0">
+                                <StackPanel Orientation="Horizontal">
+                                    <ui:SymbolIcon Symbol="DocumentText24" FontSize="14" Margin="0,0,8,0" />
+                                    <TextBlock Text="{DynamicResource Attendance.AddException}" />
+                                </StackPanel>
+                            </Button>
+                        </StackPanel>
+                    </Border>
+                </StackPanel>
+            </controls:SlideOver.DrawerContent>
+        </controls:SlideOver>
+    </Grid>
+</UserControl>

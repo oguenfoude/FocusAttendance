@@ -1,0 +1,312 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - generic [ref=e4]:
+      - list [ref=e5]:
+        - listitem [ref=e6]:
+          - link "Investor Relations" [ref=e7] [cursor=pointer]:
+            - /url: /en/investor_relations
+        - listitem [ref=e8]:
+          - link "About Us" [ref=e9] [cursor=pointer]:
+            - /url: /en/about_us
+        - listitem [ref=e10]:
+          - link "News Center" [ref=e11] [cursor=pointer]:
+            - /url: /en/news_center
+        - listitem [ref=e12]:
+          - link "Contact Us" [ref=e13] [cursor=pointer]:
+            - /url: /en/contact
+      - paragraph [ref=e15] [cursor=pointer]: Language/Region
+      - generic [ref=e16]:
+        - link [ref=e17] [cursor=pointer]:
+          - /url: https://www.linkedin.com/company/zktecoltd
+        - link [ref=e18] [cursor=pointer]:
+          - /url: "https://www.facebook.com/zktecoelectronic "
+        - link [ref=e19] [cursor=pointer]:
+          - /url: https://twitter.com/ZKTeco
+        - link [ref=e20] [cursor=pointer]:
+          - /url: "https://www.youtube.com/ZKTeco "
+        - link [ref=e21] [cursor=pointer]:
+          - /url: https://www.tiktok.com/@zkteco.global?lang=en
+      - generic [ref=e22]:
+        - link [ref=e24] [cursor=pointer]:
+          - /url: ""
+        - link "Login" [ref=e26] [cursor=pointer]:
+          - /url: /en/member/index/login
+        - link "Register" [ref=e28] [cursor=pointer]:
+          - /url: /en/member/index/register
+    - generic [ref=e30]:
+      - link [ref=e31] [cursor=pointer]:
+        - /url: /en/
+        - img "熵基" [ref=e33]
+      - generic [ref=e34]:
+        - list [ref=e35]:
+          - listitem [ref=e36]:
+            - link "Product" [ref=e37] [cursor=pointer]:
+              - /url: /en/Product
+          - listitem [ref=e38]:
+            - link "Solution" [ref=e39] [cursor=pointer]:
+              - /url: /en/solution
+          - listitem [ref=e40]:
+            - link "Case" [ref=e41] [cursor=pointer]:
+              - /url: /en/case
+          - listitem [ref=e42]:
+            - link "Technology" [ref=e43] [cursor=pointer]:
+              - /url: /en/technologies
+          - listitem [ref=e44]:
+            - link "Support" [ref=e45] [cursor=pointer]:
+              - /url: /en/support
+        - list:
+          - listitem [ref=e46]:
+            - link "Product >" [ref=e48] [cursor=pointer]:
+              - /url: javascript:;
+              - text: Product
+              - generic [ref=e49]: ">"
+          - listitem [ref=e50]:
+            - link "Solution" [ref=e51] [cursor=pointer]:
+              - /url: /en/solution
+          - listitem [ref=e52]:
+            - link "Case" [ref=e53] [cursor=pointer]:
+              - /url: /en/case
+          - listitem [ref=e54]:
+            - link "Technology" [ref=e55] [cursor=pointer]:
+              - /url: /en/technologies
+          - listitem [ref=e56]:
+            - link "Support" [ref=e57] [cursor=pointer]:
+              - /url: /en/support
+        - generic [ref=e59] [cursor=pointer]
+  - generic [ref=e62]:
+    - img "Download Center" [ref=e63]
+    - generic [ref=e65]:
+      - heading "Download Center" [level=2] [ref=e66]
+      - generic [ref=e67]:
+        - textbox "Search file name" [ref=e68]
+        - button [ref=e69] [cursor=pointer]
+  - paragraph [ref=e73]:
+    - link "Home" [ref=e74] [cursor=pointer]:
+      - /url: /en/
+    - text: ">"
+    - link "Support" [ref=e75] [cursor=pointer]:
+      - /url: /en/support
+    - text: ">"
+    - link "Download Center" [ref=e76] [cursor=pointer]:
+      - /url: /en/download_center
+    - text: ">"
+    - link "SDK" [ref=e77] [cursor=pointer]:
+      - /url: /en/SDK
+  - generic [ref=e79]:
+    - list [ref=e80]:
+      - listitem [ref=e81]:
+        - link "Datasheet" [ref=e82] [cursor=pointer]:
+          - /url: javascript:void(0);
+      - listitem [ref=e83]:
+        - link "Software" [ref=e84] [cursor=pointer]:
+          - /url: javascript:void(0);
+      - listitem [ref=e85]:
+        - link "User Manual" [ref=e86] [cursor=pointer]:
+          - /url: javascript:void(0);
+      - listitem [ref=e87]:
+        - link "Installation Guide" [ref=e88] [cursor=pointer]:
+          - /url: javascript:void(0);
+      - listitem [ref=e89]:
+        - link "Quick Use Guide" [ref=e90] [cursor=pointer]:
+          - /url: javascript:void(0);
+      - listitem [ref=e91]:
+        - link "SDK" [ref=e92] [cursor=pointer]:
+          - /url: javascript:void(0);
+      - listitem [ref=e93]:
+        - link "A&E Specifications" [ref=e94] [cursor=pointer]:
+          - /url: javascript:void(0);
+      - listitem [ref=e95]:
+        - link "Solutions" [ref=e96] [cursor=pointer]:
+          - /url: javascript:void(0);
+      - listitem [ref=e97]:
+        - link "Case Studies" [ref=e98] [cursor=pointer]:
+          - /url: javascript:void(0);
+      - listitem [ref=e99]:
+        - link "Biometrics Technology" [ref=e100] [cursor=pointer]:
+          - /url: javascript:void(0);
+      - listitem [ref=e101]:
+        - link "Catalog" [ref=e102] [cursor=pointer]:
+          - /url: javascript:void(0);
+      - listitem [ref=e103]:
+        - link "Others" [ref=e104] [cursor=pointer]:
+          - /url: javascript:void(0);
+      - listitem [ref=e105]:
+        - link "Online Training" [ref=e106] [cursor=pointer]:
+          - /url: javascript:void(0);
+      - listitem [ref=e107]:
+        - link "Guideline" [ref=e108] [cursor=pointer]:
+          - /url: javascript:void(0);
+    - list [ref=e109]:
+      - listitem [ref=e110]: Display
+      - listitem [ref=e111]: File Type
+      - listitem [ref=e112]: Size
+      - listitem [ref=e113]: Upload Time
+      - listitem [ref=e114]: Download
+    - list [ref=e115]:
+      - listitem [ref=e116]:
+        - generic [ref=e117]:
+          - generic [ref=e118]:
+            - paragraph [ref=e119]: zip
+            - paragraph [ref=e120]: ZKFinger SDK Linux
+          - paragraph [ref=e122]: zip
+          - paragraph [ref=e124]: 10.36MB
+          - paragraph [ref=e126]: 2022-07-25
+          - link "Download" [ref=e128] [cursor=pointer]:
+            - /url: javascript:downloadFile(1283);
+      - listitem [ref=e131]:
+        - generic [ref=e132]:
+          - generic [ref=e133]:
+            - paragraph [ref=e134]: rar
+            - paragraph [ref=e135]: ZKFinger SDK Windows
+          - paragraph [ref=e137]: rar
+          - paragraph [ref=e139]: 34.18MB
+          - paragraph [ref=e141]: 2022-07-25
+          - link "Download" [ref=e143] [cursor=pointer]:
+            - /url: javascript:downloadFile(1284);
+      - listitem [ref=e146]:
+        - generic [ref=e147]:
+          - generic [ref=e148]:
+            - paragraph [ref=e149]: rar
+            - paragraph [ref=e150]: ZKFingerSDK_Andoroid
+          - paragraph [ref=e152]: rar
+          - paragraph [ref=e154]: 32.67MB
+          - paragraph [ref=e156]: 2022-07-25
+          - link "Download" [ref=e158] [cursor=pointer]:
+            - /url: javascript:downloadFile(1427);
+      - listitem [ref=e161]:
+        - generic [ref=e162]:
+          - generic [ref=e163]:
+            - paragraph [ref=e164]: zip
+            - paragraph [ref=e165]: ZKBioModuleSDK_20210113
+          - paragraph [ref=e167]: zip
+          - paragraph [ref=e169]: 15.54MB
+          - paragraph [ref=e171]: 2022-04-20
+          - link "Download" [ref=e173] [cursor=pointer]:
+            - /url: javascript:downloadFile(1281);
+      - listitem [ref=e176]:
+        - generic [ref=e177]:
+          - generic [ref=e178]:
+            - paragraph [ref=e179]: pdf
+            - paragraph [ref=e180]: Visible Light Recognition SDK Introduction
+          - paragraph [ref=e182]: pdf
+          - paragraph [ref=e184]: 7.07MB
+          - paragraph [ref=e186]: 2019-04-26
+          - link "Download" [ref=e188] [cursor=pointer]:
+            - /url: javascript:downloadFile(2439);
+    - link "Expand More" [ref=e191] [cursor=pointer]:
+      - /url: javascript:;
+  - generic [ref=e194]:
+    - generic [ref=e196]:
+      - generic [ref=e197]:
+        - generic [ref=e198]:
+          - link "About Us" [ref=e199] [cursor=pointer]:
+            - /url: /en/about_us
+          - text: 
+        - list [ref=e200]:
+          - listitem [ref=e201]:
+            - link "Investor Relations" [ref=e202] [cursor=pointer]:
+              - /url: /en/investor_relations
+          - listitem [ref=e203]:
+            - link "Company Profile" [ref=e204] [cursor=pointer]:
+              - /url: /en/about
+          - listitem [ref=e205]:
+            - link "ZKTeco Culture" [ref=e206] [cursor=pointer]:
+              - /url: /en/culture
+          - listitem [ref=e207]:
+            - link "Corporate Values" [ref=e208] [cursor=pointer]:
+              - /url: /en/Corporate_Values
+      - generic [ref=e209]:
+        - generic [ref=e210]:
+          - link "News Center" [ref=e211] [cursor=pointer]:
+            - /url: /en/news_center
+          - text: 
+        - list [ref=e212]:
+          - listitem [ref=e213]:
+            - link "News" [ref=e214] [cursor=pointer]:
+              - /url: /en/News
+          - listitem [ref=e215]:
+            - link "Notices" [ref=e216] [cursor=pointer]:
+              - /url: /en/notices
+          - listitem [ref=e217]:
+            - link "Event" [ref=e218] [cursor=pointer]:
+              - /url: /en/event
+          - listitem [ref=e219]:
+            - link "Newsletter" [ref=e220] [cursor=pointer]:
+              - /url: /en/newsletter
+          - listitem [ref=e221]:
+            - link "New Launches" [ref=e222] [cursor=pointer]:
+              - /url: /en/New_Launches
+      - generic [ref=e223]:
+        - generic [ref=e224]:
+          - link "Contact Us" [ref=e225] [cursor=pointer]:
+            - /url: /en/contact
+          - text: 
+        - list [ref=e226]:
+          - listitem [ref=e227]:
+            - link "Project Consultation" [ref=e228] [cursor=pointer]:
+              - /url: /en/member/centre/project_inquiry
+          - listitem [ref=e229]:
+            - link "Online Purchase" [ref=e230] [cursor=pointer]:
+              - /url: /en/contact
+          - listitem [ref=e231]:
+            - link "Sales Consultation" [ref=e232] [cursor=pointer]:
+              - /url: /en/support
+      - generic [ref=e233]:
+        - generic [ref=e234]:
+          - link "Support" [ref=e235] [cursor=pointer]:
+            - /url: /en/support
+          - text: 
+        - list [ref=e236]:
+          - listitem [ref=e237]:
+            - link "Training Center" [ref=e238] [cursor=pointer]:
+              - /url: /en/training
+          - listitem [ref=e239]:
+            - link "Download Center" [ref=e240] [cursor=pointer]:
+              - /url: /en/download_center
+          - listitem [ref=e241]:
+            - link "Security Center" [ref=e242] [cursor=pointer]:
+              - /url: /en/announcement
+      - generic [ref=e243]:
+        - paragraph [ref=e245]: Follow Us
+        - generic [ref=e246]:
+          - link [ref=e247] [cursor=pointer]:
+            - /url: https://www.linkedin.com/company/zktecoltd
+          - link [ref=e248] [cursor=pointer]:
+            - /url: "https://www.facebook.com/zktecoelectronic "
+          - link [ref=e249] [cursor=pointer]:
+            - /url: https://twitter.com/ZKTeco
+          - link [ref=e250] [cursor=pointer]:
+            - /url: "https://www.youtube.com/ZKTeco "
+          - link [ref=e251] [cursor=pointer]:
+            - /url: https://www.tiktok.com/@zkteco.global?lang=en
+        - link "Consultation" [ref=e252] [cursor=pointer]:
+          - /url: javascript:void(0)
+    - generic [ref=e257]:
+      - paragraph [ref=e259]: Copyright © 2026 ZKTECO CO., LTD. All rights reserved.
+      - generic [ref=e260]:
+        - link "Legal Notices" [ref=e261] [cursor=pointer]:
+          - /url: /en/legal_notices
+        - link "Privacy Policy" [ref=e262] [cursor=pointer]:
+          - /url: /en/privacy_policy
+        - link "Terms of Use" [ref=e263] [cursor=pointer]:
+          - /url: /en/terms_of_use
+        - link "Sitemap" [ref=e264] [cursor=pointer]:
+          - /url: /en/sitemap
+        - link "Cookie Policy" [ref=e265] [cursor=pointer]:
+          - /url: /en/cookie_policy
+  - generic [ref=e266]:
+    - generic [ref=e267] [cursor=pointer]
+    - generic [ref=e268] [cursor=pointer]
+    - generic [ref=e269] [cursor=pointer]
+  - generic [ref=e272]:
+    - paragraph [ref=e273]:
+      - text: This website uses cookies to store information on your device, cookies can enhance your user experience and help our website work normally. For more information, please read our
+      - link "Cookie Policy" [ref=e274] [cursor=pointer]:
+        - /url: /en/cookie_policy
+      - text: and
+      - link "Privacy Policy" [ref=e275] [cursor=pointer]:
+        - /url: /en/privacy_policy
+      - text: .
+    - generic [ref=e276] [cursor=pointer]: Accept
+    - generic [ref=e278] [cursor=pointer]
+  - text: 💡 💡 💡 💡 💡

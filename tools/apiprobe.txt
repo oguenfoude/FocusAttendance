@@ -1,0 +1,3927 @@
+﻿ASSEMBLY: Wpf.Ui, Version=4.3.0.0, Culture=neutral, PublicKeyToken=11f9f5cc97b3ffd6
+TYPES: 186
+--- Controls ---
+Wpf.Ui.Controls.Anchor
+Wpf.Ui.Controls.Arc
+Wpf.Ui.Controls.AutoSuggestBox
+Wpf.Ui.Controls.AutoSuggestBoxQuerySubmittedEventArgs
+Wpf.Ui.Controls.AutoSuggestBoxSuggestionChosenEventArgs
+Wpf.Ui.Controls.AutoSuggestBoxTextChangedEventArgs
+Wpf.Ui.Controls.AutoSuggestionBoxTextChangeReason
+Wpf.Ui.Controls.Badge
+Wpf.Ui.Controls.BreadcrumbBar
+Wpf.Ui.Controls.BreadcrumbBarItem
+Wpf.Ui.Controls.BreadcrumbBarItemClickedEventArgs
+Wpf.Ui.Controls.Button
+Wpf.Ui.Controls.CalendarDatePicker
+Wpf.Ui.Controls.Card
+Wpf.Ui.Controls.CardAction
+Wpf.Ui.Controls.CardColor
+Wpf.Ui.Controls.CardControl
+Wpf.Ui.Controls.CardExpander
+Wpf.Ui.Controls.ClientAreaBorder
+Wpf.Ui.Controls.ClockIdentifier
+Wpf.Ui.Controls.ContentDialog
+Wpf.Ui.Controls.ContentDialogButton
+Wpf.Ui.Controls.ContentDialogButtonClickEventArgs
+Wpf.Ui.Controls.ContentDialogClosedEventArgs
+Wpf.Ui.Controls.ContentDialogClosingEventArgs
+Wpf.Ui.Controls.ContentDialogHost
+Wpf.Ui.Controls.ContentDialogHostBehavior
+Wpf.Ui.Controls.ContentDialogResult
+Wpf.Ui.Controls.ContextMenuLoader
+Wpf.Ui.Controls.ControlAppearance
+Wpf.Ui.Controls.ControlsServices
+Wpf.Ui.Controls.DataGrid
+Wpf.Ui.Controls.DropDownButton
+Wpf.Ui.Controls.DynamicScrollBar
+Wpf.Ui.Controls.DynamicScrollViewer
+Wpf.Ui.Controls.EffectThicknessDecorator
+Wpf.Ui.Controls.ElementPlacement
+Wpf.Ui.Controls.FluentWindow
+Wpf.Ui.Controls.Flyout
+Wpf.Ui.Controls.FontIcon
+Wpf.Ui.Controls.FontIconSource
+Wpf.Ui.Controls.FontTypography
+Wpf.Ui.Controls.GridView
+Wpf.Ui.Controls.GridViewColumn
+Wpf.Ui.Controls.GridViewHeaderRowPresenter
+Wpf.Ui.Controls.GridViewRowPresenter
+Wpf.Ui.Controls.HwndProcEventArgs
+Wpf.Ui.Controls.HyperlinkButton
+Wpf.Ui.Controls.IAppearanceControl
+Wpf.Ui.Controls.IconElement
+Wpf.Ui.Controls.IconElementConverter
+Wpf.Ui.Controls.IconSource
+Wpf.Ui.Controls.IconSourceElement
+Wpf.Ui.Controls.IDpiAwareControl
+Wpf.Ui.Controls.IIconControl
+Wpf.Ui.Controls.Image
+Wpf.Ui.Controls.ImageIcon
+Wpf.Ui.Controls.INavigationView
+Wpf.Ui.Controls.INavigationViewItem
+Wpf.Ui.Controls.InfoBadge
+Wpf.Ui.Controls.InfoBadgeSeverity
+Wpf.Ui.Controls.InfoBar
+Wpf.Ui.Controls.InfoBarSeverity
+Wpf.Ui.Controls.INumberFormatter
+Wpf.Ui.Controls.INumberParser
+Wpf.Ui.Controls.ItemRange
+Wpf.Ui.Controls.IThemeControl
+Wpf.Ui.Controls.ListView
+Wpf.Ui.Controls.ListViewItem
+Wpf.Ui.Controls.ListViewViewState
+Wpf.Ui.Controls.LoadingScreen
+Wpf.Ui.Controls.MenuItem
+Wpf.Ui.Controls.MenuLoader
+Wpf.Ui.Controls.MessageBox
+Wpf.Ui.Controls.MessageBoxButton
+Wpf.Ui.Controls.MessageBoxResult
+Wpf.Ui.Controls.NavigatedEventArgs
+Wpf.Ui.Controls.NavigatingCancelEventArgs
+Wpf.Ui.Controls.NavigationCacheMode
+Wpf.Ui.Controls.NavigationView
+Wpf.Ui.Controls.NavigationViewBackButtonVisible
+Wpf.Ui.Controls.NavigationViewContentPresenter
+Wpf.Ui.Controls.NavigationViewItem
+Wpf.Ui.Controls.NavigationViewItemHeader
+Wpf.Ui.Controls.NavigationViewItemSeparator
+Wpf.Ui.Controls.NavigationViewPaneDisplayMode
+Wpf.Ui.Controls.NumberBox
+Wpf.Ui.Controls.NumberBoxSpinButtonPlacementMode
+Wpf.Ui.Controls.NumberBoxValidationMode
+Wpf.Ui.Controls.NumberBoxValueChangedEvent
+Wpf.Ui.Controls.NumberBoxValueChangedEventArgs
+Wpf.Ui.Controls.PassiveScrollViewer
+Wpf.Ui.Controls.PasswordBox
+Wpf.Ui.Controls.ProgressRing
+Wpf.Ui.Controls.RatingControl
+Wpf.Ui.Controls.RichTextBox
+Wpf.Ui.Controls.ScrollDirection
+Wpf.Ui.Controls.Snackbar
+Wpf.Ui.Controls.SnackbarPresenter
+Wpf.Ui.Controls.SpacingMode
+Wpf.Ui.Controls.SplitButton
+Wpf.Ui.Controls.SymbolFilled
+Wpf.Ui.Controls.SymbolGlyph
+Wpf.Ui.Controls.SymbolIcon
+Wpf.Ui.Controls.SymbolIconSource
+Wpf.Ui.Controls.SymbolRegular
+Wpf.Ui.Controls.TabView
+Wpf.Ui.Controls.TabViewItem
+Wpf.Ui.Controls.TextBlock
+Wpf.Ui.Controls.TextBox
+Wpf.Ui.Controls.TextColor
+Wpf.Ui.Controls.ThumbRate
+Wpf.Ui.Controls.ThumbRateState
+Wpf.Ui.Controls.TimePicker
+Wpf.Ui.Controls.TitleBar
+Wpf.Ui.Controls.TitleBarButton
+Wpf.Ui.Controls.TitleBarButtonType
+Wpf.Ui.Controls.ToggleSwitch
+Wpf.Ui.Controls.TreeGrid
+Wpf.Ui.Controls.TreeGridHeader
+Wpf.Ui.Controls.TreeGridItem
+Wpf.Ui.Controls.TreeViewItem
+Wpf.Ui.Controls.TypedEventHandler`2
+Wpf.Ui.Controls.ValidateNumberFormatter
+Wpf.Ui.Controls.VirtualizingGridView
+Wpf.Ui.Controls.VirtualizingItemsControl
+Wpf.Ui.Controls.VirtualizingPanelBase
+Wpf.Ui.Controls.VirtualizingWrapPanel
+Wpf.Ui.Controls.WindowBackdrop
+Wpf.Ui.Controls.WindowBackdropType
+Wpf.Ui.Controls.WindowCornerPreference
+--- SymbolRegular (filtered) ---
+COUNT 9235
+AccessibilityCheckmark20
+AccessibilityCheckmark24
+AddCircle16
+AddCircle32
+AddSquare20
+AddSquareMultiple16
+AddSquareMultiple20
+AddSubtractCircle16
+AddSubtractCircle20
+AddSubtractCircle24
+AddSubtractCircle28
+AddSubtractCircle48
+AlbumAdd20
+AlbumAdd24
+Alert12
+Alert16
+Alert32
+Alert48
+AlertBadge16
+AlertBadge20
+AlertBadge24
+AlertOn20
+AlertSnooze12
+AlertSnooze16
+AlertUrgent16
+AppsAddIn16
+AppsAddIn28
+ArchiveArrowBack16
+ArchiveArrowBack20
+ArchiveArrowBack24
+ArchiveArrowBack28
+ArchiveArrowBack32
+ArchiveArrowBack48
+ArchiveSettings20
+ArchiveSettings24
+ArchiveSettings28
+ArrowAutofitContent20
+ArrowAutofitContent24
+ArrowAutofitDown20
+ArrowAutofitDown24
+ArrowAutofitHeight20
+ArrowAutofitHeightDotted20
+ArrowAutofitHeightDotted24
+ArrowAutofitUp20
+ArrowAutofitUp24
+ArrowAutofitWidth20
+ArrowAutofitWidthDotted20
+ArrowAutofitWidthDotted24
+ArrowBetweenDown20
+ArrowBetweenDown24
+ArrowBetweenUp20
+ArrowBidirectionalUpDown12
+ArrowBidirectionalUpDown16
+ArrowBidirectionalUpDown20
+ArrowBidirectionalUpDown24
+ArrowBounce16
+ArrowBounce20
+ArrowBounce24
+ArrowCircleDown12
+ArrowCircleDown16
+ArrowCircleDown28
+ArrowCircleDown32
+ArrowCircleDown48
+ArrowCircleDownRight16
+ArrowCircleDownRight20
+ArrowCircleDownRight24
+ArrowCircleDownUp20
+ArrowCircleLeft12
+ArrowCircleLeft16
+ArrowCircleLeft20
+ArrowCircleLeft24
+ArrowCircleLeft28
+ArrowCircleLeft32
+ArrowCircleLeft48
+ArrowCircleRight12
+ArrowCircleRight16
+ArrowCircleRight20
+ArrowCircleRight24
+ArrowCircleRight28
+ArrowCircleRight32
+ArrowCircleRight48
+ArrowCircleUp12
+ArrowCircleUp16
+ArrowCircleUp20
+ArrowCircleUp24
+ArrowCircleUp28
+ArrowCircleUp32
+ArrowCircleUp48
+ArrowCircleUpLeft20
+ArrowCircleUpLeft24
+ArrowClockwise12
+ArrowClockwise16
+ArrowClockwise28
+ArrowClockwise32
+ArrowClockwise48
+ArrowClockwiseDashes20
+ArrowClockwiseDashes24
+ArrowCollapseAll20
+ArrowCollapseAll24
+ArrowCounterclockwise12
+ArrowCounterclockwise16
+ArrowCounterclockwise32
+ArrowCounterclockwise48
+ArrowCounterclockwiseDashes20
+ArrowCounterclockwiseDashes24
+ArrowCurveDownLeft16
+ArrowCurveDownLeft24
+ArrowCurveDownLeft28
+ArrowDownLeft20
+ArrowDownLeft32
+ArrowDownLeft48
+ArrowEject20
+ArrowEnter20
+ArrowEnterLeft20
+ArrowEnterLeft24
+ArrowEnterUp20
+ArrowEnterUp24
+ArrowExit20
+ArrowExpand20
+ArrowExportLtr16
+ArrowExportLtr20
+ArrowExportLtr24
+ArrowExportRtl16
+ArrowExportRtl24
+ArrowExportUp20
+ArrowExportUp24
+ArrowFit20
+ArrowFitIn16
+ArrowFitIn20
+ArrowForward28
+ArrowForward48
+ArrowForwardDownLightning20
+ArrowForwardDownLightning24
+ArrowForwardDownPerson20
+ArrowForwardDownPerson24
+ArrowJoin20
+ArrowLeft12
+ArrowMaximize32
+ArrowMaximize48
+ArrowMaximizeVertical48
+ArrowMinimizeVertical20
+ArrowMoveInward20
+ArrowNext12
+ArrowOutlineUpRight20
+ArrowOutlineUpRight24
+ArrowOutlineUpRight32
+ArrowOutlineUpRight48
+ArrowParagraph20
+ArrowPrevious12
+ArrowRedo16
+ArrowRedo28
+ArrowReply28
+ArrowReplyAll28
+ArrowReset32
+ArrowReset48
+ArrowRight12
+ArrowRight16
+ArrowRotateClockwise16
+ArrowSortDownLines20
+ArrowSortDownLines24
+ArrowSplit16
+ArrowSplit20
+ArrowSplit24
+ArrowSquareDown20
+ArrowSquareDown24
+ArrowStepBack16
+ArrowStepBack20
+ArrowStepIn12
+ArrowStepIn16
+ArrowStepIn20
+ArrowStepIn24
+ArrowStepIn28
+ArrowStepInLeft12
+ArrowStepInLeft16
+ArrowStepInLeft20
+ArrowStepInLeft24
+ArrowStepInLeft28
+ArrowStepInRight12
+ArrowStepInRight16
+ArrowStepInRight20
+ArrowStepInRight24
+ArrowStepInRight28
+ArrowStepOut12
+ArrowStepOut16
+ArrowStepOut20
+ArrowStepOut24
+ArrowStepOut28
+ArrowStepOver16
+ArrowStepOver20
+ArrowSync16
+ArrowSyncCheckmark20
+ArrowSyncCheckmark24
+ArrowSyncDismiss20
+ArrowSyncDismiss24
+ArrowSyncOff16
+ArrowSyncOff20
+ArrowTrendingCheckmark20
+ArrowTrendingCheckmark24
+ArrowTrendingDown16
+ArrowTrendingDown20
+ArrowTrendingDown24
+ArrowTrendingLines20
+ArrowTrendingLines24
+ArrowTrendingSettings20
+ArrowTrendingSettings24
+ArrowTrendingText20
+ArrowTrendingText24
+ArrowTrendingWrench20
+ArrowTrendingWrench24
+ArrowTurnBidirectionalDownRight20
+ArrowTurnRight20
+ArrowUndo16
+ArrowUndo28
+ArrowUndo32
+ArrowUndo48
+ArrowUp12
+ArrowUpLeft16
+ArrowUpLeft20
+ArrowUpLeft48
+ArrowUpRight20
+ArrowUpRight32
+ArrowUpRight48
+ArrowUpload16
+ArrowWrap20
+ArrowWrapOff20
+ArrowsBidirectional20
+BackpackAdd20
+BackpackAdd24
+BackpackAdd28
+BackpackAdd48
+BatteryCheckmark20
+BatteryCheckmark24
+BatteryWarning20
+BluetoothSearching20
+BookAdd24
+BookArrowClockwise20
+BookArrowClockwise24
+BookClock20
+BookClock24
+BookDatabase20
+BookDatabase24
+BookGlobe20
+BookInformation20
+BookInformation24
+BookOpenGlobe20
+BookOpenGlobe24
+BookSearch20
+BookSearch24
+BookmarkSearch20
+BookmarkSearch24
+BotAdd20
+BoxArrowLeft20
+BoxArrowLeft24
+BoxArrowUp20
+BoxArrowUp24
+BoxCheckmark20
+BoxCheckmark24
+BoxDismiss20
+BoxDismiss24
+BoxEdit20
+BoxEdit24
+BoxMultipleArrowLeft20
+BoxMultipleArrowLeft24
+BoxMultipleArrowRight20
+BoxMultipleArrowRight24
+BoxMultipleCheckmark20
+BoxMultipleCheckmark24
+BoxMultipleSearch20
+BoxMultipleSearch24
+BoxSearch20
+BoxSearch24
+Broom28
+BugArrowCounterclockwise20
+BuildingHome16
+BuildingHome20
+BuildingHome24
+BuildingRetailShield20
+BuildingRetailShield24
+CalculatorArrowClockwise20
+CalculatorArrowClockwise24
+Calendar3Day16
+CalendarAdd16
+CalendarAdd28
+CalendarArrowDown20
+CalendarArrowDown24
+CalendarArrowRight16
+CalendarArrowRight24
+CalendarAssistant16
+CalendarCancel16
+CalendarChat20
+CalendarChat24
+CalendarClock16
+CalendarDay16
+CalendarEdit16
+CalendarEdit20
+CalendarEdit24
+CalendarEmpty32
+CalendarError20
+CalendarError24
+CalendarInfo20
+CalendarLtr12
+CalendarLtr16
+CalendarLtr20
+CalendarLtr24
+CalendarLtr28
+CalendarLtr32
+CalendarLtr48
+CalendarMail16
+CalendarMail20
+CalendarMention20
+CalendarMultiple28
+CalendarMultiple32
+CalendarPattern16
+CalendarPattern20
+CalendarPerson16
+CalendarPerson24
+CalendarPhone16
+CalendarPhone20
+CalendarQuestionMark16
+CalendarQuestionMark20
+CalendarQuestionMark24
+CalendarRtl12
+CalendarRtl16
+CalendarRtl20
+CalendarRtl24
+CalendarRtl28
+CalendarRtl32
+CalendarRtl48
+CalendarSearch20
+CalendarSettings16
+CalendarStar16
+CalendarToolbox20
+CalendarToolbox24
+CalendarWeekNumbers20
+CalendarWorkWeek28
+CallAdd16
+CallAdd20
+CallCheckmark24
+CallDismiss16
+CallWarning16
+CallWarning20
+CalligraphyPenCheckmark20
+CameraEdit20
+CellularWarning20
+CellularWarning24
+ChannelAdd16
+ChannelAdd20
+ChannelAdd24
+ChannelAdd28
+ChannelAdd48
+ChannelAlert16
+ChannelAlert20
+ChannelAlert24
+ChannelAlert28
+ChannelAlert48
+ChannelArrowLeft16
+ChannelArrowLeft20
+ChannelArrowLeft24
+ChannelArrowLeft28
+ChannelArrowLeft48
+ChannelDismiss16
+ChannelDismiss20
+ChannelDismiss24
+ChannelDismiss28
+ChannelDismiss48
+ChartPerson20
+ChartPerson24
+ChartPerson28
+ChartPerson48
+ChatArrowBack16
+ChatArrowBack20
+ChatArrowDoubleBack16
+ChatArrowDoubleBack20
+ChatDismiss16
+ChatDismiss20
+ChatDismiss24
+ChatWarning16
+ChatWarning20
+CheckboxArrowRight20
+CheckboxArrowRight24
+CheckboxCheckedSync20
+CheckboxPerson16
+CheckboxPerson20
+CheckboxPerson24
+CheckboxWarning20
+CheckboxWarning24
+Checkmark16
+Checkmark48
+CheckmarkCircle12
+CheckmarkNote20
+CheckmarkSquare20
+CheckmarkStarburst20
+CheckmarkStarburst24
+CircleEdit20
+CircleEdit24
+CircleMultipleSubtractCheckmark20
+ClipboardArrowRight16
+ClipboardArrowRight20
+ClipboardArrowRight24
+ClipboardCheckmark20
+ClipboardCheckmark24
+ClipboardClock20
+ClipboardClock24
+ClipboardEdit20
+ClipboardSettings24
+ClipboardTaskAdd20
+ClipboardTaskAdd24
+ClipboardTextEdit20
+ClipboardTextEdit24
+ClipboardTextEdit32
+Clock32
+ClockAlarm16
+ClockAlarm32
+ClockArrowDownload24
+ClockDismiss20
+ClockDismiss24
+ClockPause20
+ClockPause24
+ClockToolbox20
+ClockToolbox24
+CloudAdd20
+CloudArrowDown16
+CloudArrowDown20
+CloudArrowDown24
+CloudArrowDown28
+CloudArrowDown32
+CloudArrowDown48
+CloudArrowUp16
+CloudArrowUp20
+CloudArrowUp24
+CloudArrowUp28
+CloudArrowUp32
+CloudArrowUp48
+CloudCheckmark16
+CloudCheckmark20
+CloudCheckmark24
+CloudCheckmark28
+CloudCheckmark32
+CloudCheckmark48
+CloudDismiss16
+CloudDismiss20
+CloudDismiss24
+CloudDismiss28
+CloudDismiss32
+CloudDismiss48
+CloudEdit20
+CloudSync16
+CloudSync20
+CloudSync24
+CloudSync28
+CloudSync32
+CloudSync48
+CodeTextEdit20
+ColumnArrowRight20
+ColumnEdit20
+ColumnEdit24
+ColumnTripleEdit20
+ColumnTripleEdit24
+CommentAdd12
+CommentAdd16
+CommentAdd20
+CommentAdd28
+CommentAdd48
+CommentArrowLeft12
+CommentArrowLeft16
+CommentArrowLeft20
+CommentArrowLeft24
+CommentArrowLeft28
+CommentArrowLeft48
+CommentArrowRight12
+CommentArrowRight16
+CommentArrowRight20
+CommentArrowRight24
+CommentArrowRight28
+CommentArrowRight48
+CommentCheckmark12
+CommentCheckmark16
+CommentCheckmark20
+CommentCheckmark24
+CommentCheckmark28
+CommentCheckmark48
+CommentDismiss20
+CommentDismiss24
+CommentEdit20
+CommentEdit24
+CommentMultipleCheckmark16
+CommentMultipleCheckmark20
+CommentMultipleCheckmark24
+CommentMultipleCheckmark28
+CommunicationPerson20
+CommunicationPerson24
+ContentSettings32
+CopyAdd20
+CopyAdd24
+CopyArrowRight16
+CopyArrowRight20
+CopyArrowRight24
+CreditCardPerson20
+CreditCardPerson24
+CubeAdd20
+CubeArrowCurveDown20
+CubeSync20
+CubeSync24
+DataBarVerticalAdd20
+DataBarVerticalAdd24
+DataUsageEdit24
+DataUsageSettings20
+Database20
+Database24
+DatabaseArrowDown20
+DatabaseArrowRight20
+DatabaseArrowUp20
+DatabaseLightning20
+DatabaseLink20
+DatabaseLink24
+DatabaseMultiple20
+DatabasePerson20
+DatabasePerson24
+DatabasePlugConnected20
+DatabaseSearch20
+DatabaseSearch24
+DatabaseSwitch20
+DatabaseWarning20
+DatabaseWindow20
+DecimalArrowLeft20
+DecimalArrowLeft24
+DecimalArrowRight20
+DecimalArrowRight24
+Delete16
+DeleteArrowBack16
+DeleteArrowBack20
+DeleteDismiss20
+DeleteDismiss24
+DeleteDismiss28
+DeleteLines20
+DesktopArrowRight16
+DesktopArrowRight20
+DesktopArrowRight24
+DesktopEdit16
+DesktopEdit20
+DesktopEdit24
+DesktopSync20
+DesktopSync24
+DeveloperBoardSearch20
+DeveloperBoardSearch24
+DeviceEq20
+DeviceMeetingRoom20
+DeviceMeetingRoomRemote20
+DismissCircle12
+DismissCircle28
+DismissCircle32
+DismissSquare20
+DismissSquare24
+DismissSquareMultiple16
+DismissSquareMultiple20
+DocumentAdd16
+DocumentAdd20
+DocumentAdd24
+DocumentAdd28
+DocumentAdd48
+DocumentArrowDown16
+DocumentArrowDown20
+DocumentArrowLeft16
+DocumentArrowLeft20
+DocumentArrowLeft24
+DocumentArrowLeft28
+DocumentArrowLeft48
+DocumentArrowRight20
+DocumentArrowRight24
+DocumentArrowUp20
+DocumentBulletListClock20
+DocumentBulletListClock24
+DocumentCheckmark20
+DocumentCheckmark24
+DocumentDismiss16
+DocumentFooterDismiss20
+DocumentFooterDismiss24
+DocumentHeaderArrowDown16
+DocumentHeaderArrowDown20
+DocumentHeaderArrowDown24
+DocumentHeaderDismiss20
+DocumentHeaderDismiss24
+DocumentMultipleSync20
+DocumentPerson20
+DocumentQueueAdd20
+DocumentQueueAdd24
+DocumentSave20
+DocumentSave24
+DocumentSearch16
+DocumentSettings20
+DocumentSync16
+DocumentSync20
+DocumentSync24
+DocumentTableArrowRight20
+DocumentTableArrowRight24
+DocumentTableCheckmark20
+DocumentTableCheckmark24
+DocumentTableSearch20
+DocumentTableSearch24
+DocumentTextClock20
+DocumentTextClock24
+DoorArrowLeft16
+DoorArrowLeft20
+DoorArrowLeft24
+DoorArrowRight16
+DoorArrowRight20
+DoorArrowRight28
+DrawerAdd20
+DrawerAdd24
+DrawerArrowDownload20
+DrawerArrowDownload24
+DrawerDismiss20
+DrawerDismiss24
+DualScreenAdd20
+DualScreenArrowRight20
+DualScreenArrowUp20
+DualScreenArrowUp24
+DualScreenClock20
+DualScreenClosedAlert20
+DualScreenClosedAlert24
+DualScreenDismiss20
+DualScreenDismiss24
+DualScreenSettings20
+Edit28
+Edit32
+Edit48
+EditArrowBack20
+EditOff16
+EditOff20
+EditOff24
+EditOff28
+EditOff32
+EditOff48
+EditProhibited16
+EditProhibited20
+EditProhibited24
+EditProhibited28
+EditProhibited32
+EditProhibited48
+EditSettings20
+EditSettings24
+EmojiAdd16
+EmojiAdd20
+EmojiEdit16
+EmojiEdit20
+EmojiEdit24
+EmojiEdit28
+EmojiEdit48
+ErrorCircleSettings20
+Filter12
+Filter16
+FilterAdd20
+FilterDismiss16
+FilterDismiss20
+FilterDismiss24
+FilterSync20
+FilterSync24
+FlashAdd20
+FlashCheckmark16
+FlashCheckmark20
+FlashCheckmark24
+FlashCheckmark28
+FlashSettings20
+FlashSettings24
+FolderAdd16
+FolderArrowLeft16
+FolderArrowLeft20
+FolderArrowLeft24
+FolderArrowLeft28
+FolderArrowLeft32
+FolderArrowRight16
+FolderArrowRight20
+FolderArrowRight24
+FolderArrowRight28
+FolderArrowRight48
+FolderArrowUp16
+FolderArrowUp20
+FolderArrowUp24
+FolderArrowUp28
+FolderArrowUp48
+FolderGlobe20
+FolderPerson20
+FolderSync16
+FolderSync20
+FolderSync24
+GaugeAdd20
+GiftCardAdd24
+GiftCardArrowRight20
+GiftCardArrowRight24
+Globe16
+Globe32
+GlobeAdd20
+GlobeClock16
+GlobeClock20
+GlobeDesktop20
+GlobePerson20
+GlobePerson24
+GlobeProhibited20
+GlobeSearch20
+GlobeShield20
+GlobeShield24
+GlobeStar20
+GlobeSurface20
+GlobeSurface24
+GlobeVideo28
+GlobeVideo32
+GlobeVideo48
+GroupDismiss20
+GroupDismiss24
+GuestAdd20
+History16
+History28
+History32
+History48
+HistoryDismiss20
+HistoryDismiss24
+HistoryDismiss28
+HistoryDismiss32
+HistoryDismiss48
+Home12
+Home16
+Home32
+Home48
+HomeAdd20
+HomeCheckmark16
+HomeCheckmark20
+HomeDatabase20
+HomeMore20
+HomePerson20
+HomePerson24
+ImageAdd20
+ImageArrowBack20
+ImageArrowBack24
+ImageArrowCounterclockwise20
+ImageArrowCounterclockwise24
+ImageArrowForward20
+ImageArrowForward24
+ImageGlobe20
+ImageGlobe24
+Info12
+InfoShield20
+IosArrowLtr24
+IosArrowRtl24
+LaptopDismiss20
+LauncherSettings20
+LinkDismiss16
+LinkDismiss20
+LinkDismiss24
+LocationAdd16
+LocationAdd20
+LocationAdd24
+LocationAddLeft20
+LocationAddRight20
+LocationAddUp20
+LocationArrowLeft48
+LocationArrowRight48
+LocationArrowUp48
+LocationDismiss20
+LocationDismiss24
+MailAlert28
+MailArrowDoubleBack16
+MailArrowDoubleBack20
+MailArrowDown20
+MailArrowForward16
+MailArrowForward20
+MailArrowUp16
+MailCheckmark20
+MailDismiss16
+MailDismiss28
+MailEdit20
+MailEdit24
+MailInboxArrowDown20
+MailInboxArrowRight20
+MailInboxArrowRight24
+MailInboxArrowUp20
+MailInboxArrowUp24
+MailInboxCheckmark16
+MailInboxCheckmark20
+MailInboxCheckmark24
+MailInboxCheckmark28
+MailOpenPerson16
+MailOpenPerson20
+MailOpenPerson24
+MailSettings20
+MailShield20
+MailWarning20
+MailWarning24
+MentionArrowDown20
+MicSettings20
+MicSync20
+MoneyDismiss20
+MoneyDismiss24
+MoneySettings20
+NoteAdd28
+NoteAdd48
+NoteEdit20
+NoteEdit24
+NotebookAdd20
+NotebookAdd24
+NotebookArrowCurveDown20
+NotebookSectionArrowRight24
+NotebookSync20
+NotepadEdit20
+NotepadPerson16
+NotepadPerson20
+NotepadPerson24
+NumberSymbolDismiss20
+NumberSymbolDismiss24
+PaintBrushArrowDown20
+PaintBrushArrowDown24
+PaintBrushArrowUp20
+PaintBrushArrowUp24
+PauseSettings16
+PauseSettings20
+People12
+People32
+People48
+PeopleAdd28
+PeopleAudience20
+PeopleCall16
+PeopleCall20
+PeopleCheckmark16
+PeopleCheckmark20
+PeopleCheckmark24
+PeopleCommunityAdd20
+PeopleCommunityAdd28
+PeopleEdit20
+PeopleError16
+PeopleError20
+PeopleError24
+PeopleList16
+PeopleList20
+PeopleList24
+PeopleList28
+PeopleLock20
+PeopleLock24
+PeopleMoney20
+PeopleMoney24
+PeopleProhibited16
+PeopleProhibited24
+PeopleQueue20
+PeopleQueue24
+PeopleSearch20
+PeopleSettings24
+PeopleSettings28
+PeopleSwap16
+PeopleSwap20
+PeopleSwap24
+PeopleSwap28
+PeopleSync20
+PeopleSync28
+PeopleTeam32
+PeopleTeamAdd20
+PeopleTeamAdd24
+PeopleTeamDelete16
+PeopleTeamDelete20
+PeopleTeamDelete24
+PeopleTeamDelete28
+PeopleTeamDelete32
+PeopleTeamToolbox20
+PeopleTeamToolbox24
+PeopleToolbox20
+Person32
+Person520
+Person532
+Person620
+Person632
+PersonAccounts20
+PersonAdd16
+PersonAdd28
+PersonArrowLeft16
+PersonAvailable20
+PersonCall16
+PersonCall20
+PersonCircle12
+PersonCircle20
+PersonCircle24
+PersonClock16
+PersonClock20
+PersonClock24
+PersonDelete20
+PersonEdit20
+PersonEdit24
+PersonFeedback16
+PersonHeart24
+PersonInfo20
+PersonKey20
+PersonLightbulb20
+PersonLightbulb24
+PersonLock24
+PersonMail16
+PersonMail20
+PersonMail24
+PersonMail28
+PersonMail48
+PersonMoney20
+PersonMoney24
+PersonNote20
+PersonNote24
+PersonPill20
+PersonPill24
+PersonProhibited16
+PersonProhibited24
+PersonProhibited28
+PersonSettings16
+PersonSettings20
+PersonSubtract20
+PersonSync16
+PersonSync20
+PersonSync24
+PersonSync28
+PersonSync32
+PersonSync48
+PersonTag20
+PersonTag24
+PersonTag28
+PersonTag32
+PersonTag48
+PhoneAdd20
+PhoneAdd24
+PhoneArrowRight20
+PhoneArrowRight24
+PhoneCheckmark20
+PhoneDesktopAdd20
+PhoneDismiss20
+PhoneDismiss24
+PhoneUpdateCheckmark20
+PhoneUpdateCheckmark24
+PhotoFilter20
+PipelineAdd20
+PipelineArrowCurveDown20
+PlaySettings20
+PlugConnectedAdd20
+PlugConnectedCheckmark20
+PointScan20
+PremiumPerson16
+PremiumPerson20
+PremiumPerson24
+Print28
+Print32
+PrintAdd24
+ProjectionScreenDismiss16
+ProjectionScreenDismiss20
+ProjectionScreenDismiss24
+ProjectionScreenDismiss28
+PuzzlePieceShield20
+RadarCheckmark20
+ReceiptAdd24
+ReceiptSearch20
+Save16
+Save28
+SaveArrowRight20
+SaveArrowRight24
+SaveCopy20
+SaveEdit20
+SaveEdit24
+SaveImage20
+SaveMultiple20
+SaveMultiple24
+SaveSearch20
+SaveSync20
+Scan16
+Scan20
+ScanCamera16
+ScanCamera20
+ScanCamera24
+ScanCamera28
+ScanCamera48
+ScanDash12
+ScanDash16
+ScanDash20
+ScanDash24
+ScanDash28
+ScanDash32
+ScanDash48
+ScanObject20
+ScanObject24
+ScanTable20
+ScanTable24
+ScanText20
+ScanText24
+ScanThumbUp16
+ScanThumbUp20
+ScanThumbUp24
+ScanThumbUp28
+ScanThumbUp48
+ScanThumbUpOff16
+ScanThumbUpOff20
+ScanThumbUpOff24
+ScanThumbUpOff28
+ScanThumbUpOff48
+ScanType20
+ScanType24
+ScanTypeCheckmark20
+ScanTypeCheckmark24
+ScanTypeOff20
+ScreenPerson20
+ScreenSearch20
+ScreenSearch24
+Search12
+Search16
+Search32
+Search48
+SearchSettings20
+SearchShield20
+SearchSquare20
+SearchVisual16
+SearchVisual20
+SearchVisual24
+SelectObjectSkewDismiss20
+SelectObjectSkewDismiss24
+SelectObjectSkewEdit20
+SelectObjectSkewEdit24
+SendClock24
+Settings32
+Settings48
+SettingsChat20
+SettingsChat24
+ShareScreenPerson16
+ShareScreenPerson20
+ShareScreenPerson24
+ShareScreenPerson28
+ShareScreenPersonOverlay16
+ShareScreenPersonOverlay20
+ShareScreenPersonOverlay24
+ShareScreenPersonOverlay28
+ShareScreenPersonOverlayInside16
+ShareScreenPersonOverlayInside20
+ShareScreenPersonOverlayInside24
+ShareScreenPersonOverlayInside28
+ShareScreenPersonP16
+ShareScreenPersonP20
+ShareScreenPersonP24
+ShareScreenPersonP28
+Shield16
+Shield28
+Shield48
+ShieldBadge24
+ShieldCheckmark16
+ShieldCheckmark20
+ShieldCheckmark24
+ShieldCheckmark28
+ShieldCheckmark48
+ShieldDismiss16
+ShieldDismissShield20
+ShieldError16
+ShieldLock16
+ShieldLock20
+ShieldLock24
+ShieldLock28
+ShieldLock48
+ShieldPerson20
+ShieldPersonAdd20
+ShieldTask16
+ShieldTask20
+ShieldTask24
+ShieldTask28
+ShieldTask48
+ShiftsAdd20
+ShiftsCheckmark20
+ShiftsCheckmark24
+ShoppingBagArrowLeft20
+ShoppingBagArrowLeft24
+ShoppingBagDismiss20
+ShoppingBagDismiss24
+SidebarSearchLtr20
+SidebarSearchRtl20
+SlideAdd16
+SlideAdd20
+SlideAdd28
+SlideAdd32
+SlideAdd48
+SlideArrowRight20
+SlideArrowRight24
+SlideMultipleArrowRight20
+SlideMultipleArrowRight24
+SlideSearch20
+SlideSearch24
+SlideSearch28
+SlideSettings20
+SlideSettings24
+SpeakerSettings20
+SpeakerSettings28
+SquareAdd16
+SquareAdd20
+SquareArrowForward16
+SquareArrowForward20
+SquareArrowForward24
+SquareArrowForward28
+SquareArrowForward32
+SquareArrowForward48
+SquareDismiss16
+SquareDismiss20
+SquareHintArrowBack16
+SquareHintArrowBack20
+StackArrowForward20
+StackArrowForward24
+StarAdd28
+StarArrowRightEnd20
+StarArrowRightEnd24
+StarArrowRightStart20
+StarDismiss16
+StarDismiss20
+StarDismiss24
+StarDismiss28
+StarEdit20
+StarEdit24
+StarSettings20
+StickerAdd20
+SubtractCircleArrowBack16
+SubtractCircleArrowBack20
+SubtractCircleArrowForward16
+SubtractCircleArrowForward20
+TabAdd20
+TabAdd24
+TabArrowLeft20
+TabArrowLeft24
+TabDesktopArrowLeft20
+TabShieldDismiss20
+TabShieldDismiss24
+TableAdd16
+TableAdd20
+TableAdd28
+TableCellEdit16
+TableCellEdit20
+TableCellEdit24
+TableCellEdit28
+TableDeleteColumn16
+TableDeleteColumn20
+TableDeleteColumn24
+TableDeleteColumn28
+TableDeleteRow16
+TableDeleteRow20
+TableDeleteRow24
+TableDeleteRow28
+TableDismiss16
+TableDismiss20
+TableDismiss24
+TableDismiss28
+TableEdit16
+TableEdit20
+TableEdit28
+TableSearch20
+TableSettings16
+TableSettings20
+TableSettings28
+TagDismiss16
+TagDismiss20
+TagDismiss24
+TagSearch20
+TagSearch24
+TargetArrow24
+TaskListSquareAdd20
+TaskListSquareAdd24
+TaskListSquareDatabase20
+TaskListSquarePerson20
+TaskListSquareSettings20
+TextAdd20
+TextAddT24
+TextBoxSettings20
+TextBoxSettings24
+TextBulletListAdd20
+TextBulletListCheckmark20
+TextBulletListDismiss20
+TextBulletListSquareClock20
+TextBulletListSquarePerson20
+TextBulletListSquareSearch20
+TextBulletListSquareSettings20
+TextBulletListSquareShield20
+TextFontInfo16
+TextFontInfo20
+TextFontInfo24
+TextGrammarArrowLeft20
+TextGrammarArrowLeft24
+TextGrammarArrowRight20
+TextGrammarArrowRight24
+TextGrammarCheckmark20
+TextGrammarCheckmark24
+TextGrammarDismiss20
+TextGrammarDismiss24
+TextGrammarSettings20
+TextGrammarSettings24
+TimeAndWeather20
+TrayItemAdd20
+TrayItemAdd24
+TvArrowRight20
+VideoAdd20
+VideoAdd24
+VideoPerson12
+VideoPerson16
+VideoPerson20
+VideoPerson28
+VideoPerson48
+VideoPersonCall16
+VideoPersonCall20
+VideoPersonCall24
+VideoPersonCall32
+VideoPersonOff20
+VideoPersonSparkle16
+VideoPersonSparkle20
+VideoPersonSparkle24
+VideoPersonSparkle28
+VideoPersonSparkle48
+VideoPersonStar20
+VideoPersonStarOff20
+VideoPersonStarOff24
+VideoSync20
+VoicemailArrowBack20
+VoicemailArrowForward20
+VoicemailArrowSubtract20
+Warning12
+Warning28
+WarningShield20
+WeatherDrizzle20
+WeatherDrizzle24
+WeatherDrizzle48
+WeatherHaze20
+WeatherHaze24
+WeatherHaze48
+WeatherMoon16
+WeatherMoon28
+WeatherMoonOff16
+WeatherMoonOff20
+WeatherMoonOff24
+WeatherMoonOff28
+WeatherMoonOff48
+WeatherPartlyCloudyDay16
+WeatherSunny16
+WeatherSunny28
+WeatherSunny32
+WeatherSunnyHigh20
+WeatherSunnyHigh24
+WeatherSunnyHigh48
+WeatherSunnyLow20
+WeatherSunnyLow24
+WeatherSunnyLow48
+WifiSettings20
+WifiWarning20
+WindowAdPerson20
+WindowArrowUp16
+WindowArrowUp20
+WindowArrowUp24
+WindowBulletListAdd20
+WindowDatabase20
+WindowDevEdit16
+WindowDevEdit20
+WindowEdit20
+WindowSettings20
+CalendarDataBar16
+CalendarDataBar20
+CalendarDataBar24
+CalendarDataBar28
+Delete12
+Delete32
+PanelRightAdd20
+PersonNote16
+ShieldGlobe16
+ShieldGlobe20
+ShieldGlobe24
+ArrowParagraph16
+ArrowParagraph24
+CalendarMonth32
+CreditCardClock20
+CreditCardClock24
+CreditCardClock28
+CreditCardClock32
+Database32
+FolderPeople20
+FolderPeople24
+HomeDatabase24
+HomeDatabase32
+HomeMore24
+HomeMore32
+PersonRunning20
+PersonHeart20
+PersonStar16
+PersonStar20
+PersonStar24
+PersonStar28
+PersonStar32
+PersonStar48
+PipelineAdd32
+Shield32
+ShieldQuestion16
+ShieldQuestion20
+ShieldQuestion24
+ShieldQuestion32
+LayerDiagonalPerson20
+ArrowRepeat116
+ArrowRepeat120
+ArrowRepeat124
+ArrowShuffle16
+ArrowShuffle20
+ArrowShuffle24
+ArrowShuffle28
+ArrowShuffle32
+ArrowShuffle48
+ArrowShuffleOff16
+ArrowShuffleOff20
+ArrowShuffleOff24
+ArrowShuffleOff28
+ArrowShuffleOff32
+ArrowShuffleOff48
+CalendarEmpty48
+CalendarLock16
+CalendarLock20
+CalendarLock24
+CalendarLock28
+CalendarLock32
+CalendarLock48
+CalendarSettings24
+CalendarSettings28
+CalendarSettings32
+CalendarSettings48
+ChatAdd16
+ChatAdd20
+ChatAdd24
+ChatAdd28
+ChatAdd32
+ChatAdd48
+DesktopCheckmark16
+DesktopCheckmark20
+DesktopCheckmark24
+InkStrokeArrowDown20
+InkStrokeArrowDown24
+InkStrokeArrowUpDown20
+InkStrokeArrowUpDown24
+LocationArrowLeft20
+LocationArrowRight20
+LocationArrowUp20
+NotebookSectionArrowRight20
+PersonSearch20
+PersonSearch24
+TextAddT20
+PersonAlert16
+PersonAlert20
+PersonAlert24
+PersonArrowBack16
+PersonArrowBack20
+PersonArrowBack24
+PersonArrowBack28
+PersonArrowBack32
+PersonArrowBack48
+PersonLink16
+PersonLink20
+PersonLink24
+PersonLink28
+PersonLink32
+PersonLink48
+ShieldAdd16
+ShieldAdd20
+ShieldAdd24
+DatabaseArrowRight32
+DocumentSync32
+TextBulletListSquarePerson32
+WeatherSnowflake32
+WindowDatabase24
+ArrowTrending12
+BuildingPeople16
+BuildingPeople20
+BuildingPeople24
+DatabaseArrowRight24
+PanelLeftAdd16
+PanelLeftAdd20
+PanelLeftAdd24
+PanelLeftAdd28
+PanelLeftAdd32
+PanelLeftAdd48
+AccessibilityCheckmark28
+AccessibilityCheckmark32
+AccessibilityCheckmark48
+AddCircle12
+ArrowTurnDownRight20
+ArrowTurnDownRight48
+ArrowTurnDownUp20
+ArrowTurnDownUp48
+ArrowTurnLeftDown20
+ArrowTurnLeftDown48
+ArrowTurnLeftRight20
+ArrowTurnLeftRight48
+ArrowTurnLeftUp20
+ArrowTurnLeftUp48
+ArrowTurnRight48
+ArrowTurnRightDown20
+ArrowTurnRightDown48
+ArrowTurnRightLeft20
+ArrowTurnRightLeft48
+ArrowTurnRightUp20
+ArrowTurnRightUp48
+ArrowTurnUpDown20
+ArrowTurnUpDown48
+ArrowTurnUpLeft20
+ArrowTurnUpLeft48
+DocumentDatabase20
+DocumentDatabase24
+HomeSplit20
+HomeSplit24
+HomeSplit32
+HomeSplit48
+PersonBoard28
+PersonBoard32
+PersonCircle28
+PersonCircle32
+PersonSquare20
+PersonSquare24
+PersonStarburst20
+PersonStarburst24
+ScanQrCode24
+VehicleCarProfileLtrClock16
+VehicleCarProfileLtrClock20
+VehicleCarProfileLtrClock24
+VideoPeople32
+ArrowTurnDownLeft20
+ArrowTurnDownLeft48
+LightbulbPerson16
+LightbulbPerson20
+LightbulbPerson24
+LightbulbPerson28
+LightbulbPerson32
+LightbulbPerson48
+PersonWalking20
+PersonWalking24
+ScanText16
+ScanText28
+TableSimpleCheckmark16
+TableSimpleCheckmark20
+TableSimpleCheckmark24
+TableSimpleCheckmark28
+TableSimpleCheckmark32
+TableSimpleCheckmark48
+ArrowNext16
+ArrowPrevious16
+BracesCheckmark16
+BracesDismiss16
+CalendarArrowCounterclockwise16
+CalendarArrowCounterclockwise20
+CalendarArrowCounterclockwise24
+CalendarArrowCounterclockwise28
+CalendarArrowCounterclockwise32
+CalendarArrowCounterclockwise48
+CalendarPlay16
+CalendarPlay20
+CalendarPlay24
+CalendarPlay28
+CalendarShield16
+CalendarShield20
+CalendarShield24
+CalendarShield28
+CalendarShield32
+CalendarShield48
+CloudAdd24
+CloudEdit24
+Database16
+DatabaseStack16
+PeopleStar16
+PeopleStar20
+PeopleStar24
+PeopleStar28
+PeopleStar32
+PeopleStar48
+PersonSearch16
+PersonSearch32
+PersonStanding16
+PersonWalking16
+Add12
+Add16
+Add20
+Add24
+Add28
+AddCircle20
+AddCircle24
+AddCircle28
+Alert20
+Alert24
+Alert28
+AlertOff16
+AlertOff20
+AlertOff24
+AlertOff28
+AlertOn24
+AlertSnooze20
+AlertSnooze24
+AlertUrgent20
+AlertUrgent24
+ArchiveSettings16
+ArrowCircleDown20
+ArrowCircleDown24
+ArrowCircleDownDouble20
+ArrowCircleDownDouble24
+AppsAddIn20
+AppsAddIn24
+ArrowClockwise20
+ArrowClockwise24
+ArrowCounterclockwise20
+ArrowCounterclockwise24
+ArrowCurveDownLeft20
+ArrowCurveDownRight20
+ArrowCircleDownSplit20
+ArrowCircleDownSplit24
+ArrowCurveUpLeft20
+ArrowCurveUpRight20
+ArrowDown16
+ArrowDown20
+ArrowDown24
+ArrowDown28
+ArrowDownLeft24
+ArrowDown32
+ArrowDown48
+ArrowFit16
+ArrowDownload16
+ArrowDownload20
+ArrowDownload24
+ArrowDownload48
+ArrowExpand24
+ArrowForward16
+ArrowForward20
+ArrowForward24
+ArrowImport20
+ArrowImport24
+ArrowLeft20
+ArrowLeft24
+ArrowLeft28
+ArrowMaximize16
+ArrowMaximize20
+ArrowMaximize24
+ArrowMaximize28
+ArrowMaximizeVertical20
+ArrowMaximizeVertical24
+ArrowMinimize16
+ArrowMinimize20
+ArrowMinimize24
+ArrowMinimize28
+ArrowMinimizeVertical24
+ArrowMove24
+ArrowNext20
+ArrowNext24
+ArrowPrevious20
+ArrowPrevious24
+ArrowRedo20
+ArrowRedo24
+ArrowRepeatAll16
+ArrowRepeatAll20
+ArrowRepeatAll24
+ArrowRepeatAllOff16
+ArrowRepeatAllOff20
+ArrowRepeatAllOff24
+ArrowReply16
+ArrowReply20
+ArrowReply24
+ArrowReply48
+ArrowReplyAll16
+ArrowReplyAll20
+ArrowReplyAll24
+ArrowReplyAll48
+ArrowReplyDown16
+ArrowReplyDown20
+ArrowReplyDown24
+ArrowRight20
+ArrowRight24
+ArrowRight28
+ArrowLeft16
+ArrowRotateClockwise20
+ArrowRotateClockwise24
+ArrowRotateCounterclockwise20
+ArrowRotateCounterclockwise24
+ArrowLeft32
+ArrowSort20
+ArrowSort24
+ArrowSort28
+ArrowSwap20
+ArrowSwap24
+ArrowSync12
+ArrowSync20
+ArrowSync24
+ArrowSyncCircle16
+ArrowSyncCircle20
+ArrowSyncCircle24
+ArrowSyncOff12
+ArrowTrending16
+ArrowTrending20
+ArrowTrending24
+ArrowUndo20
+ArrowUndo24
+ArrowUp20
+ArrowUp24
+ArrowUp28
+ArrowLeft48
+ArrowReset20
+ArrowReset24
+ArrowUpLeft24
+ArrowRight32
+ArrowUpRight24
+ArrowUpload20
+ArrowUpload24
+ArrowsBidirectional24
+ArrowRight48
+ArrowSort16
+ArrowSortDown16
+ArrowSortDownLines16
+ArrowSortUp16
+ArrowUp16
+ArrowUp32
+ArrowUp48
+BarcodeScanner20
+SaveMultiple16
+BatterySaver20
+BatterySaver24
+BatteryWarning24
+BluetoothSearching24
+BarcodeScanner24
+BeakerEdit20
+BeakerEdit24
+BookmarkAdd20
+BookmarkAdd24
+BookGlobe24
+BotAdd24
+Broom16
+Broom20
+Broom24
+CalendarInfo16
+CalendarMultiple16
+CallCheckmark20
+CallDismiss20
+CallDismiss24
+Calendar3Day20
+Calendar3Day24
+Calendar3Day28
+CalendarAdd20
+CalendarAdd24
+CalendarAgenda20
+CalendarAgenda24
+CalendarAgenda28
+CalendarArrowRight20
+CalendarAssistant20
+CalendarAssistant24
+CalendarCancel20
+CalendarCancel24
+CalendarCheckmark16
+CalendarCheckmark20
+CalendarClock20
+CalendarClock24
+Shield12
+ChatSettings20
+CalendarDay20
+CalendarDay24
+CalendarDay28
+CalendarEmpty16
+CalendarEmpty20
+CalendarEmpty24
+CalendarEmpty28
+ChatSettings24
+CalendarMonth20
+CalendarMonth24
+CalendarMonth28
+CalendarMultiple20
+CalendarMultiple24
+SlideTextPerson16
+CalendarPerson20
+CalendarReply16
+CalendarReply20
+CalendarReply24
+CalendarReply28
+CalendarSettings20
+CalendarStar20
+CalendarStar24
+CalendarSync16
+CalendarSync20
+CalendarSync24
+CalendarToday16
+CalendarToday20
+CalendarToday24
+CalendarToday28
+CalendarWeekNumbers24
+CalendarWeekStart20
+CalendarWeekStart24
+CalendarWeekStart28
+CalendarWorkWeek16
+CalendarWorkWeek20
+CalendarWorkWeek24
+CallAdd24
+CameraAdd20
+CameraAdd24
+CameraAdd48
+SlideTextPerson20
+SlideTextPerson24
+SlideTextPerson28
+SlideTextPerson32
+CheckboxCheckedSync16
+CheckmarkStarburst16
+ChatWarning24
+Checkmark12
+Checkmark20
+Checkmark24
+Checkmark28
+CheckmarkCircle16
+CheckmarkCircle20
+CheckmarkCircle24
+CheckmarkCircle48
+CheckmarkLock16
+CheckmarkLock20
+CheckmarkLock24
+CheckmarkSquare24
+CheckmarkUnderlineCircle16
+CheckmarkUnderlineCircle20
+ClipboardSearch20
+ClipboardSearch24
+SlideTextPerson48
+Clock12
+Clock16
+Clock20
+Clock24
+Clock28
+Clock48
+ClockAlarm20
+ClockAlarm24
+CollectionsAdd20
+CollectionsAdd24
+CommentAdd24
+ContentSettings16
+ContentSettings20
+ContentSettings24
+VideoPerson32
+ClipboardSettings20
+ClockArrowDownload20
+CloudAdd16
+CloudEdit16
+Delete20
+Delete24
+Delete28
+Delete48
+DeleteOff20
+DeleteOff24
+DeviceEq24
+Dismiss12
+Dismiss16
+Dismiss20
+Dismiss24
+Dismiss28
+DismissCircle16
+DismissCircle20
+DismissCircle24
+DismissCircle48
+DocumentDismiss20
+DocumentDismiss24
+DocumentEdit16
+DocumentEdit20
+DocumentEdit24
+VideoPersonClock16
+VideoPersonClock20
+DocumentSearch20
+DocumentSearch24
+DataUsageEdit20
+DesktopSync16
+DeviceMeetingRoom16
+DeviceMeetingRoom24
+DeviceMeetingRoom28
+DeviceMeetingRoom32
+DeviceMeetingRoom48
+DeviceMeetingRoomRemote16
+DeviceMeetingRoomRemote24
+DualScreenAdd24
+DualScreenArrowRight24
+DualScreenClock24
+DeviceMeetingRoomRemote28
+DualScreenSettings24
+Edit16
+Edit20
+Edit24
+EmojiAdd24
+DeviceMeetingRoomRemote32
+DeviceMeetingRoomRemote48
+Dismiss32
+VideoPersonClock24
+VideoPersonClock28
+VideoPersonClock32
+VideoPersonClock48
+Dismiss48
+DocumentArrowUp16
+Filter20
+Filter24
+Filter28
+FolderAdd20
+FolderAdd24
+FolderAdd28
+FolderAdd48
+DocumentPerson16
+DocumentSettings16
+EditArrowBack16
+ErrorCircleSettings16
+Globe20
+Globe24
+GlobeAdd24
+GlobeClock24
+GlobeDesktop24
+GlobeLocation24
+GlobeSearch24
+GlobeVideo24
+GuestAdd24
+History20
+History24
+Home20
+Home24
+Home28
+HomeAdd24
+HomeCheckmark24
+ImageAdd24
+ImageEdit16
+ImageEdit20
+ImageEdit24
+ImageSearch20
+ImageSearch24
+Info16
+Info20
+Info24
+Info28
+FolderGlobe16
+FolderPerson16
+LauncherSettings24
+GiftCardAdd20
+GlobeLocation20
+LinkEdit16
+LinkEdit20
+LinkEdit24
+GlobeStar16
+GlobeVideo20
+HeadsetAdd20
+HeadsetAdd24
+LockShield20
+LockShield24
+LockShield48
+LaptopDismiss16
+MailAdd24
+MailAdd16
+MailClock20
+MailInboxAdd16
+MailInboxAdd20
+MailInboxAdd24
+MailInboxAdd28
+MailInboxDismiss16
+MailInboxDismiss20
+MailInboxDismiss24
+MailInboxDismiss28
+MailAdd20
+MailAlert16
+MailAlert20
+MailAlert24
+MailArrowDown16
+MailArrowUp20
+MicSettings24
+MailArrowUp24
+MailCheckmark16
+MailClock16
+MailClock24
+MailDismiss20
+MailDismiss24
+TextboxSettings20
+MailInboxArrowDown16
+NoteAdd16
+NoteAdd20
+NoteAdd24
+NotebookSync24
+TextboxSettings24
+Add32
+Add48
+ArrowTrendingSparkle20
+ArrowTrendingSparkle24
+People16
+People20
+People24
+People28
+PeopleAdd16
+PeopleAdd20
+PeopleAdd24
+PeopleAudience24
+PeopleCommunity16
+PeopleCommunity20
+PeopleCommunity24
+PeopleCommunity28
+PeopleCommunityAdd24
+PeopleProhibited20
+PeopleSearch24
+PeopleSettings20
+PeopleTeam16
+PeopleTeam20
+PeopleTeam24
+PeopleTeam28
+Person12
+Person16
+Person20
+Person24
+Person28
+Person48
+PersonAccounts24
+PersonAdd20
+PersonAdd24
+PersonArrowLeft20
+PersonArrowLeft24
+PersonArrowRight16
+PersonArrowRight20
+PersonArrowRight24
+PersonAvailable16
+PersonAvailable24
+PersonBoard16
+PersonBoard20
+PersonBoard24
+PersonCall24
+PersonDelete16
+PersonDelete24
+PersonFeedback20
+PersonFeedback24
+PersonProhibited20
+PersonQuestionMark16
+PersonQuestionMark20
+PersonQuestionMark24
+PersonSupport16
+PersonSupport20
+PersonSupport24
+PersonSwap16
+PersonSwap20
+PersonSwap24
+PersonVoice20
+PersonVoice24
+MailSettings16
+MailShield16
+MailWarning16
+PhotoFilter24
+PointScan24
+Print20
+Print24
+Print48
+ReadingListAdd16
+ReadingListAdd20
+ReadingListAdd24
+ReadingListAdd28
+NotepadEdit16
+Save20
+Save24
+SaveCopy24
+Scan24
+Search20
+Search24
+Search28
+SearchInfo20
+SearchInfo24
+SearchSquare24
+SendClock20
+BoxSearch16
+Settings16
+Settings20
+Settings24
+Settings28
+PeopleSync16
+Shield20
+Shield24
+ShieldDismiss20
+ShieldDismiss24
+ShieldError20
+ShieldError24
+ShieldKeyhole16
+ShieldKeyhole20
+ShieldKeyhole24
+ShieldProhibited20
+ShieldProhibited24
+PeopleToolbox16
+PersonChat16
+ShiftsAdd24
+PersonChat20
+PersonChat24
+PersonInfo16
+PersonLock16
+PersonLock20
+CalendarError16
+SlideAdd24
+PersonSubtract16
+PhoneCheckmark16
+Print16
+PrintAdd20
+SpeakerEdit16
+SpeakerEdit20
+SpeakerEdit24
+ProductionCheckmark20
+ProductionCheckmark24
+SpeakerSettings24
+ReceiptAdd20
+StarAdd16
+StarAdd20
+StarAdd24
+StarArrowRightStart24
+StarSettings24
+StickerAdd24
+SyncOff16
+SyncOff20
+TabDesktopArrowClockwise16
+TabDesktopArrowClockwise20
+TabDesktopArrowClockwise24
+TabDesktopClock20
+TableAdd24
+RibbonAdd20
+RibbonAdd24
+TableEdit24
+ShieldBadge20
+SlideMultipleSearch20
+SlideMultipleSearch24
+TableSettings24
+TargetEdit16
+TargetEdit20
+TargetEdit24
+TaskListAdd20
+TaskListAdd24
+TextAddSpaceAfter20
+TextAddSpaceAfter24
+TextAddSpaceBefore20
+TextAddSpaceBefore24
+TextBulletListAdd24
+TextBulletListSquareWarning16
+TextBulletListSquareWarning20
+TextBulletListSquareWarning24
+TargetArrow16
+TargetArrow20
+TextBulletListSquareEdit20
+TextBulletListSquareEdit24
+TextEditStyle20
+TextEditStyle24
+VoicemailArrowBack16
+VoicemailArrowForward16
+ClipboardCheckmark16
+WifiWarning24
+WindowEdit16
+ArrowSortDown20
+ArrowSortDown24
+ArrowSortUp20
+ClockLock16
+ClockLock20
+ArrowSortUp24
+ArrowTurnBidirectionalDownRight24
+TimeAndWeather24
+ArrowTurnRight24
+ClockLock24
+VideoPerson24
+VideoPersonOff24
+VideoPersonStar24
+CalendarCheckmark28
+CalendarSearch16
+Warning16
+Warning20
+Warning24
+WeatherBlowingSnow20
+WeatherBlowingSnow24
+WeatherBlowingSnow48
+WeatherCloudy20
+WeatherCloudy24
+WeatherCloudy48
+WeatherDuststorm20
+WeatherDuststorm24
+WeatherDuststorm48
+WeatherFog20
+WeatherFog24
+WeatherFog48
+WeatherHailDay20
+WeatherHailDay24
+WeatherHailDay48
+WeatherHailNight20
+WeatherHailNight24
+WeatherHailNight48
+WeatherMoon20
+WeatherMoon24
+WeatherMoon48
+WeatherPartlyCloudyDay20
+WeatherPartlyCloudyDay24
+WeatherPartlyCloudyDay48
+WeatherPartlyCloudyNight20
+WeatherPartlyCloudyNight24
+WeatherPartlyCloudyNight48
+WeatherRain20
+WeatherRain24
+WeatherRain48
+WeatherRainShowersDay20
+WeatherRainShowersDay24
+WeatherRainShowersDay48
+WeatherRainShowersNight20
+WeatherRainShowersNight24
+WeatherRainShowersNight48
+WeatherRainSnow20
+WeatherRainSnow24
+WeatherRainSnow48
+WeatherSnow20
+WeatherSnow24
+WeatherSnow48
+WeatherSnowShowerDay20
+WeatherSnowShowerDay24
+WeatherSnowShowerDay48
+WeatherSnowShowerNight20
+WeatherSnowShowerNight24
+WeatherSnowShowerNight48
+WeatherSnowflake20
+WeatherSnowflake24
+WeatherSnowflake48
+WeatherSqualls20
+WeatherSqualls24
+WeatherSqualls48
+WeatherSunny20
+WeatherSunny24
+WeatherSunny48
+WeatherThunderstorm20
+WeatherThunderstorm24
+WeatherThunderstorm48
+WindowShield16
+WindowShield20
+WindowShield24
+CalendarCheckmark24
+AddSquare24
+ArrowAutofitHeight24
+ArrowAutofitWidth24
+ArrowCounterclockwise28
+ArrowDown12
+ArrowDownLeft16
+ArrowExportRtl20
+Checkmark32
+ArrowHookDownLeft16
+ArrowHookDownLeft20
+ArrowHookDownLeft24
+ArrowHookDownLeft28
+ArrowHookDownRight16
+ArrowHookDownRight20
+ArrowHookDownRight24
+ArrowHookDownRight28
+ArrowHookUpLeft16
+ArrowHookUpLeft20
+ArrowHookUpLeft24
+ArrowHookUpLeft28
+ArrowHookUpRight16
+ArrowHookUpRight20
+ArrowHookUpRight24
+ArrowHookUpRight28
+ArrowMove20
+ArrowRedo32
+ArrowRedo48
+CheckmarkCircle32
+ArrowUpRight16
+AttachArrowRight20
+AttachArrowRight24
+BookAdd20
+Database48
+DatabaseMultiple32
+DeviceEq16
+DocumentBorderPrint20
+DocumentBorderPrint24
+DocumentBorderPrint32
+DocumentBulletListArrowLeft16
+DocumentBulletListArrowLeft20
+DocumentBulletListArrowLeft24
+DocumentOnePageAdd16
+DocumentOnePageAdd20
+DocumentOnePageAdd24
+DocumentPrint20
+DocumentPrint24
+DocumentPrint28
+DocumentPrint32
+DocumentPrint48
+FlagClock16
+FlagClock20
+FlagClock24
+FlagClock28
+FlagClock32
+FlagClock48
+GlobeSurface32
+HomeMore48
+Info32
+Info48
+IotAlert16
+IotAlert20
+IotAlert24
+LineHorizontal4Search20
+LocationArrow12
+LocationArrow16
+LocationArrow20
+LocationArrow24
+LocationArrow28
+LocationArrow32
+LocationArrow48
+LocationArrowLeft16
+LocationArrowRight16
+LocationArrowUp16
+MailArrowDoubleBack24
+MailCheckmark24
+PanelLeftHeaderAdd16
+PanelLeftHeaderAdd20
+PanelLeftHeaderAdd24
+PanelLeftHeaderAdd28
+PanelLeftHeaderAdd32
+PanelLeftHeaderAdd48
+PeopleCall24
+PeopleCommunity32
+PeopleCommunity48
+PersonFeedback28
+PersonFeedback32
+PersonFeedback48
+StarArrowBack16
+StarArrowBack20
+StarArrowBack24
+ArrowCircleUpRight20
+ArrowCircleUpRight24
+PenDismiss16
+PenDismiss20
+PenDismiss24
+PenDismiss28
+PenDismiss32
+PenDismiss48
+PhoneEdit20
+PhoneEdit24
+TableOffsetAdd20
+TableOffsetAdd24
+TableOffsetSettings20
+TableOffsetSettings24
+ArrowAutofitHeightIn20
+ArrowAutofitHeightIn24
+CloudDatabase20
+DesktopArrowDown16
+DesktopArrowDown20
+DesktopArrowDown24
+DocumentCheckmark16
+EditArrowBack24
+LightbulbCheckmark20
+LineHorizontal4Search16
+PeopleTeam48
+PersonDesktop20
+PersonRibbon16
+PersonRibbon20
+PersonWrench20
+SettingsCogMultiple20
+SettingsCogMultiple24
+StackAdd20
+StackAdd24
+StarCheckmark16
+StarCheckmark20
+StarCheckmark24
+StarCheckmark28
+ArrowEnter16
+ArrowSprint16
+ArrowSprint20
+BeakerSettings16
+BeakerSettings20
+BookDismiss16
+BookDismiss20
+Globe12
+LaptopShield16
+LaptopShield20
+PanelLeftTextAdd16
+PanelLeftTextAdd20
+PanelLeftTextAdd24
+PanelLeftTextAdd28
+PanelLeftTextAdd32
+PanelLeftTextAdd48
+PanelLeftTextDismiss16
+PanelLeftTextDismiss20
+PanelLeftTextDismiss24
+PanelLeftTextDismiss28
+PanelLeftTextDismiss32
+PanelLeftTextDismiss48
+PersonLightning16
+PersonLightning20
+ArrowFlowDiagonalUpRight16
+ArrowFlowDiagonalUpRight20
+ArrowFlowDiagonalUpRight24
+ArrowFlowDiagonalUpRight32
+ArrowFlowUpRight16
+ArrowFlowUpRight20
+ArrowFlowUpRight24
+ArrowFlowUpRight32
+ArrowFlowUpRightRectangleMultiple20
+ArrowFlowUpRightRectangleMultiple24
+ArrowSquareUpRight20
+ArrowSquareUpRight24
+BriefcaseSearch20
+BriefcaseSearch24
+HeartPulseCheckmark20
+HeartPulseWarning20
+HomeHeart16
+HomeHeart20
+HomeHeart24
+HomeHeart32
+MoneySettings16
+MoneySettings24
+PeopleEdit16
+PeopleEdit24
+AddSquare16
+AddSquare28
+AddSquare32
+AddSquare48
+ArrowRouting20
+ArrowRouting24
+ArrowRoutingRectangleMultiple20
+ArrowRoutingRectangleMultiple24
+BookAdd28
+PersonInfo24
+ArrowOutlineDownLeft16
+ArrowOutlineDownLeft20
+ArrowOutlineDownLeft24
+ArrowOutlineDownLeft28
+ArrowOutlineDownLeft32
+ArrowOutlineDownLeft48
+ArrowStepInDiagonalDownLeft16
+ArrowStepInDiagonalDownLeft20
+ArrowStepInDiagonalDownLeft24
+ArrowStepInDiagonalDownLeft28
+ArrowUpSquareSettings24
+BriefcasePerson24
+CalendarEye20
+CommentEdit16
+FolderAdd32
+FolderArrowLeft48
+FolderArrowRight32
+FolderArrowUp32
+LinkAdd24
+LinkSettings24
+PersonPhone24
+PersonSubtract24
+PhoneMultipleSettings24
+PhonePerson24
+PlugConnectedSettings20
+PlugConnectedSettings24
+TableArrowUp20
+TableArrowUp24
+Warning32
+AddSquareMultiple24
+Globe48
+GlobeShield48
+PersonEdit48
+TextBulletListSquareShield48
+ArrowExport16
+ArrowExport20
+ArrowExport24
+Calendar12
+Calendar16
+Calendar20
+Calendar24
+Calendar28
+Calendar32
+Calendar48
+CalendarDate20
+CalendarDate24
+CalendarDate28
+IosArrow24
+ArrowBidirectionalLeftRight16
+ArrowBidirectionalLeftRight20
+ArrowBidirectionalLeftRight24
+ArrowBidirectionalLeftRight28
+ArrowSwap16
+ArrowSwap28
+CheckmarkCircleSquare16
+CheckmarkCircleSquare20
+CheckmarkCircleSquare24
+RemixAdd16
+RemixAdd20
+RemixAdd24
+RemixAdd32
+VideoPersonSparkleOff20
+VideoPersonSparkleOff24
+VoicemailShield20
+VoicemailShield24
+VoicemailShield32
+WindowDatabase32
+GlobeArrowForward16
+GlobeArrowForward20
+GlobeArrowForward24
+GlobeArrowForward32
+ScanPerson16
+ScanPerson20
+ScanPerson24
+ScanPerson28
+ScanPerson48
+VoicemailShield16
+Edit12
+TabDesktopMultipleAdd20
+BeakerAdd20
+BeakerAdd24
+BeakerDismiss20
+BeakerDismiss24
+TabDesktopMultipleAdd16
+TargetAdd20
+TargetAdd24
+TargetDismiss20
+TargetDismiss24
+ArrowDownload28
+ArrowDownload32
+ArrowExpand16
+ArrowExportUp16
+ArrowImport16
+ArrowUpRightDashes16
+FolderSearch16
+FolderSearch20
+FolderSearch24
+TextEditStyle16
+ArrowDownloadOff16
+ArrowDownloadOff20
+ArrowDownloadOff24
+ArrowDownloadOff28
+ArrowDownloadOff32
+ArrowDownloadOff48
+LinkPerson16
+LinkPerson20
+LinkPerson24
+LinkPerson32
+LinkPerson48
+PeopleChat16
+PeopleChat20
+PeopleChat24
+PersonSupport28
+SlideTextEdit16
+SlideTextEdit20
+SlideTextEdit24
+SlideTextEdit28
+Warning48
+AlertOn16
+ArrowDownExclamation16
+ArrowDownExclamation20
+ArrowFit24
+ArrowFitIn24
+BookDatabase16
+BookDatabase32
+BuildingGovernmentSearch16
+BuildingGovernmentSearch20
+BuildingGovernmentSearch24
+BuildingGovernmentSearch32
+CalendarRecord16
+CalendarRecord20
+CalendarRecord24
+CalendarRecord28
+CalendarRecord32
+CalendarRecord48
+CommunicationShield16
+CommunicationShield20
+CommunicationShield24
+DocumentSearch32
+FolderPerson24
+FolderPerson28
+FolderPerson32
+FolderPerson48
+HatGraduationAdd16
+HatGraduationAdd20
+HatGraduationAdd24
+LayerDiagonalAdd20
+LinkAdd16
+LinkAdd20
+LockShield16
+LockShield28
+LockShield32
+PersonVoice16
+PersonWarning16
+PersonWarning20
+PersonWarning24
+PersonWarning28
+PersonWarning32
+PersonWarning48
+ScanTypeOff24
+SlideSearch16
+SlideSearch32
+VehicleSubwayClock16
+VehicleSubwayClock20
+VehicleSubwayClock24
+VideoPersonPulse16
+VideoPersonPulse20
+VideoPersonPulse24
+VideoPersonPulse28
+ArchiveSettings32
+ArrowForward32
+ArrowReply32
+ArrowReplyAll32
+Broom32
+CalendarNote16
+CalendarNote20
+CalendarNote24
+CalendarNote32
+CheckmarkUnderlineCircle24
+Filter32
+GlobeArrowUp16
+GlobeArrowUp20
+GlobeArrowUp24
+GlobeError16
+GlobeError20
+GlobeError24
+GlobeProhibited16
+GlobeProhibited24
+GlobeSync16
+GlobeSync20
+GlobeSync24
+GlobeWarning16
+GlobeWarning20
+GlobeWarning24
+LayerDiagonalPerson16
+PeopleList32
+PersonAdd32
+PersonSquare16
+PersonSquare32
+PersonSquareCheckmark16
+PersonSquareCheckmark20
+PersonSquareCheckmark24
+PersonSquareCheckmark32
+PhoneFooterArrowDown20
+PhoneFooterArrowDown24
+PhoneHeaderArrowUp20
+PhoneHeaderArrowUp24
+TextEditStyleCharacterA32
+ArrowClockwiseDashes16
+ArrowClockwiseDashes32
+TextArrowDownRightColumn16
+TextArrowDownRightColumn20
+TextArrowDownRightColumn24
+TextArrowDownRightColumn28
+TextArrowDownRightColumn32
+TextArrowDownRightColumn48
+LayerDiagonalPerson24
+RectangleLandscapeSync16
+RectangleLandscapeSync20
+RectangleLandscapeSync24
+RectangleLandscapeSync28
+RectangleLandscapeSyncOff16
+RectangleLandscapeSyncOff20
+RectangleLandscapeSyncOff24
+RectangleLandscapeSyncOff28
+SeatAdd16
+SeatAdd20
+SeatAdd24
+TextEditStyleCharacterGa32
+WrenchSettings20
+WrenchSettings24
+CalendarLink24
+CalendarLink28
+CalendarVideo24
+CalendarVideo28
+LaptopSettings20
+LaptopSettings24
+LaptopSettings32
+PeopleAudience32
+ShoppingBagAdd20
+ShoppingBagAdd24
+CalendarSparkle16
+CalendarSparkle20
+CalendarSparkle24
+CalendarSparkle28
+CalendarSparkle32
+CalendarSparkle48
+CalendarTemplate20
+CalendarTemplate24
+CalendarTemplate32
+Globe28
+CheckmarkCircleWarning16
+CheckmarkCircleWarning20
+CheckmarkCircleWarning24
+CloudArrowRight16
+CloudArrowRight20
+CloudArrowRight24
+DocumentArrowDown24
+HomeGarage20
+HomeGarage24
+MailArrowClockwise16
+MailArrowClockwise20
+MailArrowClockwise24
+PersonPasskey16
+PersonPasskey20
+PersonPasskey24
+PersonPasskey28
+PersonPasskey32
+PersonPasskey48
+PersonProhibited32
+PersonRibbon24
+ArrowDownExclamation24
+ArrowSortUpLines16
+ArrowSortUpLines20
+ArrowSortUpLines24
+ArrowUpExclamation16
+ArrowUpExclamation20
+ArrowUpExclamation24
+CalendarVideo20
+ClockBill16
+ClockBill20
+ClockBill24
+ClockBill32
+DataUsageSettings16
+DataUsageSettings24
+EditPerson20
+EditPerson24
+LaptopPerson20
+LaptopPerson24
+LaptopPerson48
+MailArrowDoubleBack32
+PeopleAdd32
+PersonAlert32
+Save32
+PeopleSubtract20
+PeopleSubtract24
+PeopleSubtract32
+PersonAlertOff16
+PersonAlertOff20
+PersonAlertOff24
+PersonAlertOff32
+ShoppingBagAdd16
+AppsSettings16
+AppsSettings20
+AppsShield16
+AppsShield20
+ArrowUpload32
+CalendarEdit32
+DataBarVerticalArrowDown16
+DataBarVerticalArrowDown20
+DataBarVerticalArrowDown24
+MailEdit32
+PasswordClock48
+PeopleEye16
+PeopleEye20
+PinGlobe16
+PinGlobe20
+CameraArrowUp16
+CameraArrowUp20
+CameraArrowUp24
+ChatSettings16
+SearchSquare16
+SettingsChat16
+ArrowTurnRight16
+PeopleCommunity12
+PersonBoard12
+PersonTentative16
+PersonTentative20
+PersonTentative24
+TabDesktopSearch16
+TabDesktopSearch20
+TabDesktopSearch24
+CommentAdd32
+CropArrowRotate16
+CropArrowRotate20
+CropArrowRotate24
+LayerDiagonalAdd24
+MailAlert32
+MailArrowClockwise32
+PersonSupport32
+SendPerson16
+SendPerson20
+SendPerson24
+ArrowCollapseAll16
+ArrowExpandAll16
+ArrowExpandAll20
+ArrowExpandAll24
+ChatArrowBackDown16
+ChatArrowBackDown20
+ChatArrowBackDown24
+ChatArrowBackDown28
+ChatArrowBackDown32
+ChatArrowBackDown48
+DesktopArrowDown32
+EditLineHorizontal320
+EditLineHorizontal324
+SearchSparkle16
+SearchSparkle20
+SearchSparkle24
+SearchSparkle28
+SearchSparkle32
+SearchSparkle48
+DatabaseArrowUp16
+PeopleEdit32
+PersonMail32
+PersonHome16
+PersonHome20
+PersonHome24
+PersonHome28
+PersonHome32
+PersonHome48
+EditLock16
+EditLock20
+EditLock24
+LayoutRowTwoSettings20
+LayoutRowTwoSettings24
+LayoutRowTwoSettings28
+LayoutRowTwoSettings32
+ShieldAdd28
+ShieldAdd32
+ShieldAdd48
+ShieldCheckmark32
+ShieldTask32
+WarningLockOpen16
+WarningLockOpen20
+WarningLockOpen24
+PersonBoardAdd20
+PersonSquareAdd16
+PersonSquareAdd20
+PersonSquareAdd24
+GlobeOff12
+GlobeOff16
+GlobeOff20
+GlobeOff24
+GlobeOff28
+GlobeOff32
+GlobeOff48
+PersonBoardAdd16
+PersonBoardAdd24
+PersonBoardAdd28
+PersonBoardAdd32
+ArrowSyncCircle28
+ArrowSyncCircle32
+ArrowSyncCircle48
+CalendarArrowRepeatAll16
+CalendarArrowRepeatAll20
+CalendarArrowRepeatAll24
+CalendarArrowRepeatAll28
+CalendarArrowRepeatAll32
+CalendarArrowRepeatAll48
+ClockToolbox32
+DatabaseSearch32
+DocumentGlobe20
+DocumentGlobe24
+TabAdd32
+AddCircle48
+ClipboardTextEdit48
+ArrowCircleUpLeft16
+ArrowCircleUpRight16
+BuildingCheckmark16
+BuildingCheckmark20
+ClockAlarm48
+PenSync16
+PenSync20
+PenSync24
+PenSync28
+PenSync32
+PenSync48
+PeopleLink16
+PeopleLink20
+PeopleLink24
+PeopleLink28
+PeopleLink32
+PeopleLink48
+PeopleQueue28
+PeopleQueue32
+PeopleQueue48
+PersonHeadHint16
+PersonHeadHint20
+PersonHeadHint24
+PersonSoundSpatial16
+PersonSoundSpatial20
+PersonSoundSpatial24
+PersonSoundSpatial28
+PersonSoundSpatial32
+PersonSoundSpatial48
+ArrowDownRight16
+ArrowDownRight20
+ArrowDownRight24
+ArrowDownRight32
+ArrowDownRight48
+ArrowRepeatAll28
+ArrowRepeatAll48
+CalendarMention16
+CalendarPerson32
+MailInboxPerson16
+MailInboxPerson20
+MailInboxPerson32
+ArrowBounce12
+ArrowBounce28
+ArrowBounce48
+ArrowDownLeft12
+ArrowDownLeft28
+ArrowFlowDiagonalUpRight12
+ArrowFlowDiagonalUpRight28
+ArrowFlowDiagonalUpRight48
+ArrowUpRight12
+ArrowUpRight28
+ArrowUpRightDashes12
+ArrowUpRightDashes20
+ArrowUpRightDashes24
+ArrowUpRightDashes28
+ArrowUpRightDashes32
+ArrowUpRightDashes48
+ArrowWrap32
+ArrowWrapUpToDown20
+ArrowWrapUpToDown32
+DataUsageCheckmark16
+DataUsageCheckmark20
+DataUsageCheckmark24
+DataUsageCheckmark28
+DataUsageCheckmark32
+DataUsageCheckmark48
+TextboxCheckmark16
+TextboxCheckmark20
+TextboxCheckmark24
+TextboxCheckmark28
+TextboxCheckmark32
+TextboxCheckmark48
+AnimalPawPrint16
+AnimalPawPrint20
+AnimalPawPrint24
+AnimalPawPrint28
+AnimalPawPrint32
+AnimalPawPrint48
+ArrowClockwiseDashes28
+ArrowClockwiseDashes48
+ArrowClockwiseDashesSettings16
+ArrowClockwiseDashesSettings20
+ArrowClockwiseDashesSettings24
+ArrowClockwiseDashesSettings28
+ArrowClockwiseDashesSettings32
+ArrowClockwiseDashesSettings48
+SquareTextArrowRepeatAll16
+SquareTextArrowRepeatAll20
+SquareTextArrowRepeatAll24
+CircleHintDismiss16
+CircleHintDismiss20
+CircleHintDismiss24
+DatabaseCheckmark16
+DatabaseCheckmark20
+DatabaseCheckmark24
+MailInboxPerson48
+BotAdd16
+BotAdd28
+BotAdd32
+BotAdd48
+ChatHistory20
+ChatHistory24
+ChatHistory28
+CircleMultipleHintCheckmark20
+CircleMultipleHintCheckmark24
+CircleMultipleHintCheckmark28
+HomeEmpty20
+HomeEmpty24
+HomeEmpty28
+WeatherMoon32
+LocationCheckmark12
+LocationCheckmark16
+LocationCheckmark20
+LocationCheckmark24
+LocationCheckmark48
+AlertBadge32
+AppsAddIn32
+AppsAddIn48
+AppsAddInOff16
+AppsAddInOff20
+AppsAddInOff24
+AppsAddInOff28
+AppsAddInOff32
+AppsAddInOff48
+ArrowCircleUpSparkle20
+ArrowCircleUpSparkle24
+ArrowCounterclockwiseInfo20
+ArrowCounterclockwiseInfo24
+ArrowCounterclockwiseInfo28
+ArrowCounterclockwiseInfo32
+ArrowCounterclockwiseInfo48
+ArrowSquare32
+ArrowSquareDown32
+BuildingHome32
+CalendarClock32
+ChatMultipleCheckmark16
+ChatMultipleCheckmark20
+ChatMultipleCheckmark24
+ChatMultipleCheckmark28
+CircleMultipleHintCheckmark16
+CircleMultipleHintCheckmark32
+ClockSparkle16
+ClockSparkle20
+ClockSparkle24
+ClockSparkle32
+CodeBlockEdit16
+CodeBlockEdit20
+CodeBlockEdit24
+CubeCheckmark16
+CubeCheckmark20
+CubeCheckmark24
+CubeCheckmark28
+CubeCheckmark32
+CubeCheckmark48
+DatabaseArrowRight16
+DatabaseSwitch24
+DesktopArrowDown28
+DesktopArrowDown48
+DesktopArrowDownOff20
+DesktopArrowDownOff24
+DesktopArrowDownOff28
+DesktopArrowDownOff32
+DesktopArrowDownOff48
+DiamondDismiss16
+DiamondDismiss20
+DiamondDismiss24
+DiamondDismiss28
+DiamondDismiss32
+DiamondDismiss48
+DocumentArrowRight16
+EditPerson16
+ImageAdd28
+ImageAdd32
+ImageAdd48
+InfoSparkle16
+InfoSparkle20
+InfoSparkle24
+InfoSparkle28
+InfoSparkle32
+InfoSparkle48
+LightbulbCheckmark24
+LightbulbCheckmark32
+LocationSettings20
+LocationSettings24
+LocationSettings28
+LocationSettings48
+MailClock32
+NavigationPerson20
+NavigationPerson24
+NavigationPerson28
+PeopleSync24
+PeopleSync32
+PersonEdit16
+PersonHeart32
+PersonKey24
+PersonKey32
+PersonStarburst16
+PersonStarburst28
+PersonStarburst32
+PersonStarburst48
+PersonTentative32
+SendClock32
+ShieldArrowRight16
+ShieldArrowRight20
+ShieldArrowRight24
+ShieldArrowRight28
+ShieldArrowRight32
+ShieldArrowRight48
+ShoppingBagCheckmark16
+ShoppingBagCheckmark20
+ShoppingBagCheckmark24
+ShoppingBagCheckmark28
+ShoppingBagCheckmark32
+ShoppingBagCheckmark48
+SparkleInfo20
+SparkleInfo24
+SquareTextArrowRepeatAll32
+StarSettings32
+TableCellAdd16
+TableCellAdd20
+TableCellAdd24
+TableColumnTopBottomEdit16
+TableColumnTopBottomEdit20
+TableColumnTopBottomEdit24
+TableColumnTopBottomEdit28
+TaskListSquareDatabase24
+VehicleTruckCheckmark16
+VehicleTruckCheckmark20
+VehicleTruckCheckmark24
+VehicleTruckCheckmark28
+VehicleTruckCheckmark32
+VehicleTruckCheckmark48
+VideoSettings16
+VideoSettings20
+VideoSettings24
+VideoSettings28
+VideoSettings32
+VideoSettings48
+AddStarburst16
+AddStarburst20
+AddStarburst24
+AddStarburst28
+AddStarburst32
+AddStarburst48
+ArrowExit12
+ArrowExit16
+ArrowExit24
+ArrowExit28
+ArrowExit32
+ArrowExit48
+BoxCheckmark16
+BoxCheckmark28
+BoxCheckmark32
+BoxCheckmark48
+CircleMultipleHintCheckmark48
+SlideTextTitleAdd16
+SlideTextTitleAdd20
+SlideTextTitleAdd24
+SlideTextTitleCheckmark16
+SlideTextTitleCheckmark20
+SlideTextTitleCheckmark24
+SlideTextTitleEdit16
+SlideTextTitleEdit20
+SlideTextTitleEdit24
+TableArrowRepeatAll20
+TableArrowRepeatAll24
+TableArrowRepeatAll28
+TableCellCenterArrowRepeatAll20
+TableCellCenterArrowRepeatAll24
+TableCellCenterArrowRepeatAll28
+TableCellCenterEdit16
+TableCellCenterEdit20
+TableCellCenterEdit24
+TableCellCenterEdit28
+TableCellCenterSearch20
+TableCellCenterSearch24
+TableCellCenterSearch28
+TableColumnTopBottomArrowRepeatAll20
+TableColumnTopBottomArrowRepeatAll24
+TableColumnTopBottomArrowRepeatAll28
+TableColumnTopBottomSearch20
+TableColumnTopBottomSearch24
+TableColumnTopBottomSearch28
+TableSearch24
+TableSearch28
+TagAdd16
+TagAdd20
+TagAdd24
+TagAdd28
+TagAdd32
+TagAdd48
+TagEdit16
+TagEdit20
+TagEdit24
+TagEdit28
+TagEdit32
+TagEdit48
+PeopleChat28
+PeopleChat32
+PeopleChat48
+PersonAccount16
+PersonAdd48
+PersonBriefcase16
+PersonBriefcase20
+PersonBriefcase24
+PersonError16
+PersonError20
+PersonError24
+PersonHeart28
+PersonHeart48
+BarcodeScanner16
+BarcodeScanner28
+BarcodeScanner32
+BarcodeScanner48
+BarcodeScannerAdd16
+BarcodeScannerAdd20
+BarcodeScannerAdd24
+BarcodeScannerAdd28
+BarcodeScannerAdd32
+BarcodeScannerAdd48
+BarcodeScannerDismiss16
+BarcodeScannerDismiss20
+BarcodeScannerDismiss24
+BarcodeScannerDismiss28
+BarcodeScannerDismiss32
+BarcodeScannerDismiss48
+DataBarVerticalEdit16
+DataBarVerticalEdit20
+DataBarVerticalEdit24
+NotepadPerson28
+NotepadPerson32
+NotepadPerson48
+NotepadPersonOff16
+NotepadPersonOff20
+NotepadPersonOff24
+NotepadPersonOff28
+NotepadPersonOff32
+NotepadPersonOff48
+BroomSparkle20
+ArrowCircleDownRight12
+ArrowClockwiseDashes12
+BroomSparkle16
+DiamondDismiss12
+PersonEdit32
+ShieldSettings16
+ShieldSettings20
+ShieldSettings24
+ShieldSettings28
+ArrowHookDownLeft32
+ArrowHookDownRight32
+ArrowHookUpLeft32
+ArrowHookUpRight32
+DoorArrowRight32
+PeopleSettings32
+StarAdd32
+PeopleInterwoven16
+PeopleInterwoven20
+PeopleInterwoven24
+PeopleInterwoven28
+PeopleInterwoven32
+PeopleInterwoven48
+AgentsAdd20
+AgentsAdd24
+ArrowExpand28
+CalendarDay32
+CalendarWorkWeek32
+PasswordClock16
+PasswordClock20
+PasswordClock24
+PersonShield16
+PersonShield20
+PersonShield24
+PersonShield28
+PersonShield32
+PersonShield48
+ShieldError28
+ShieldError32
+ShieldError48
+SlideTopicAdd16
+SlideTopicAdd20
+SlideTopicAdd32
+CalendarCheckmarkSparkle16
+CalendarCheckmarkSparkle20
+CalendarCheckmarkSparkle24
+CalendarCheckmarkSparkle28
+CalendarCheckmarkSparkle32
+CalendarCheckmarkSparkle48
+CalendarMonth16
+TaskListSquarePerson24
+TaskListSquarePerson48
+CalendarCheckmarkCenter16
+CalendarCheckmarkCenter20
+CalendarCheckmarkCenter24
+CalendarCheckmarkCenter28
+CalendarCheckmarkCenter32
+CalendarCheckmarkCenter48
+CheckmarkCircleHint16
+CheckmarkCircleHint20
+CheckmarkCircleHint24
+DocumentGlobe16
+MicSync16
+MicSync24
+MicSync28
+MicSync32
+MicSync48
+PeopleCheckmark32
+PersonGuest16
+PersonGuest20
+PersonGuest24
+EditLineHorizontal328
+PeopleCommunication16
+PeopleCommunication20
+PeopleCommunication24
+PeopleCommunication32
+TableFreezeColumnAndRowDismiss20
+TableFreezeColumnAndRowDismiss24
+TableFreezeColumnDismiss20
+TableFreezeColumnDismiss24
+TableFreezeRowDismiss20
+TableFreezeRowDismiss24
+LayoutAddAbove16
+LayoutAddAbove20
+LayoutAddAbove24
+LayoutAddAbove32
+LayoutAddBelow16
+LayoutAddBelow20
+LayoutAddBelow24
+LayoutAddBelow32
+LayoutColumnTwoEdit16
+LayoutColumnTwoEdit20
+LayoutColumnTwoEdit24
+LayoutColumnTwoEdit32
+Calendar3Day32
+CalendarDataBar32
+ClockPause16
+ClockWarning16
+ClockWarning20
+ClockWarning24
+ClockWarning28
+MailSettings28
+MailSettings32
+AgentsAdd16
+ArchiveClock16
+ArchiveClock20
+ArchiveClock24
+ArchiveClock28
+ArchiveClock32
+ArchiveClock48
+ArrowMaximizeTopLeftBottomRight16
+ArrowMaximizeTopLeftBottomRight20
+ArrowMaximizeTopLeftBottomRight24
+ArrowMaximizeTopLeftBottomRight28
+ArrowMinimizeTopLeftBottomRight16
+ArrowMinimizeTopLeftBottomRight20
+ArrowMinimizeTopLeftBottomRight24
+ArrowMinimizeTopLeftBottomRight28
+CalendarCheckmark32
+MailWarning28
+MailWarning32
+PeopleCommunication28
+PeopleCommunication48
+PeopleLock28
+PeopleLock32
+PersonVoice32
+PersonVoice48
+SendClock28
+TextEditStyle28
+TextEditStyleCharacterA28
+TextEditStyleCharacterGa28
+CalendarEye16
+CalendarEye24
+CalendarEye28
+CalendarEye32
+DeviceMeetingRoomBar12
+DeviceMeetingRoomBar16
+DeviceMeetingRoomBar20
+DeviceMeetingRoomBar24
+DeviceMeetingRoomBar28
+DeviceMeetingRoomBar32
+DeviceEq28
+DeviceEq32
+DeviceEq48
+DismissSquare28
+DismissSquare32
+DismissSquare48
+PersonKey16
+ScanText32
+ScanText48
+SoundWaveCircleAdd20
+SoundWaveCircleAdd24
+SoundWaveCircleAdd28
+DeviceMeetingRoomAllInOne12
+DeviceMeetingRoomAllInOne16
+DeviceMeetingRoomAllInOne20
+DeviceMeetingRoomAllInOne24
+DeviceMeetingRoomAllInOne28
+DeviceMeetingRoomAllInOne32
+VehicleTrailerArrowDown16
+VehicleTrailerArrowDown20
+--- Interfaces ---
+Wpf.Ui.Appearance.ApplicationThemeManager
+Wpf.Ui.Appearance.SystemThemeManager
+Wpf.Ui.ContentDialogService
+Wpf.Ui.Extensions.ContentDialogServiceExtensions
+Wpf.Ui.Extensions.SnackbarServiceExtensions
+Wpf.Ui.IContentDialogService
+Wpf.Ui.ISnackbarService
+Wpf.Ui.SnackbarService
+MISSING INavigationViewPageProvider
+== Wpf.Ui.Controls.NavigationView
+   System.Object GetHeaderContent(System.Windows.FrameworkElement)
+   Void SetHeaderContent(System.Windows.FrameworkElement, System.Object)
+   Wpf.Ui.Controls.INavigationViewItem get_SelectedItem()
+   Void add_PaneOpened(Wpf.Ui.Controls.TypedEventHandler`2[Wpf.Ui.Controls.NavigationView,System.Windows.RoutedEventArgs])
+   Void remove_PaneOpened(Wpf.Ui.Controls.TypedEventHandler`2[Wpf.Ui.Controls.NavigationView,System.Windows.RoutedEventArgs])
+   Void add_PaneClosed(Wpf.Ui.Controls.TypedEventHandler`2[Wpf.Ui.Controls.NavigationView,System.Windows.RoutedEventArgs])
+   Void remove_PaneClosed(Wpf.Ui.Controls.TypedEventHandler`2[Wpf.Ui.Controls.NavigationView,System.Windows.RoutedEventArgs])
+   Void add_SelectionChanged(Wpf.Ui.Controls.TypedEventHandler`2[Wpf.Ui.Controls.NavigationView,System.Windows.RoutedEventArgs])
+   Void remove_SelectionChanged(Wpf.Ui.Controls.TypedEventHandler`2[Wpf.Ui.Controls.NavigationView,System.Windows.RoutedEventArgs])
+   Void add_ItemInvoked(Wpf.Ui.Controls.TypedEventHandler`2[Wpf.Ui.Controls.NavigationView,System.Windows.RoutedEventArgs])
+   Void remove_ItemInvoked(Wpf.Ui.Controls.TypedEventHandler`2[Wpf.Ui.Controls.NavigationView,System.Windows.RoutedEventArgs])
+   Void add_BackRequested(Wpf.Ui.Controls.TypedEventHandler`2[Wpf.Ui.Controls.NavigationView,System.Windows.RoutedEventArgs])
+   Void remove_BackRequested(Wpf.Ui.Controls.TypedEventHandler`2[Wpf.Ui.Controls.NavigationView,System.Windows.RoutedEventArgs])
+   Void add_Navigating(Wpf.Ui.Controls.TypedEventHandler`2[Wpf.Ui.Controls.NavigationView,Wpf.Ui.Controls.NavigatingCancelEventArgs])
+   Void remove_Navigating(Wpf.Ui.Controls.TypedEventHandler`2[Wpf.Ui.Controls.NavigationView,Wpf.Ui.Controls.NavigatingCancelEventArgs])
+   Void add_Navigated(Wpf.Ui.Controls.TypedEventHandler`2[Wpf.Ui.Controls.NavigationView,Wpf.Ui.Controls.NavigatedEventArgs])
+   Void remove_Navigated(Wpf.Ui.Controls.TypedEventHandler`2[Wpf.Ui.Controls.NavigationView,Wpf.Ui.Controls.NavigatedEventArgs])
+   Boolean get_CanGoBack()
+   Void SetPageProviderService(Wpf.Ui.Abstractions.INavigationViewPageProvider)
+   Void SetServiceProvider(System.IServiceProvider)
+   Boolean Navigate(System.Type, System.Object)
+   Boolean Navigate(System.String, System.Object)
+   Boolean NavigateWithHierarchy(System.Type, System.Object)
+   Boolean ReplaceContent(System.Type)
+   Boolean ReplaceContent(System.Windows.UIElement, System.Object)
+   Boolean GoForward()
+   Boolean GoBack()
+   Void ClearJournal()
+   Boolean get_EnableDebugMessages()
+   Void set_EnableDebugMessages(Boolean)
+   System.Object get_Header()
+   Void set_Header(System.Object)
+   System.Windows.Visibility get_HeaderVisibility()
+   Void set_HeaderVisibility(System.Windows.Visibility)
+   Boolean get_AlwaysShowHeader()
+   Void set_AlwaysShowHeader(Boolean)
+   System.Collections.IList get_MenuItems()
+   System.Object get_MenuItemsSource()
+   Void set_MenuItemsSource(System.Object)
+   System.Collections.IList get_FooterMenuItems()
+   System.Object get_FooterMenuItemsSource()
+   Void set_FooterMenuItemsSource(System.Object)
+   Boolean get_IsTopSeparatorVisible()
+   Void set_IsTopSeparatorVisible(Boolean)
+   Boolean get_IsFooterSeparatorVisible()
+   Void set_IsFooterSeparatorVisible(Boolean)
+   System.Object get_ContentOverlay()
+   Void set_ContentOverlay(System.Object)
+   Boolean get_IsBackEnabled()
+   Wpf.Ui.Controls.NavigationViewBackButtonVisible get_IsBackButtonVisible()
+   Void set_IsBackButtonVisible(Wpf.Ui.Controls.NavigationViewBackButtonVisible)
+   Boolean get_IsPaneToggleVisible()
+   Void set_IsPaneToggleVisible(Boolean)
+   Boolean get_IsPaneOpen()
+   Void set_IsPaneOpen(Boolean)
+   Boolean get_IsPaneVisible()
+   Void set_IsPaneVisible(Boolean)
+   Double get_OpenPaneLength()
+   Void set_OpenPaneLength(Double)
+   Double get_CompactPaneLength()
+   Void set_CompactPaneLength(Double)
+   System.Object get_PaneHeader()
+   Void set_PaneHeader(System.Object)
+   System.String get_PaneTitle()
+   Void set_PaneTitle(System.String)
+   System.Object get_PaneFooter()
+   Void set_PaneFooter(System.Object)
+   Wpf.Ui.Controls.NavigationViewPaneDisplayMode get_PaneDisplayMode()
+   Void set_PaneDisplayMode(Wpf.Ui.Controls.NavigationViewPaneDisplayMode)
+   Wpf.Ui.Controls.AutoSuggestBox get_AutoSuggestBox()
+   Void set_AutoSuggestBox(Wpf.Ui.Controls.AutoSuggestBox)
+   Wpf.Ui.Controls.TitleBar get_TitleBar()
+   Void set_TitleBar(Wpf.Ui.Controls.TitleBar)
+   Wpf.Ui.Controls.BreadcrumbBar get_BreadcrumbBar()
+   Void set_BreadcrumbBar(Wpf.Ui.Controls.BreadcrumbBar)
+   System.Windows.Controls.ControlTemplate get_ItemTemplate()
+   Void set_ItemTemplate(System.Windows.Controls.ControlTemplate)
+   Int32 get_TransitionDuration()
+   Void set_TransitionDuration(Int32)
+   Wpf.Ui.Animations.Transition get_Transition()
+   Void set_Transition(Wpf.Ui.Animations.Transition)
+   System.Windows.Thickness get_FrameMargin()
+   Void set_FrameMargin(System.Windows.Thickness)
+   Void OnApplyTemplate()
+   Wpf.Ui.Controls.INavigationViewItem SelectedItem
+   Boolean CanGoBack
+   Boolean EnableDebugMessages
+   System.Object Header
+   System.Windows.Visibility HeaderVisibility
+   Boolean AlwaysShowHeader
+   System.Collections.IList MenuItems
+   System.Object MenuItemsSource
+   System.Collections.IList FooterMenuItems
+   System.Object FooterMenuItemsSource
+   Boolean IsTopSeparatorVisible
+   Boolean IsFooterSeparatorVisible
+   System.Object ContentOverlay
+   Boolean IsBackEnabled
+   Wpf.Ui.Controls.NavigationViewBackButtonVisible IsBackButtonVisible
+   Boolean IsPaneToggleVisible
+   Boolean IsPaneOpen
+   Boolean IsPaneVisible
+   Double OpenPaneLength
+   Double CompactPaneLength
+   System.Object PaneHeader
+   System.String PaneTitle
+   System.Object PaneFooter
+   Wpf.Ui.Controls.NavigationViewPaneDisplayMode PaneDisplayMode
+   Wpf.Ui.Controls.AutoSuggestBox AutoSuggestBox
+   Wpf.Ui.Controls.TitleBar TitleBar
+   Wpf.Ui.Controls.BreadcrumbBar BreadcrumbBar
+   System.Windows.Controls.ControlTemplate ItemTemplate
+   Int32 TransitionDuration
+   Wpf.Ui.Animations.Transition Transition
+   System.Windows.Thickness FrameMargin
+   System.Windows.DependencyProperty HeaderContentProperty
+   System.Windows.RoutedEvent PaneOpenedEvent
+   System.Windows.RoutedEvent PaneClosedEvent
+   System.Windows.RoutedEvent SelectionChangedEvent
+   System.Windows.RoutedEvent ItemInvokedEvent
+   System.Windows.RoutedEvent BackRequestedEvent
+   System.Windows.RoutedEvent NavigatingEvent
+   System.Windows.RoutedEvent NavigatedEvent
+   System.Windows.DependencyProperty EnableDebugMessagesProperty
+   System.Windows.DependencyProperty HeaderProperty
+   System.Windows.DependencyProperty HeaderVisibilityProperty
+   System.Windows.DependencyProperty AlwaysShowHeaderProperty
+   System.Windows.DependencyProperty MenuItemsProperty
+   System.Windows.DependencyProperty MenuItemsSourceProperty
+   System.Windows.DependencyProperty FooterMenuItemsProperty
+   System.Windows.DependencyProperty FooterMenuItemsSourceProperty
+   System.Windows.DependencyProperty IsTopSeparatorVisibleProperty
+   System.Windows.DependencyProperty IsFooterSeparatorVisibleProperty
+   System.Windows.DependencyProperty ContentOverlayProperty
+   System.Windows.DependencyProperty IsBackEnabledProperty
+   System.Windows.DependencyProperty IsBackButtonVisibleProperty
+   System.Windows.DependencyProperty IsPaneToggleVisibleProperty
+   System.Windows.DependencyProperty IsPaneOpenProperty
+   System.Windows.DependencyProperty IsPaneVisibleProperty
+   System.Windows.DependencyProperty OpenPaneLengthProperty
+   System.Windows.DependencyProperty CompactPaneLengthProperty
+   System.Windows.DependencyProperty PaneHeaderProperty
+   System.Windows.DependencyProperty PaneTitleProperty
+   System.Windows.DependencyProperty PaneFooterProperty
+   System.Windows.DependencyProperty PaneDisplayModeProperty
+   System.Windows.DependencyProperty AutoSuggestBoxProperty
+   System.Windows.DependencyProperty TitleBarProperty
+   System.Windows.DependencyProperty BreadcrumbBarProperty
+   System.Windows.DependencyProperty ItemTemplateProperty
+   System.Windows.DependencyProperty TransitionDurationProperty
+   System.Windows.DependencyProperty TransitionProperty
+   System.Windows.DependencyProperty FrameMarginProperty
+== Wpf.Ui.Controls.ContentDialog
+   System.Object get_Title()
+   Void set_Title(System.Object)
+   System.Windows.DataTemplate get_TitleTemplate()
+   Void set_TitleTemplate(System.Windows.DataTemplate)
+   Double get_DialogWidth()
+   Void set_DialogWidth(Double)
+   Double get_DialogHeight()
+   Void set_DialogHeight(Double)
+   Double get_DialogMaxWidth()
+   Void set_DialogMaxWidth(Double)
+   Double get_DialogMaxHeight()
+   Void set_DialogMaxHeight(Double)
+   System.Windows.Thickness get_DialogMargin()
+   Void set_DialogMargin(System.Windows.Thickness)
+   System.String get_PrimaryButtonText()
+   Void set_PrimaryButtonText(System.String)
+   System.String get_SecondaryButtonText()
+   Void set_SecondaryButtonText(System.String)
+   System.String get_CloseButtonText()
+   Void set_CloseButtonText(System.String)
+   Wpf.Ui.Controls.IconElement get_PrimaryButtonIcon()
+   Void set_PrimaryButtonIcon(Wpf.Ui.Controls.IconElement)
+   Wpf.Ui.Controls.IconElement get_SecondaryButtonIcon()
+   Void set_SecondaryButtonIcon(Wpf.Ui.Controls.IconElement)
+   Wpf.Ui.Controls.IconElement get_CloseButtonIcon()
+   Void set_CloseButtonIcon(Wpf.Ui.Controls.IconElement)
+   Boolean get_IsPrimaryButtonEnabled()
+   Void set_IsPrimaryButtonEnabled(Boolean)
+   Boolean get_IsSecondaryButtonEnabled()
+   Void set_IsSecondaryButtonEnabled(Boolean)
+   Wpf.Ui.Controls.ControlAppearance get_PrimaryButtonAppearance()
+   Void set_PrimaryButtonAppearance(Wpf.Ui.Controls.ControlAppearance)
+   Wpf.Ui.Controls.ControlAppearance get_SecondaryButtonAppearance()
+   Void set_SecondaryButtonAppearance(Wpf.Ui.Controls.ControlAppearance)
+   Wpf.Ui.Controls.ControlAppearance get_CloseButtonAppearance()
+   Void set_CloseButtonAppearance(Wpf.Ui.Controls.ControlAppearance)
+   Wpf.Ui.Controls.ContentDialogButton get_DefaultButton()
+   Void set_DefaultButton(Wpf.Ui.Controls.ContentDialogButton)
+   Boolean get_IsFooterVisible()
+   Void set_IsFooterVisible(Boolean)
+   Wpf.Ui.Input.IRelayCommand get_TemplateButtonCommand()
+   Void add_Opened(Wpf.Ui.Controls.TypedEventHandler`2[Wpf.Ui.Controls.ContentDialog,System.Windows.RoutedEventArgs])
+   Void remove_Opened(Wpf.Ui.Controls.TypedEventHandler`2[Wpf.Ui.Controls.ContentDialog,System.Windows.RoutedEventArgs])
+   Void add_Closing(Wpf.Ui.Controls.TypedEventHandler`2[Wpf.Ui.Controls.ContentDialog,Wpf.Ui.Controls.ContentDialogClosingEventArgs])
+   Void remove_Closing(Wpf.Ui.Controls.TypedEventHandler`2[Wpf.Ui.Controls.ContentDialog,Wpf.Ui.Controls.ContentDialogClosingEventArgs])
+   Void add_Closed(Wpf.Ui.Controls.TypedEventHandler`2[Wpf.Ui.Controls.ContentDialog,Wpf.Ui.Controls.ContentDialogClosedEventArgs])
+   Void remove_Closed(Wpf.Ui.Controls.TypedEventHandler`2[Wpf.Ui.Controls.ContentDialog,Wpf.Ui.Controls.ContentDialogClosedEventArgs])
+   Void add_ButtonClicked(Wpf.Ui.Controls.TypedEventHandler`2[Wpf.Ui.Controls.ContentDialog,Wpf.Ui.Controls.ContentDialogButtonClickEventArgs])
+   Void remove_ButtonClicked(Wpf.Ui.Controls.TypedEventHandler`2[Wpf.Ui.Controls.ContentDialog,Wpf.Ui.Controls.ContentDialogButtonClickEventArgs])
+   Boolean get_IsLegacyHost()
+   System.Windows.Controls.ContentPresenter get_DialogHost()
+   Void set_DialogHost(System.Windows.Controls.ContentPresenter)
+   Wpf.Ui.Controls.ContentDialogHost get_DialogHostEx()
+   Void set_DialogHostEx(Wpf.Ui.Controls.ContentDialogHost)
+   System.Windows.Controls.ContentPresenter get_ContentPresenter()
+   Void set_ContentPresenter(System.Windows.Controls.ContentPresenter)
+   System.Threading.Tasks.Task`1[Wpf.Ui.Controls.ContentDialogResult] ShowAsync(System.Threading.CancellationToken)
+   Void Hide(Wpf.Ui.Controls.ContentDialogResult)
+   Boolean IsFocusInsideDialog()
+   System.Object Title
+   System.Windows.DataTemplate TitleTemplate
+   Double DialogWidth
+   Double DialogHeight
+   Double DialogMaxWidth
+   Double DialogMaxHeight
+   System.Windows.Thickness DialogMargin
+   System.String PrimaryButtonText
+   System.String SecondaryButtonText
+   System.String CloseButtonText
+   Wpf.Ui.Controls.IconElement PrimaryButtonIcon
+   Wpf.Ui.Controls.IconElement SecondaryButtonIcon
+   Wpf.Ui.Controls.IconElement CloseButtonIcon
+   Boolean IsPrimaryButtonEnabled
+   Boolean IsSecondaryButtonEnabled
+   Wpf.Ui.Controls.ControlAppearance PrimaryButtonAppearance
+   Wpf.Ui.Controls.ControlAppearance SecondaryButtonAppearance
+   Wpf.Ui.Controls.ControlAppearance CloseButtonAppearance
+   Wpf.Ui.Controls.ContentDialogButton DefaultButton
+   Boolean IsFooterVisible
+   Wpf.Ui.Input.IRelayCommand TemplateButtonCommand
+   Boolean IsLegacyHost
+   System.Windows.Controls.ContentPresenter DialogHost
+   Wpf.Ui.Controls.ContentDialogHost DialogHostEx
+   System.Windows.Controls.ContentPresenter ContentPresenter
+   System.Windows.DependencyProperty TitleProperty
+   System.Windows.DependencyProperty TitleTemplateProperty
+   System.Windows.DependencyProperty DialogWidthProperty
+   System.Windows.DependencyProperty DialogHeightProperty
+   System.Windows.DependencyProperty DialogMaxWidthProperty
+   System.Windows.DependencyProperty DialogMaxHeightProperty
+   System.Windows.DependencyProperty DialogMarginProperty
+   System.Windows.DependencyProperty PrimaryButtonTextProperty
+   System.Windows.DependencyProperty SecondaryButtonTextProperty
+   System.Windows.DependencyProperty CloseButtonTextProperty
+   System.Windows.DependencyProperty PrimaryButtonIconProperty
+   System.Windows.DependencyProperty SecondaryButtonIconProperty
+   System.Windows.DependencyProperty CloseButtonIconProperty
+   System.Windows.DependencyProperty IsPrimaryButtonEnabledProperty
+   System.Windows.DependencyProperty IsSecondaryButtonEnabledProperty
+   System.Windows.DependencyProperty PrimaryButtonAppearanceProperty
+   System.Windows.DependencyProperty SecondaryButtonAppearanceProperty
+   System.Windows.DependencyProperty CloseButtonAppearanceProperty
+   System.Windows.DependencyProperty DefaultButtonProperty
+   System.Windows.DependencyProperty IsFooterVisibleProperty
+   System.Windows.DependencyProperty TemplateButtonCommandProperty
+   System.Windows.DependencyProperty IsLegacyHostProperty
+   System.Windows.RoutedEvent OpenedEvent
+   System.Windows.RoutedEvent ClosingEvent
+   System.Windows.RoutedEvent ClosedEvent
+   System.Windows.RoutedEvent ButtonClickedEvent
+== Wpf.Ui.ContentDialogService
+   Void SetContentPresenter(System.Windows.Controls.ContentPresenter)
+   System.Windows.Controls.ContentPresenter GetContentPresenter()
+   Void SetDialogHost(System.Windows.Controls.ContentPresenter)
+   System.Windows.Controls.ContentPresenter GetDialogHost()
+   Void SetDialogHost(Wpf.Ui.Controls.ContentDialogHost)
+   Wpf.Ui.Controls.ContentDialogHost GetDialogHostEx()
+   System.Threading.Tasks.Task`1[Wpf.Ui.Controls.ContentDialogResult] ShowAsync(Wpf.Ui.Controls.ContentDialog, System.Threading.CancellationToken)
+== Wpf.Ui.SnackbarService
+   System.TimeSpan get_DefaultTimeOut()
+   Void set_DefaultTimeOut(System.TimeSpan)
+   Void SetSnackbarPresenter(Wpf.Ui.Controls.SnackbarPresenter)
+   Wpf.Ui.Controls.SnackbarPresenter GetSnackbarPresenter()
+   Void Show(System.String, System.String, Wpf.Ui.Controls.ControlAppearance, Wpf.Ui.Controls.IconElement, System.TimeSpan)
+   System.TimeSpan DefaultTimeOut
+== Wpf.Ui.Controls.Snackbar
+   Boolean get_IsCloseButtonEnabled()
+   Void set_IsCloseButtonEnabled(Boolean)
+   System.Windows.Media.TranslateTransform get_SlideTransform()
+   Void set_SlideTransform(System.Windows.Media.TranslateTransform)
+   Boolean get_IsShown()
+   Void set_IsShown(Boolean)
+   System.TimeSpan get_Timeout()
+   Void set_Timeout(System.TimeSpan)
+   System.Object get_Title()
+   Void set_Title(System.Object)
+   System.Windows.DataTemplate get_TitleTemplate()
+   Void set_TitleTemplate(System.Windows.DataTemplate)
+   Wpf.Ui.Controls.IconElement get_Icon()
+   Void set_Icon(Wpf.Ui.Controls.IconElement)
+   Wpf.Ui.Controls.ControlAppearance get_Appearance()
+   Void set_Appearance(Wpf.Ui.Controls.ControlAppearance)
+   System.Windows.Media.Brush get_ContentForeground()
+   Void set_ContentForeground(System.Windows.Media.Brush)
+   Wpf.Ui.Input.IRelayCommand get_TemplateButtonCommand()
+   Void add_Opened(Wpf.Ui.Controls.TypedEventHandler`2[Wpf.Ui.Controls.Snackbar,System.Windows.RoutedEventArgs])
+   Void remove_Opened(Wpf.Ui.Controls.TypedEventHandler`2[Wpf.Ui.Controls.Snackbar,System.Windows.RoutedEventArgs])
+   Void add_Closed(Wpf.Ui.Controls.TypedEventHandler`2[Wpf.Ui.Controls.Snackbar,System.Windows.RoutedEventArgs])
+   Void remove_Closed(Wpf.Ui.Controls.TypedEventHandler`2[Wpf.Ui.Controls.Snackbar,System.Windows.RoutedEventArgs])
+   Void Show()
+   Void Show(Boolean)
+   System.Threading.Tasks.Task ShowAsync()
+   System.Threading.Tasks.Task ShowAsync(Boolean)
+   Boolean IsCloseButtonEnabled
+   System.Windows.Media.TranslateTransform SlideTransform
+   Boolean IsShown
+   System.TimeSpan Timeout
+   System.Object Title
+   System.Windows.DataTemplate TitleTemplate
+   Wpf.Ui.Controls.IconElement Icon
+   Wpf.Ui.Controls.ControlAppearance Appearance
+   System.Windows.Media.Brush ContentForeground
+   Wpf.Ui.Input.IRelayCommand TemplateButtonCommand
+   System.Windows.DependencyProperty IsCloseButtonEnabledProperty
+   System.Windows.DependencyProperty SlideTransformProperty
+   System.Windows.DependencyProperty IsShownProperty
+   System.Windows.DependencyProperty TimeoutProperty
+   System.Windows.DependencyProperty TitleProperty
+   System.Windows.DependencyProperty TitleTemplateProperty
+   System.Windows.DependencyProperty IconProperty
+   System.Windows.DependencyProperty AppearanceProperty
+   System.Windows.DependencyProperty TemplateButtonCommandProperty
+   System.Windows.DependencyProperty ContentForegroundProperty
+   System.Windows.RoutedEvent OpenedEvent
+   System.Windows.RoutedEvent ClosedEvent
+MISSING Shimmer
+== Wpf.Ui.Controls.Card
+   System.Object get_Footer()
+   Void set_Footer(System.Object)
+   Boolean get_HasFooter()
+   System.Object Footer
+   Boolean HasFooter
+   System.Windows.DependencyProperty FooterProperty
+   System.Windows.DependencyProperty HasFooterProperty
+== Wpf.Ui.Controls.FluentWindow
+   Wpf.Ui.Controls.WindowCornerPreference get_WindowCornerPreference()
+   Void set_WindowCornerPreference(Wpf.Ui.Controls.WindowCornerPreference)
+   Wpf.Ui.Controls.WindowBackdropType get_WindowBackdropType()
+   Void set_WindowBackdropType(Wpf.Ui.Controls.WindowBackdropType)
+   Boolean get_ExtendsContentIntoTitleBar()
+   Void set_ExtendsContentIntoTitleBar(Boolean)
+   Wpf.Ui.Controls.WindowCornerPreference WindowCornerPreference
+   Wpf.Ui.Controls.WindowBackdropType WindowBackdropType
+   Boolean ExtendsContentIntoTitleBar
+   System.Windows.DependencyProperty WindowCornerPreferenceProperty
+   System.Windows.DependencyProperty WindowBackdropTypeProperty
+   System.Windows.DependencyProperty ExtendsContentIntoTitleBarProperty
+== Wpf.Ui.Controls.NavigationViewItem
+   System.Collections.IList get_MenuItems()
+   System.Object get_MenuItemsSource()
+   Void set_MenuItemsSource(System.Object)
+   Boolean get_HasMenuItems()
+   Boolean get_IsActive()
+   Void set_IsActive(Boolean)
+   Boolean get_IsExpanded()
+   Void set_IsExpanded(Boolean)
+   Boolean get_IsPaneOpen()
+   Void set_IsPaneOpen(Boolean)
+   Wpf.Ui.Controls.IconElement get_Icon()
+   Void set_Icon(Wpf.Ui.Controls.IconElement)
+   System.String get_TargetPageTag()
+   Void set_TargetPageTag(System.String)
+   System.Type get_TargetPageType()
+   Void set_TargetPageType(System.Type)
+   Wpf.Ui.Controls.InfoBadge get_InfoBadge()
+   Void set_InfoBadge(Wpf.Ui.Controls.InfoBadge)
+   Wpf.Ui.Controls.NavigationCacheMode get_NavigationCacheMode()
+   Void set_NavigationCacheMode(Wpf.Ui.Controls.NavigationCacheMode)
+   Wpf.Ui.Controls.INavigationViewItem get_NavigationViewItemParent()
+   Void set_NavigationViewItemParent(Wpf.Ui.Controls.INavigationViewItem)
+   Boolean get_IsMenuElement()
+   Void set_IsMenuElement(Boolean)
+   System.String get_Id()
+   Void Activate(Wpf.Ui.Controls.INavigationView)
+   Void Deactivate(Wpf.Ui.Controls.INavigationView)
+   Void OnApplyTemplate()
+   System.Collections.IList MenuItems
+   System.Object MenuItemsSource
+   Boolean HasMenuItems
+   Boolean IsActive
+   Boolean IsExpanded
+   Boolean IsPaneOpen
+   Wpf.Ui.Controls.IconElement Icon
+   System.String TargetPageTag
+   System.Type TargetPageType
+   Wpf.Ui.Controls.InfoBadge InfoBadge
+   Wpf.Ui.Controls.NavigationCacheMode NavigationCacheMode
+   Wpf.Ui.Controls.INavigationViewItem NavigationViewItemParent
+   Boolean IsMenuElement
+   System.String Id
+   System.Windows.DependencyProperty MenuItemsProperty
+   System.Windows.DependencyProperty MenuItemsSourceProperty
+   System.Windows.DependencyProperty HasMenuItemsProperty
+   System.Windows.DependencyProperty IsActiveProperty
+   System.Windows.DependencyProperty IsPaneOpenProperty
+   System.Windows.DependencyProperty IsExpandedProperty
+   System.Windows.DependencyProperty IconProperty
+   System.Windows.DependencyProperty TargetPageTagProperty
+   System.Windows.DependencyProperty TargetPageTypeProperty
+   System.Windows.DependencyProperty InfoBadgeProperty
+   System.Windows.DependencyProperty NavigationCacheModeProperty
+== Wpf.Ui.Controls.TextBox
+   Wpf.Ui.Controls.IconElement get_Icon()
+   Void set_Icon(Wpf.Ui.Controls.IconElement)
+   Wpf.Ui.Controls.ElementPlacement get_IconPlacement()
+   Void set_IconPlacement(Wpf.Ui.Controls.ElementPlacement)
+   System.String get_PlaceholderText()
+   Void set_PlaceholderText(System.String)
+   Boolean get_PlaceholderEnabled()
+   Void set_PlaceholderEnabled(Boolean)
+   Boolean get_CurrentPlaceholderEnabled()
+   Boolean get_ClearButtonEnabled()
+   Void set_ClearButtonEnabled(Boolean)
+   Boolean get_ShowClearButton()
+   Boolean get_IsTextSelectionEnabled()
+   Void set_IsTextSelectionEnabled(Boolean)
+   Wpf.Ui.Input.IRelayCommand get_TemplateButtonCommand()
+   Wpf.Ui.Controls.IconElement Icon
+   Wpf.Ui.Controls.ElementPlacement IconPlacement
+   System.String PlaceholderText
+   Boolean PlaceholderEnabled
+   Boolean CurrentPlaceholderEnabled
+   Boolean ClearButtonEnabled
+   Boolean ShowClearButton
+   Boolean IsTextSelectionEnabled
+   Wpf.Ui.Input.IRelayCommand TemplateButtonCommand
+   System.Windows.DependencyProperty IconProperty
+   System.Windows.DependencyProperty IconPlacementProperty
+   System.Windows.DependencyProperty PlaceholderTextProperty
+   System.Windows.DependencyProperty PlaceholderEnabledProperty
+   System.Windows.DependencyProperty CurrentPlaceholderEnabledProperty
+   System.Windows.DependencyProperty ClearButtonEnabledProperty
+   System.Windows.DependencyProperty ShowClearButtonProperty
+   System.Windows.DependencyProperty IsTextSelectionEnabledProperty
+   System.Windows.DependencyProperty TemplateButtonCommandProperty
+== Wpf.Ui.Controls.NumberBox
+   System.Nullable`1[System.Double] get_Value()
+   Void set_Value(System.Nullable`1[System.Double])
+   Int32 get_MaxDecimalPlaces()
+   Void set_MaxDecimalPlaces(Int32)
+   Double get_SmallChange()
+   Void set_SmallChange(Double)
+   Double get_LargeChange()
+   Void set_LargeChange(Double)
+   Double get_Maximum()
+   Void set_Maximum(Double)
+   Double get_Minimum()
+   Void set_Minimum(Double)
+   Boolean get_AcceptsExpression()
+   Void set_AcceptsExpression(Boolean)
+   Wpf.Ui.Controls.INumberFormatter get_NumberFormatter()
+   Void set_NumberFormatter(Wpf.Ui.Controls.INumberFormatter)
+   Wpf.Ui.Controls.NumberBoxSpinButtonPlacementMode get_SpinButtonPlacementMode()
+   Void set_SpinButtonPlacementMode(Wpf.Ui.Controls.NumberBoxSpinButtonPlacementMode)
+   Wpf.Ui.Controls.NumberBoxValidationMode get_ValidationMode()
+   Void set_ValidationMode(Wpf.Ui.Controls.NumberBoxValidationMode)
+   Void add_ValueChanged(Wpf.Ui.Controls.NumberBoxValueChangedEvent)
+   Void remove_ValueChanged(Wpf.Ui.Controls.NumberBoxValueChangedEvent)
+   Void OnApplyTemplate()
+   System.Nullable`1[System.Double] Value
+   Int32 MaxDecimalPlaces
+   Double SmallChange
+   Double LargeChange
+   Double Maximum
+   Double Minimum
+   Boolean AcceptsExpression
+   Wpf.Ui.Controls.INumberFormatter NumberFormatter
+   Wpf.Ui.Controls.NumberBoxSpinButtonPlacementMode SpinButtonPlacementMode
+   Wpf.Ui.Controls.NumberBoxValidationMode ValidationMode
+   System.Windows.DependencyProperty ValueProperty
+   System.Windows.DependencyProperty MaxDecimalPlacesProperty
+   System.Windows.DependencyProperty SmallChangeProperty
+   System.Windows.DependencyProperty LargeChangeProperty
+   System.Windows.DependencyProperty MaximumProperty
+   System.Windows.DependencyProperty MinimumProperty
+   System.Windows.DependencyProperty AcceptsExpressionProperty
+   System.Windows.DependencyProperty SpinButtonPlacementModeProperty
+   System.Windows.DependencyProperty ValidationModeProperty
+   System.Windows.DependencyProperty NumberFormatterProperty
+   System.Windows.RoutedEvent ValueChangedEvent
+== Wpf.Ui.Controls.DataGrid
+   System.Windows.Style get_CheckBoxColumnElementStyle()
+   Void set_CheckBoxColumnElementStyle(System.Windows.Style)
+   System.Windows.Style get_CheckBoxColumnEditingElementStyle()
+   Void set_CheckBoxColumnEditingElementStyle(System.Windows.Style)
+   System.Windows.Style get_ComboBoxColumnElementStyle()
+   Void set_ComboBoxColumnElementStyle(System.Windows.Style)
+   System.Windows.Style get_ComboBoxColumnEditingElementStyle()
+   Void set_ComboBoxColumnEditingElementStyle(System.Windows.Style)
+   System.Windows.Style get_TextColumnElementStyle()
+   Void set_TextColumnElementStyle(System.Windows.Style)
+   System.Windows.Style get_TextColumnEditingElementStyle()
+   Void set_TextColumnEditingElementStyle(System.Windows.Style)
+   System.Windows.Style CheckBoxColumnElementStyle
+   System.Windows.Style CheckBoxColumnEditingElementStyle
+   System.Windows.Style ComboBoxColumnElementStyle
+   System.Windows.Style ComboBoxColumnEditingElementStyle
+   System.Windows.Style TextColumnElementStyle
+   System.Windows.Style TextColumnEditingElementStyle
+   System.Windows.DependencyProperty CheckBoxColumnElementStyleProperty
+   System.Windows.DependencyProperty CheckBoxColumnEditingElementStyleProperty
+   System.Windows.DependencyProperty ComboBoxColumnElementStyleProperty
+   System.Windows.DependencyProperty ComboBoxColumnEditingElementStyleProperty
+   System.Windows.DependencyProperty TextColumnElementStyleProperty
+   System.Windows.DependencyProperty TextColumnEditingElementStyleProperty
+== Wpf.Ui.Controls.AutoSuggestBox
+   System.Collections.IList get_OriginalItemsSource()
+   Void set_OriginalItemsSource(System.Collections.IList)
+   Boolean get_IsSuggestionListOpen()
+   Void set_IsSuggestionListOpen(Boolean)
+   System.String get_Text()
+   Void set_Text(System.String)
+   System.String get_PlaceholderText()
+   Void set_PlaceholderText(System.String)
+   Double get_MaxSuggestionListHeight()
+   Void set_MaxSuggestionListHeight(Double)
+   Boolean get_UpdateTextOnSelect()
+   Void set_UpdateTextOnSelect(Boolean)
+   Wpf.Ui.Controls.IconElement get_Icon()
+   Void set_Icon(Wpf.Ui.Controls.IconElement)
+   Boolean get_ClearButtonEnabled()
+   Void set_ClearButtonEnabled(Boolean)
+   System.Windows.Input.ICommand get_FocusCommand()
+   Void add_QuerySubmitted(Wpf.Ui.Controls.TypedEventHandler`2[Wpf.Ui.Controls.AutoSuggestBox,Wpf.Ui.Controls.AutoSuggestBoxQuerySubmittedEventArgs])
+   Void remove_QuerySubmitted(Wpf.Ui.Controls.TypedEventHandler`2[Wpf.Ui.Controls.AutoSuggestBox,Wpf.Ui.Controls.AutoSuggestBoxQuerySubmittedEventArgs])
+   Void add_SuggestionChosen(Wpf.Ui.Controls.TypedEventHandler`2[Wpf.Ui.Controls.AutoSuggestBox,Wpf.Ui.Controls.AutoSuggestBoxSuggestionChosenEventArgs])
+   Void remove_SuggestionChosen(Wpf.Ui.Controls.TypedEventHandler`2[Wpf.Ui.Controls.AutoSuggestBox,Wpf.Ui.Controls.AutoSuggestBoxSuggestionChosenEventArgs])
+   Void add_TextChanged(Wpf.Ui.Controls.TypedEventHandler`2[Wpf.Ui.Controls.AutoSuggestBox,Wpf.Ui.Controls.AutoSuggestBoxTextChangedEventArgs])
+   Void remove_TextChanged(Wpf.Ui.Controls.TypedEventHandler`2[Wpf.Ui.Controls.AutoSuggestBox,Wpf.Ui.Controls.AutoSuggestBoxTextChangedEventArgs])
+   Void OnApplyTemplate()
+   Boolean Focus()
+   System.Collections.IList OriginalItemsSource
+   Boolean IsSuggestionListOpen
+   System.String Text
+   System.String PlaceholderText
+   Double MaxSuggestionListHeight
+   Boolean UpdateTextOnSelect
+   Wpf.Ui.Controls.IconElement Icon
+   Boolean ClearButtonEnabled
+   System.Windows.Input.ICommand FocusCommand
+   System.Windows.DependencyProperty OriginalItemsSourceProperty
+   System.Windows.DependencyProperty IsSuggestionListOpenProperty
+   System.Windows.DependencyProperty TextProperty
+   System.Windows.DependencyProperty PlaceholderTextProperty
+   System.Windows.DependencyProperty UpdateTextOnSelectProperty
+   System.Windows.DependencyProperty MaxSuggestionListHeightProperty
+   System.Windows.DependencyProperty IconProperty
+   System.Windows.DependencyProperty FocusCommandProperty
+   System.Windows.DependencyProperty ClearButtonEnabledProperty
+   System.Windows.RoutedEvent QuerySubmittedEvent
+   System.Windows.RoutedEvent SuggestionChosenEvent
+   System.Windows.RoutedEvent TextChangedEvent
+== Wpf.Ui.Appearance.ApplicationThemeManager
+   Void add_Changed(Wpf.Ui.Appearance.ThemeChangedEvent)
+   Void remove_Changed(Wpf.Ui.Appearance.ThemeChangedEvent)
+   Boolean IsHighContrast()
+   Boolean IsSystemHighContrast()
+   Void Apply(Wpf.Ui.Appearance.ApplicationTheme, Wpf.Ui.Controls.WindowBackdropType, Boolean)
+   Void Apply(System.Windows.FrameworkElement)
+   Void ApplySystemTheme()
+   Void ApplySystemTheme(Boolean)
+   Wpf.Ui.Appearance.ApplicationTheme GetAppTheme()
+   Wpf.Ui.Appearance.SystemTheme GetSystemTheme()
+   Boolean IsAppMatchesSystem()
+   Boolean IsMatchedDark()
+   Boolean IsMatchedLight()

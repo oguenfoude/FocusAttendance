@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <IsPackable>false</IsPackable>
+    <RootNamespace>FocusAttendance.Tests</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" />
+    <PackageReference Include="xunit" />
+    <PackageReference Include="xunit.runner.visualstudio" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\FocusAttendance.Domain\FocusAttendance.Domain.csproj" />
+    <ProjectReference Include="..\..\src\FocusAttendance.Data\FocusAttendance.Data.csproj" />
+    <ProjectReference Include="..\..\src\FocusAttendance.Hardware\FocusAttendance.Hardware.csproj" />
+    <ProjectReference Include="..\..\src\FocusAttendance.Application\FocusAttendance.Application.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Using Include="Xunit" />
+  </ItemGroup>
+
+</Project>

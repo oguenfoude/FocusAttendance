@@ -1,0 +1,148 @@
+<ui:FluentWindow x:Class="FocusAttendance.App.Views.LoginWindow"
+                 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                 xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+                 Title="Focus Attendance — OPGI M'Sila"
+                 Width="990" Height="660" MinWidth="920" MinHeight="620"
+                 WindowStartupLocation="CenterScreen"
+                 WindowBackdropType="Mica"
+                 ExtendsContentIntoTitleBar="True"
+                 FontFamily="Segoe UI Variable Text, Segoe UI, Dubai, Tahoma">
+
+    <Grid x:Name="Root">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <ui:TitleBar Grid.Row="0" Title="{DynamicResource App.BrandName}" Header="{DynamicResource App.Organisation}"
+                     ShowMaximize="False" ShowHelp="False">
+            <ui:TitleBar.TrailingContent>
+                <StackPanel Orientation="Horizontal">
+                    <Button Style="{StaticResource GhostAction}" Command="{Binding ToggleThemeCommand}"
+                            ToolTip="{DynamicResource App.Theme}" Margin="0,0,4,0">
+                        <ui:SymbolIcon x:Name="LoginThemeIcon" Symbol="WeatherSunny24" FontSize="14" />
+                    </Button>
+                    <Button Style="{StaticResource GhostAction}" Command="{Binding ToggleLanguageCommand}"
+                            Content="{Binding LanguageLabel}" Margin="0,0,8,0" FontSize="11.5" />
+                </StackPanel>
+            </ui:TitleBar.TrailingContent>
+        </ui:TitleBar>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1.18*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+
+            <!-- Brand panel -->
+            <Border Grid.Column="0" Background="{DynamicResource PrimaryGradientBrush}">
+                <Grid>
+                    <Rectangle Fill="{DynamicResource PatternBrush}" />
+                    <StackPanel VerticalAlignment="Center" Margin="56,0,56,0">
+                        <Border Background="#33FFFFFF" BorderBrush="#55FFFFFF" BorderThickness="1" CornerRadius="6"
+                                Padding="9,4" HorizontalAlignment="Left">
+                            <TextBlock Text="FOCUSPLUS" Foreground="White" FontSize="10" FontWeight="Bold" />
+                        </Border>
+                        <StackPanel Orientation="Horizontal" Margin="0,22,0,0">
+                            <Border Width="64" Height="64" CornerRadius="16" Background="#22FFFFFF"
+                                    BorderBrush="#55FFFFFF" BorderThickness="1">
+                                <TextBlock Text="OPGI" FontSize="16" FontWeight="Bold" Foreground="White"
+                                           HorizontalAlignment="Center" VerticalAlignment="Center" />
+                            </Border>
+                            <StackPanel Margin="16,0,0,0" VerticalAlignment="Center">
+                                <TextBlock Text="FocusAttendance" Foreground="White" FontSize="26" FontWeight="Bold" />
+                                <TextBlock Text="{Binding BrandBranch}" Foreground="#BFDBFE" FontSize="11.5"
+                                           TextWrapping="Wrap" MaxWidth="330" />
+                            </StackPanel>
+                        </StackPanel>
+
+                        <TextBlock Text="{DynamicResource Login.BrandTitle}" Margin="0,26,0,0"
+                                   Foreground="White" FontSize="21" FontWeight="SemiBold"
+                                   TextWrapping="Wrap" MaxWidth="430" />
+                        <Border Width="56" Height="3" Background="#93C5FD"
+                                HorizontalAlignment="Left" Margin="0,14,0,14" CornerRadius="2" />
+                        <TextBlock Text="{DynamicResource Login.BrandText}" Foreground="#DBEAFE"
+                                   FontSize="13" TextWrapping="Wrap" MaxWidth="410" LineHeight="22" />
+
+                        <StackPanel Margin="0,30,0,0">
+                            <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                                <ui:SymbolIcon Symbol="Calendar24" FontSize="15" Foreground="#F0C98A" />
+                                <TextBlock Text="{DynamicResource Attendance.Week}" Foreground="#E7F5EF"
+                                           Margin="10,0,0,0" FontSize="12.5" VerticalAlignment="Center" />
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                                <ui:SymbolIcon Symbol="Clock24" FontSize="15" Foreground="#F0C98A" />
+                                <TextBlock Text="08:00 → 12:00 / 13:00 → 16:30" Foreground="#E7F5EF"
+                                           Margin="10,0,0,0" FontSize="12.5" VerticalAlignment="Center" />
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <ui:SymbolIcon Symbol="Scan24" FontSize="15" Foreground="#F0C98A" />
+                                <TextBlock Text="ZKTeco • Port 4370" Foreground="#E7F5EF"
+                                           Margin="10,0,0,0" FontSize="12.5" VerticalAlignment="Center" />
+                            </StackPanel>
+                        </StackPanel>
+                    </StackPanel>
+
+                    <TextBlock Text="{DynamicResource App.OrganisationLong}" VerticalAlignment="Bottom"
+                               Margin="56,0,56,28" Foreground="#9FC9BE" FontSize="11" TextWrapping="Wrap" />
+                </Grid>
+            </Border>
+
+            <!-- Login form -->
+            <Grid Grid.Column="1" Background="{DynamicResource AppBgGradientBrush}">
+                <StackPanel VerticalAlignment="Center" Margin="52,0,52,0" MaxWidth="400" HorizontalAlignment="Left">
+                    <TextBlock Text="{DynamicResource Login.Eyebrow}" Style="{StaticResource Eyebrow}" />
+                    <TextBlock Text="{DynamicResource Login.Welcome}" FontSize="30" FontWeight="SemiBold"
+                               Foreground="{DynamicResource TextPrimaryBrush}" Margin="0,6,0,0" />
+                    <TextBlock Text="{DynamicResource Login.Subtitle}" Style="{StaticResource PageSubtitle}"
+                               Margin="0,8,0,24" />
+
+                    <TextBlock Text="{DynamicResource Login.Username}" Style="{StaticResource FieldLabel}" />
+                    <ui:TextBox x:Name="UsernameBox" Text="{Binding Username, UpdateSourceTrigger=PropertyChanged}"
+                                PlaceholderText="{DynamicResource Login.Username}" MinHeight="38" Margin="0,0,0,14" />
+
+                    <TextBlock Text="{DynamicResource Login.Password}" Style="{StaticResource FieldLabel}" />
+                    <ui:PasswordBox x:Name="PasswordBox" Password="{Binding Password, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                    PlaceholderText="{DynamicResource Login.Password}" MinHeight="38"
+                                    RevealButtonEnabled="True" KeyDown="OnPasswordKeyDown" />
+
+                    <TextBlock Text="{Binding ErrorText}" Foreground="{DynamicResource DangerBrush}" FontSize="11.5"
+                               TextWrapping="Wrap" Margin="0,10,0,0"
+                               Visibility="{Binding ErrorText, Converter={StaticResource StringEmptyToVisibility}}" />
+
+                    <CheckBox Content="{DynamicResource Login.Remember}" IsChecked="{Binding RememberUsername}"
+                              Margin="0,12,0,0" FontSize="12" />
+
+                    <Button Style="{StaticResource PrimaryAction}" Command="{Binding LoginCommand}" IsDefault="True"
+                            Height="42" Margin="0,14,0,0">
+                        <StackPanel Orientation="Horizontal">
+                            <ui:SymbolIcon Symbol="ArrowRight24" FontSize="15" Margin="0,0,8,0" />
+                            <TextBlock Text="{DynamicResource Login.SignIn}" />
+                        </StackPanel>
+                    </Button>
+
+                    <Border Style="{StaticResource Pill}" HorizontalAlignment="Left" Margin="0,16,0,0">
+                        <StackPanel Orientation="Horizontal">
+                            <Ellipse Width="7" Height="7" Margin="0,0,6,0">
+                                <Ellipse.Style>
+                                    <Style TargetType="Ellipse">
+                                        <Setter Property="Fill" Value="{DynamicResource DangerBrush}" />
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding DatabaseHealthy}" Value="True">
+                                                <Setter Property="Fill" Value="{DynamicResource SuccessBrush}" />
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Ellipse.Style>
+                            </Ellipse>
+                            <TextBlock Text="{Binding DatabaseStatus}" Style="{StaticResource PillText}" />
+                        </StackPanel>
+                    </Border>
+
+                    <TextBlock Text="{DynamicResource Login.Hint}" Style="{StaticResource Caption}" Margin="0,14,0,0" />
+                </StackPanel>
+            </Grid>
+        </Grid>
+    </Grid>
+</ui:FluentWindow>

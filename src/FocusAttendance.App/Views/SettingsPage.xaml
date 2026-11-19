@@ -1,0 +1,588 @@
+<UserControl x:Class="FocusAttendance.App.Views.SettingsPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+             xmlns:controls="clr-namespace:FocusAttendance.App.Controls"
+             xmlns:loc="clr-namespace:FocusAttendance.App.Infrastructure">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Grid Margin="0,0,6,12">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <StackPanel>
+                <TextBlock Text="{DynamicResource Settings.Title}" Style="{StaticResource PageTitle}" />
+                <TextBlock Text="{DynamicResource Settings.Subtitle}" Style="{StaticResource PageSubtitle}" Margin="0,3,0,0" />
+            </StackPanel>
+            <Button Grid.Column="1" Style="{StaticResource SecondaryAction}" Command="{Binding RefreshCommand}" VerticalAlignment="Center">
+                <StackPanel Orientation="Horizontal">
+                    <ui:SymbolIcon Symbol="ArrowSync24" FontSize="14" Margin="0,0,8,0" />
+                    <TextBlock Text="{DynamicResource App.Refresh}" />
+                </StackPanel>
+            </Button>
+        </Grid>
+
+        <TabControl Grid.Row="1" Background="Transparent" BorderThickness="0" Padding="0,6,0,0">
+            <TabItem Header="{DynamicResource Settings.TabGeneral}">
+                <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+                    <StackPanel Margin="0,0,6,14">
+
+                        <!-- Brand & branch -->
+                        <Border Style="{StaticResource FluentCard}" Margin="0,0,0,14">
+                            <StackPanel>
+                                <TextBlock Text="{DynamicResource Settings.BrandCard}" Style="{StaticResource SectionTitle}" />
+                                <TextBlock Text="FocusPlus • FocusAttendance" Style="{StaticResource Caption}" Margin="0,4,0,12" />
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="12" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <StackPanel>
+                                        <TextBlock Text="{DynamicResource Settings.BranchAr}" Style="{StaticResource FieldLabel}" />
+                                        <ui:TextBox Text="{Binding BranchNameAr, UpdateSourceTrigger=PropertyChanged}" MinHeight="38" Margin="0,0,0,10" />
+                                    </StackPanel>
+                                    <StackPanel Grid.Column="2">
+                                        <TextBlock Text="{DynamicResource Settings.BranchFr}" Style="{StaticResource FieldLabel}" />
+                                        <ui:TextBox Text="{Binding BranchNameFr, UpdateSourceTrigger=PropertyChanged}" MinHeight="38" Margin="0,0,0,10" />
+                                    </StackPanel>
+                                </Grid>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="12" />
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="12" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <StackPanel>
+                                        <TextBlock Text="{DynamicResource Settings.City}" Style="{StaticResource FieldLabel}" />
+                                        <ui:TextBox Text="{Binding BranchCity, UpdateSourceTrigger=PropertyChanged}" MinHeight="38" />
+                                    </StackPanel>
+                                    <StackPanel Grid.Column="2">
+                                        <TextBlock Text="{DynamicResource Settings.Phone}" Style="{StaticResource FieldLabel}" />
+                                        <ui:TextBox Text="{Binding BranchPhone, UpdateSourceTrigger=PropertyChanged}" MinHeight="38" />
+                                    </StackPanel>
+                                    <StackPanel Grid.Column="4">
+                                        <TextBlock Text="{DynamicResource Settings.Address}" Style="{StaticResource FieldLabel}" />
+                                        <ui:TextBox Text="{Binding BranchAddress, UpdateSourceTrigger=PropertyChanged}" MinHeight="38" />
+                                    </StackPanel>
+                                </Grid>
+                                <Button Style="{StaticResource PrimaryAction}" Command="{Binding SaveBrandingCommand}"
+                                        HorizontalAlignment="Left" Margin="0,14,0,0">
+                                    <StackPanel Orientation="Horizontal">
+                                        <ui:SymbolIcon Symbol="Save24" FontSize="14" Margin="0,0,8,0" />
+                                        <TextBlock Text="{DynamicResource Settings.SaveBrand}" />
+                                    </StackPanel>
+                                </Button>
+                            </StackPanel>
+                        </Border>
+
+                        <!-- Appearance -->
+                <Border Style="{StaticResource FluentCard}" Margin="0,0,0,14">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <StackPanel>
+                            <TextBlock Text="{DynamicResource Settings.Appearance}" Style="{StaticResource SectionTitle}" />
+                            <StackPanel Orientation="Horizontal" Margin="0,12,0,0">
+                                <TextBlock Text="{DynamicResource Settings.Language}" Style="{StaticResource Caption}"
+                                           VerticalAlignment="Center" Margin="0,0,12,0" />
+                                <Button Command="{Binding SelectArabicCommand}" Content="العربية (RTL)" Margin="0,0,8,0">
+                                    <Button.Style>
+                                        <Style TargetType="Button" BasedOn="{StaticResource SecondaryAction}">
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding IsArabic}" Value="True">
+                                                    <Setter Property="Background" Value="{DynamicResource PrimaryBrush}" />
+                                                    <Setter Property="Foreground" Value="{DynamicResource OnPrimaryBrush}" />
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Button.Style>
+                                </Button>
+                                <Button Command="{Binding SelectFrenchCommand}" Content="Français (LTR)">
+                                    <Button.Style>
+                                        <Style TargetType="Button" BasedOn="{StaticResource SecondaryAction}">
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding IsArabic}" Value="False">
+                                                    <Setter Property="Background" Value="{DynamicResource PrimaryBrush}" />
+                                                    <Setter Property="Foreground" Value="{DynamicResource OnPrimaryBrush}" />
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Button.Style>
+                                </Button>
+                            </StackPanel>
+                        </StackPanel>
+                        <StackPanel Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Right">
+                            <TextBlock Text="{DynamicResource Settings.Theme}" Style="{StaticResource Caption}" HorizontalAlignment="Right" Margin="0,0,0,6" />
+                            <Button Style="{StaticResource SecondaryAction}" Command="{Binding ToggleThemeCommand}" MinWidth="150">
+                                <StackPanel Orientation="Horizontal">
+                                    <ui:SymbolIcon Symbol="WeatherSunny24" FontSize="14" Margin="0,0,8,0" />
+                                    <TextBlock Text="{Binding ThemeLabel}" />
+                                </StackPanel>
+                            </Button>
+                        </StackPanel>
+                    </Grid>
+                </Border>
+
+                    </StackPanel>
+                </ScrollViewer>
+            </TabItem>
+            <TabItem Header="{DynamicResource Settings.TabShifts}">
+                <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+                    <StackPanel Margin="0,0,6,14">
+                <!-- Shifts -->
+                <Border Style="{StaticResource FluentCard}" Margin="0,0,0,14" Padding="0">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Grid Margin="18,14,14,8">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <StackPanel>
+                                <TextBlock Text="{DynamicResource Settings.Shifts}" Style="{StaticResource SectionTitle}" />
+                                <TextBlock Text="{DynamicResource Settings.ShiftsHint}" Style="{StaticResource Caption}" Margin="0,3,0,0" />
+                            </StackPanel>
+                            <Button Grid.Column="1" Style="{StaticResource PrimaryAction}" Command="{Binding NewRuleCommand}" Padding="12,6" VerticalAlignment="Top">
+                                <StackPanel Orientation="Horizontal">
+                                    <ui:SymbolIcon Symbol="Add24" FontSize="13" Margin="0,0,6,0" />
+                                    <TextBlock Text="{DynamicResource Settings.NewShift}" />
+                                </StackPanel>
+                            </Button>
+                        </Grid>
+                        <DataGrid Grid.Row="1" Style="{StaticResource FlatGrid}" ItemsSource="{Binding Rules}" Height="240" Margin="4,0,4,8"
+                                  EnableRowVirtualization="False" MouseDoubleClick="OnRuleDoubleClick">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="{Binding [App.Name], Source={x:Static loc:Localized.Instance}}" Binding="{Binding Name}" Width="1.6*" MinWidth="180" />
+                                <DataGridTextColumn Header="{Binding [Settings.Code], Source={x:Static loc:Localized.Instance}}" Binding="{Binding Code}" Width="130" />
+                                <DataGridTextColumn Header="{Binding [Settings.Mode], Source={x:Static loc:Localized.Instance}}" Binding="{Binding ModeText}" Width="105" />
+                                <DataGridTextColumn Header="{Binding [Attendance.Range], Source={x:Static loc:Localized.Instance}}" Binding="{Binding TimesText}" Width="*" MinWidth="190" />
+                                <DataGridTextColumn Header="{Binding [Settings.MorningGrace], Source={x:Static loc:Localized.Instance}}" Binding="{Binding GraceText}" Width="95" />
+                                <DataGridTextColumn Header="{Binding [Settings.Target], Source={x:Static loc:Localized.Instance}}" Binding="{Binding TargetText}" Width="80" />
+                                <DataGridTextColumn Header="{Binding [Settings.EmployeesCount], Source={x:Static loc:Localized.Instance}}" Binding="{Binding EmployeesText}" Width="85" />
+                                <DataGridTextColumn Header="{Binding [Settings.DefaultShift], Source={x:Static loc:Localized.Instance}}" Binding="{Binding DefaultText}" Width="95" />
+                                <DataGridTemplateColumn Width="190">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <StackPanel Orientation="Horizontal">
+                                                <Button Style="{StaticResource IconAction}" Click="OnEditRuleClick" Width="26" Height="26" ToolTip="{DynamicResource App.Edit}">
+                                                    <ui:SymbolIcon Symbol="Edit24" FontSize="12" />
+                                                </Button>
+                                                <Button Style="{StaticResource IconAction}" Click="OnMakeDefaultRuleClick" Width="26" Height="26"
+                                                        ToolTip="{DynamicResource Settings.MakeDefault}"
+                                                        Visibility="{Binding IsDefault, Converter={StaticResource InverseBoolToVisibility}}">
+                                                    <ui:SymbolIcon Symbol="Star24" FontSize="12" />
+                                                </Button>
+                                                <Button Style="{StaticResource IconAction}" Click="OnArchiveRuleClick" Width="26" Height="26"
+                                                        ToolTip="{DynamicResource App.Archive}"
+                                                        Visibility="{Binding IsArchived, Converter={StaticResource InverseBoolToVisibility}}">
+                                                    <ui:SymbolIcon Symbol="ArchiveArrowBack24" FontSize="12" />
+                                                </Button>
+                                                <Button Style="{StaticResource IconAction}" Click="OnRestoreRuleClick" Width="26" Height="26"
+                                                        ToolTip="{DynamicResource App.Restore}"
+                                                        Visibility="{Binding IsArchived, Converter={StaticResource BoolToVisibility}}">
+                                                    <ui:SymbolIcon Symbol="ArrowClockwise24" FontSize="12" />
+                                                </Button>
+                                            </StackPanel>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </Grid>
+                </Border>
+
+                    </StackPanel>
+                </ScrollViewer>
+            </TabItem>
+            <TabItem Header="{DynamicResource Settings.TabServices}">
+                <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+                    <StackPanel Margin="0,0,6,14">
+                <!-- Departments -->
+                <Border Style="{StaticResource FluentCard}" Margin="0,0,0,14" Padding="0">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Grid Margin="18,14,14,8">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <StackPanel>
+                                <TextBlock Text="{DynamicResource Settings.Services}" Style="{StaticResource SectionTitle}" />
+                                <TextBlock Text="{DynamicResource Settings.ServicesHint}" Style="{StaticResource Caption}" Margin="0,3,0,0" />
+                            </StackPanel>
+                            <Button Grid.Column="1" Style="{StaticResource PrimaryAction}" Command="{Binding NewDepartmentCommand}" Padding="12,6" VerticalAlignment="Top">
+                                <StackPanel Orientation="Horizontal">
+                                    <ui:SymbolIcon Symbol="Add24" FontSize="13" Margin="0,0,6,0" />
+                                    <TextBlock Text="{DynamicResource Settings.NewService}" />
+                                </StackPanel>
+                            </Button>
+                        </Grid>
+                        <DataGrid Grid.Row="1" Style="{StaticResource FlatGrid}" ItemsSource="{Binding Departments}" Height="240" Margin="4,0,4,8"
+                                  EnableRowVirtualization="False" MouseDoubleClick="OnDepartmentDoubleClick">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="{Binding [App.Name], Source={x:Static loc:Localized.Instance}}" Binding="{Binding Name}" Width="2*" MinWidth="220" />
+                                <DataGridTextColumn Header="{Binding [Settings.Code], Source={x:Static loc:Localized.Instance}}" Binding="{Binding Code}" Width="120" />
+                                <DataGridTextColumn Header="{Binding [Settings.Parent], Source={x:Static loc:Localized.Instance}}" Binding="{Binding Parent}" Width="1.4*" MinWidth="150" />
+                                <DataGridTextColumn Header="{Binding [Settings.ManagerAr], Source={x:Static loc:Localized.Instance}}" Binding="{Binding Manager}" Width="1.2*" MinWidth="130" />
+                                <DataGridTextColumn Header="{Binding [Settings.EmployeesCount], Source={x:Static loc:Localized.Instance}}" Binding="{Binding EmployeesText}" Width="95" />
+                                <DataGridTemplateColumn Width="80">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <StackPanel Orientation="Horizontal">
+                                                <Button Style="{StaticResource IconAction}" Click="OnEditDepartmentClick" Width="26" Height="26">
+                                                    <ui:SymbolIcon Symbol="Edit24" FontSize="12" />
+                                                </Button>
+                                                <Button Style="{StaticResource IconAction}" Click="OnArchiveDepartmentClick" Width="26" Height="26"
+                                                        Visibility="{Binding IsArchived, Converter={StaticResource InverseBoolToVisibility}}">
+                                                    <ui:SymbolIcon Symbol="ArchiveArrowBack24" FontSize="12" />
+                                                </Button>
+                                                <Button Style="{StaticResource IconAction}" Click="OnRestoreDepartmentClick" Width="26" Height="26"
+                                                        Visibility="{Binding IsArchived, Converter={StaticResource BoolToVisibility}}">
+                                                    <ui:SymbolIcon Symbol="ArrowClockwise24" FontSize="12" />
+                                                </Button>
+                                            </StackPanel>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </Grid>
+                </Border>
+
+                    </StackPanel>
+                </ScrollViewer>
+            </TabItem>
+            <TabItem Header="{DynamicResource Settings.TabSecurity}">
+                <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+                    <StackPanel Margin="0,0,6,14">
+                <!-- Database -->
+                <Border Style="{StaticResource FluentCard}" Margin="0,0,0,14">
+                    <StackPanel>
+                        <TextBlock Text="{DynamicResource Settings.Database}" Style="{StaticResource SectionTitle}" />
+                        <TextBlock Text="{DynamicResource Settings.BackupHint}" Style="{StaticResource Caption}" Margin="0,3,0,12" />
+                        <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                            <TextBlock Text="{DynamicResource Settings.TodayBackups}" Style="{StaticResource Caption}" VerticalAlignment="Center" />
+                            <TextBlock Text="{Binding TodayBackupsText}" FontWeight="Bold" Foreground="{DynamicResource PrimaryBrush}" Margin="8,0,16,0" VerticalAlignment="Center" />
+                            <TextBlock Text="{DynamicResource Settings.LatestBackup}" Style="{StaticResource Caption}" VerticalAlignment="Center" />
+                            <TextBlock Text="{Binding LatestBackupText}" FontWeight="SemiBold" Foreground="{DynamicResource TextPrimaryBrush}" Margin="8,0,0,0" VerticalAlignment="Center" />
+                        </StackPanel>
+
+                        <Grid Margin="0,0,0,10">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <StackPanel>
+                                <TextBlock Text="{DynamicResource Settings.Wal}" Style="{StaticResource FieldLabel}" />
+                                <TextBlock Text="{Binding DbJournal}" FontSize="13" FontWeight="SemiBold" Foreground="{DynamicResource TextPrimaryBrush}" />
+                            </StackPanel>
+                            <StackPanel Grid.Column="1">
+                                <TextBlock Text="{DynamicResource Settings.Schema}" Style="{StaticResource FieldLabel}" />
+                                <TextBlock Text="{Binding DbSchema}" FontSize="13" FontWeight="SemiBold" Foreground="{DynamicResource TextPrimaryBrush}" />
+                            </StackPanel>
+                            <StackPanel Grid.Column="2">
+                                <TextBlock Text="{DynamicResource Settings.Size}" Style="{StaticResource FieldLabel}" />
+                                <TextBlock Text="{Binding DbSize}" FontSize="13" FontWeight="SemiBold" Foreground="{DynamicResource TextPrimaryBrush}" />
+                            </StackPanel>
+                            <StackPanel Grid.Column="3">
+                                <TextBlock Text="{DynamicResource Settings.Counts}" Style="{StaticResource FieldLabel}" />
+                                <TextBlock Text="{Binding DbCounts}" FontSize="11.5" Foreground="{DynamicResource TextSecondaryBrush}" TextWrapping="Wrap" />
+                            </StackPanel>
+                        </Grid>
+
+                        <Border Background="{DynamicResource PanelAltBrush}" CornerRadius="8" Padding="10" Margin="0,0,0,12">
+                            <StackPanel Orientation="Horizontal">
+                                <ui:SymbolIcon Symbol="Database24" FontSize="14" Foreground="{DynamicResource TextMutedBrush}" Margin="0,0,8,0" />
+                                <TextBlock Text="{Binding DbPath}" Style="{StaticResource MonoText}" TextTrimming="CharacterEllipsis" />
+                            </StackPanel>
+                        </Border>
+
+                        <Grid Margin="0,0,0,12">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="8" />
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="8" />
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Button Style="{StaticResource PrimaryAction}" Command="{Binding BackupNowCommand}">
+                                <StackPanel Orientation="Horizontal">
+                                    <ui:SymbolIcon Symbol="Save24" FontSize="13" Margin="0,0,6,0" />
+                                    <TextBlock Text="{DynamicResource Settings.BackupNow}" />
+                                </StackPanel>
+                            </Button>
+                            <Button Grid.Column="2" Style="{StaticResource SecondaryAction}" Click="OnRestoreBackupClick">
+                                <StackPanel Orientation="Horizontal">
+                                    <ui:SymbolIcon Symbol="ArrowReset24" FontSize="13" Margin="0,0,6,0" />
+                                    <TextBlock Text="{DynamicResource Settings.RestoreSelected}" />
+                                </StackPanel>
+                            </Button>
+                            <Button Grid.Column="4" Style="{StaticResource GhostAction}" Command="{Binding OpenBackupFolderCommand}">
+                                <StackPanel Orientation="Horizontal">
+                                    <ui:SymbolIcon Symbol="Folder24" FontSize="13" Margin="0,0,6,0" />
+                                    <TextBlock Text="{DynamicResource App.OpenFolder}" />
+                                </StackPanel>
+                            </Button>
+                        </Grid>
+
+                        <DataGrid Style="{StaticResource FlatGrid}" ItemsSource="{Binding Backups}" SelectedItem="{Binding SelectedBackup}" Height="170">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="{Binding [Settings.Backups], Source={x:Static loc:Localized.Instance}}" Binding="{Binding Name}" Width="*" />
+                                <DataGridTextColumn Header="{Binding [App.Date], Source={x:Static loc:Localized.Instance}}" Binding="{Binding CreatedText}" Width="150" />
+                                <DataGridTextColumn Header="{Binding [Settings.Size], Source={x:Static loc:Localized.Instance}}" Binding="{Binding SizeText}" Width="100" />
+                            </DataGrid.Columns>
+                        </DataGrid>
+
+                        <Grid Margin="0,12,0,0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="12" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <StackPanel>
+                                <TextBlock Text="{DynamicResource Devices.ScanTimeout}" Style="{StaticResource FieldLabel}" />
+                                <ui:TextBox Text="{Binding ScanTimeout, UpdateSourceTrigger=PropertyChanged}" MinHeight="34" />
+                            </StackPanel>
+                            <StackPanel Grid.Column="2">
+                                <TextBlock Text="{DynamicResource Devices.MonitorInterval}" Style="{StaticResource FieldLabel}" />
+                                <ui:TextBox Text="{Binding MonitorInterval, UpdateSourceTrigger=PropertyChanged}" MinHeight="34" />
+                            </StackPanel>
+                            <Button Grid.Column="3" Style="{StaticResource SecondaryAction}" Command="{Binding SavePreferencesCommand}"
+                                    VerticalAlignment="Bottom" Margin="12,0,0,0">
+                                <TextBlock Text="{DynamicResource App.Apply}" />
+                            </Button>
+                        </Grid>
+                    </StackPanel>
+                </Border>
+
+                <!-- Security -->
+                <Border Style="{StaticResource FluentCard}">
+                    <StackPanel>
+                        <TextBlock Text="{DynamicResource Settings.Security}" Style="{StaticResource SectionTitle}" Margin="0,0,0,12" />
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="24" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <StackPanel>
+                                <TextBlock Text="{DynamicResource Settings.ChangePassword}" Style="{StaticResource MetricLabel}" Margin="0,0,0,8" />
+                                <TextBlock Text="{DynamicResource Settings.CurrentPassword}" Style="{StaticResource FieldLabel}" />
+                                <ui:PasswordBox Password="{Binding CurrentPassword, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" MinHeight="34" Margin="0,0,0,8" RevealButtonEnabled="True" />
+                                <TextBlock Text="{DynamicResource Settings.NewPassword}" Style="{StaticResource FieldLabel}" />
+                                <ui:PasswordBox Password="{Binding NewPassword, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" MinHeight="34" Margin="0,0,0,8" RevealButtonEnabled="True" />
+                                <TextBlock Text="{DynamicResource Settings.ConfirmPassword}" Style="{StaticResource FieldLabel}" />
+                                <ui:PasswordBox Password="{Binding ConfirmPassword, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" MinHeight="34" Margin="0,0,0,10" RevealButtonEnabled="True" />
+                                <Button Style="{StaticResource SecondaryAction}" Command="{Binding ChangePasswordCommand}" HorizontalAlignment="Left">
+                                    <TextBlock Text="{DynamicResource Settings.SavePassword}" />
+                                </Button>
+                            </StackPanel>
+                            <StackPanel Grid.Column="2">
+                                <TextBlock Text="{DynamicResource Settings.CreateOperator}" Style="{StaticResource MetricLabel}" Margin="0,0,0,8" />
+                                <TextBlock Text="{DynamicResource Settings.Username}" Style="{StaticResource FieldLabel}" />
+                                <ui:TextBox Text="{Binding OperatorUsername, UpdateSourceTrigger=PropertyChanged}" MinHeight="34" Margin="0,0,0,8" />
+                                <TextBlock Text="{DynamicResource Settings.DisplayName}" Style="{StaticResource FieldLabel}" />
+                                <ui:TextBox Text="{Binding OperatorDisplayName, UpdateSourceTrigger=PropertyChanged}" MinHeight="34" Margin="0,0,0,8" />
+                                <TextBlock Text="{DynamicResource Settings.Password}" Style="{StaticResource FieldLabel}" />
+                                <ui:PasswordBox Password="{Binding OperatorPassword, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" MinHeight="34" Margin="0,0,0,10" RevealButtonEnabled="True" />
+                                <Button Style="{StaticResource PrimaryAction}" Command="{Binding CreateOperatorCommand}" HorizontalAlignment="Left">
+                                    <TextBlock Text="{DynamicResource Settings.AddOperator}" />
+                                </Button>
+                            </StackPanel>
+                        </Grid>
+
+                        <DataGrid Style="{StaticResource FlatGrid}" ItemsSource="{Binding Operators}" Height="150" Margin="0,14,0,0">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="{Binding [Settings.Username], Source={x:Static loc:Localized.Instance}}" Binding="{Binding Username}" Width="150" />
+                                <DataGridTextColumn Header="{Binding [Settings.DisplayName], Source={x:Static loc:Localized.Instance}}" Binding="{Binding DisplayName}" Width="*" />
+                                <DataGridTextColumn Header="{Binding [App.Role], Source={x:Static loc:Localized.Instance}}" Binding="{Binding RoleText}" Width="130" />
+                                <DataGridTextColumn Header="{Binding [App.LastLogin], Source={x:Static loc:Localized.Instance}}" Binding="{Binding LastLogin}" Width="170" />
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </StackPanel>
+                </Border>
+                    </StackPanel>
+                </ScrollViewer>
+            </TabItem>
+        </TabControl>
+
+        <!-- Rule drawer -->
+        <controls:SlideOver IsOpen="{Binding IsRuleDrawerOpen}" Title="{Binding RuleDrawerTitle}"
+                            Subtitle="{Binding RuleEditor.Code}" CloseCommand="{Binding CloseRuleDrawerCommand}">
+            <controls:SlideOver.DrawerContent>
+                <StackPanel>
+                    <Border Style="{StaticResource DrawerSection}">
+                        <StackPanel>
+                            <TextBlock Text="{DynamicResource Settings.Code}" Style="{StaticResource FieldLabel}" />
+                            <ui:TextBox Text="{Binding RuleEditor.Code, UpdateSourceTrigger=PropertyChanged}" MinHeight="34" Margin="0,0,0,10" />
+                            <TextBlock Text="{DynamicResource Settings.CodeAr}" Style="{StaticResource FieldLabel}" />
+                            <ui:TextBox Text="{Binding RuleEditor.NameAr, UpdateSourceTrigger=PropertyChanged}" MinHeight="34" Margin="0,0,0,10" />
+                            <TextBlock Text="{DynamicResource Settings.CodeFr}" Style="{StaticResource FieldLabel}" />
+                            <ui:TextBox Text="{Binding RuleEditor.NameFr, UpdateSourceTrigger=PropertyChanged}" MinHeight="34" Margin="0,0,0,10" />
+                            <Grid>
+                                <TextBlock Text="{DynamicResource Settings.FreeTime}" Style="{StaticResource Caption}" VerticalAlignment="Center" />
+                                <ui:ToggleSwitch IsChecked="{Binding RuleEditor.IsFreeTime, Mode=TwoWay}" HorizontalAlignment="Right" />
+                            </Grid>
+                        </StackPanel>
+                    </Border>
+
+                    <Border Style="{StaticResource DrawerSection}" IsEnabled="{Binding RuleEditor.IsFixedShift}">
+                        <StackPanel>
+                            <TextBlock Text="{DynamicResource Settings.Mode}" Style="{StaticResource SectionTitle}" Margin="0,0,0,12" />
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="8" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <StackPanel>
+                                    <TextBlock Text="{DynamicResource Settings.MorningStart}" Style="{StaticResource FieldLabel}" />
+                                    <ui:TextBox Text="{Binding RuleEditor.MorningStart, UpdateSourceTrigger=PropertyChanged}" MinHeight="34" Margin="0,0,0,10" />
+                                </StackPanel>
+                                <StackPanel Grid.Column="2">
+                                    <TextBlock Text="{DynamicResource Settings.LunchStart}" Style="{StaticResource FieldLabel}" />
+                                    <ui:TextBox Text="{Binding RuleEditor.LunchStart, UpdateSourceTrigger=PropertyChanged}" MinHeight="34" Margin="0,0,0,10" />
+                                </StackPanel>
+                            </Grid>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="8" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <StackPanel>
+                                    <TextBlock Text="{DynamicResource Settings.LunchEnd}" Style="{StaticResource FieldLabel}" />
+                                    <ui:TextBox Text="{Binding RuleEditor.LunchEnd, UpdateSourceTrigger=PropertyChanged}" MinHeight="34" Margin="0,0,0,10" />
+                                </StackPanel>
+                                <StackPanel Grid.Column="2">
+                                    <TextBlock Text="{DynamicResource Settings.EveningEnd}" Style="{StaticResource FieldLabel}" />
+                                    <ui:TextBox Text="{Binding RuleEditor.EveningEnd, UpdateSourceTrigger=PropertyChanged}" MinHeight="34" Margin="0,0,0,10" />
+                                </StackPanel>
+                            </Grid>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="8" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="8" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <StackPanel>
+                                    <TextBlock Text="{DynamicResource Settings.MorningGrace}" Style="{StaticResource FieldLabel}" />
+                                    <ui:TextBox Text="{Binding RuleEditor.MorningGrace, UpdateSourceTrigger=LostFocus}" MinHeight="34" />
+                                </StackPanel>
+                                <StackPanel Grid.Column="2">
+                                    <TextBlock Text="{DynamicResource Settings.AfternoonGrace}" Style="{StaticResource FieldLabel}" />
+                                    <ui:TextBox Text="{Binding RuleEditor.AfternoonGrace, UpdateSourceTrigger=LostFocus}" MinHeight="34" />
+                                </StackPanel>
+                                <StackPanel Grid.Column="4">
+                                    <TextBlock Text="{DynamicResource Settings.EarlyGrace}" Style="{StaticResource FieldLabel}" />
+                                    <ui:TextBox Text="{Binding RuleEditor.EarlyLeaveGrace, UpdateSourceTrigger=LostFocus}" MinHeight="34" />
+                                </StackPanel>
+                            </Grid>
+                        </StackPanel>
+                    </Border>
+
+                    <Border Style="{StaticResource DrawerSection}">
+                        <StackPanel>
+                            <TextBlock Text="{DynamicResource Settings.LunchDeduction}" Style="{StaticResource FieldLabel}" />
+                            <ui:TextBox Text="{Binding RuleEditor.LunchDeduction, UpdateSourceTrigger=LostFocus}" MinHeight="34" Margin="0,0,0,10" />
+                            <Grid>
+                                <TextBlock Text="{DynamicResource Settings.AutoLunch}" Style="{StaticResource Caption}" VerticalAlignment="Center" />
+                                <ui:ToggleSwitch IsChecked="{Binding RuleEditor.AutoDeductLunch, Mode=TwoWay}" HorizontalAlignment="Right" />
+                            </Grid>
+                            <Grid Margin="0,12,0,0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="8" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <StackPanel>
+                                    <TextBlock Text="{DynamicResource Settings.AntiBounce}" Style="{StaticResource FieldLabel}" />
+                                    <ui:TextBox Text="{Binding RuleEditor.AntiBounce, UpdateSourceTrigger=LostFocus}" MinHeight="34" />
+                                </StackPanel>
+                                <StackPanel Grid.Column="2">
+                                    <TextBlock Text="{DynamicResource Settings.Target}" Style="{StaticResource FieldLabel}" />
+                                    <ui:TextBox Text="{Binding RuleEditor.Target, UpdateSourceTrigger=LostFocus}" MinHeight="34" />
+                                </StackPanel>
+                            </Grid>
+                            <Grid Margin="0,12,0,0">
+                                <TextBlock Text="{DynamicResource Settings.DefaultShift}" Style="{StaticResource Caption}" VerticalAlignment="Center" />
+                                <ui:ToggleSwitch IsChecked="{Binding RuleEditor.IsDefault, Mode=TwoWay}" HorizontalAlignment="Right" />
+                            </Grid>
+                        </StackPanel>
+                    </Border>
+
+                    <Button Style="{StaticResource PrimaryAction}" Command="{Binding SaveRuleCommand}">
+                        <StackPanel Orientation="Horizontal">
+                            <ui:SymbolIcon Symbol="Save24" FontSize="14" Margin="0,0,8,0" />
+                            <TextBlock Text="{DynamicResource App.Save}" />
+                        </StackPanel>
+                    </Button>
+                </StackPanel>
+            </controls:SlideOver.DrawerContent>
+        </controls:SlideOver>
+
+        <!-- Department drawer -->
+        <controls:SlideOver IsOpen="{Binding IsDepartmentDrawerOpen}" Title="{Binding DepartmentDrawerTitle}"
+                            Subtitle="{Binding DepartmentEditor.Code}" CloseCommand="{Binding CloseDepartmentDrawerCommand}">
+            <controls:SlideOver.DrawerContent>
+                <StackPanel>
+                    <Border Style="{StaticResource DrawerSection}">
+                        <StackPanel>
+                            <TextBlock Text="{DynamicResource Settings.Code}" Style="{StaticResource FieldLabel}" />
+                            <ui:TextBox Text="{Binding DepartmentEditor.Code, UpdateSourceTrigger=PropertyChanged}" MinHeight="34" Margin="0,0,0,10" />
+                            <TextBlock Text="{DynamicResource Settings.CodeAr}" Style="{StaticResource FieldLabel}" />
+                            <ui:TextBox Text="{Binding DepartmentEditor.NameAr, UpdateSourceTrigger=PropertyChanged}" MinHeight="34" Margin="0,0,0,10" />
+                            <TextBlock Text="{DynamicResource Settings.CodeFr}" Style="{StaticResource FieldLabel}" />
+                            <ui:TextBox Text="{Binding DepartmentEditor.NameFr, UpdateSourceTrigger=PropertyChanged}" MinHeight="34" Margin="0,0,0,10" />
+                        </StackPanel>
+                    </Border>
+                    <Border Style="{StaticResource DrawerSection}">
+                        <StackPanel>
+                            <TextBlock Text="{DynamicResource Settings.Parent}" Style="{StaticResource FieldLabel}" />
+                            <ComboBox ItemsSource="{Binding DepartmentOptions}" DisplayMemberPath="Display"
+                                      SelectedValuePath="Id" SelectedValue="{Binding DepartmentEditor.ParentId}"
+                                      MinHeight="34" Margin="0,0,0,10" />
+                            <TextBlock Text="{DynamicResource Settings.DefaultRuleForService}" Style="{StaticResource FieldLabel}" />
+                            <ComboBox ItemsSource="{Binding RuleOptions}" DisplayMemberPath="Display"
+                                      SelectedValuePath="Id" SelectedValue="{Binding DepartmentEditor.WorkRuleId}"
+                                      MinHeight="34" Margin="0,0,0,10" />
+                            <TextBlock Text="{DynamicResource Settings.ManagerAr}" Style="{StaticResource FieldLabel}" />
+                            <ui:TextBox Text="{Binding DepartmentEditor.ManagerAr, UpdateSourceTrigger=PropertyChanged}" MinHeight="34" Margin="0,0,0,10" />
+                            <TextBlock Text="{DynamicResource Settings.ManagerFr}" Style="{StaticResource FieldLabel}" />
+                            <ui:TextBox Text="{Binding DepartmentEditor.ManagerFr, UpdateSourceTrigger=PropertyChanged}" MinHeight="34" />
+                        </StackPanel>
+                    </Border>
+                    <Button Style="{StaticResource PrimaryAction}" Command="{Binding SaveDepartmentCommand}">
+                        <StackPanel Orientation="Horizontal">
+                            <ui:SymbolIcon Symbol="Save24" FontSize="14" Margin="0,0,8,0" />
+                            <TextBlock Text="{DynamicResource App.Save}" />
+                        </StackPanel>
+                    </Button>
+                </StackPanel>
+            </controls:SlideOver.DrawerContent>
+        </controls:SlideOver>
+    </Grid>
+</UserControl>

@@ -1,0 +1,46 @@
+<UserControl x:Class="FocusAttendance.App.Controls.SlideOver"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+             x:Name="Self"
+             Visibility="Collapsed"
+             Panel.ZIndex="60">
+
+    <Grid>
+        <Rectangle x:Name="Scrim" Style="{StaticResource DrawerScrim}" MouseLeftButtonDown="OnScrimMouseDown" />
+
+        <Border x:Name="Panel" Style="{StaticResource DrawerPanel}" HorizontalAlignment="Right">
+            <Border.RenderTransform>
+                <TranslateTransform x:Name="Slide" X="640" />
+            </Border.RenderTransform>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <Border Style="{StaticResource DrawerHeader}">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <StackPanel>
+                            <TextBlock Text="{Binding Title, ElementName=Self}" Style="{StaticResource SectionTitle}" />
+                            <TextBlock Text="{Binding Subtitle, ElementName=Self}" Style="{StaticResource Caption}" Margin="0,4,0,0" />
+                        </StackPanel>
+                        <Button Grid.Column="1" Style="{StaticResource IconAction}"
+                                Command="{Binding CloseCommand, ElementName=Self}" ToolTip="{DynamicResource App.Close}">
+                            <ui:SymbolIcon Symbol="Dismiss24" />
+                        </Button>
+                    </Grid>
+                </Border>
+
+                <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled"
+                              Padding="20,18,20,28">
+                    <ContentPresenter Content="{Binding DrawerContent, ElementName=Self}" />
+                </ScrollViewer>
+            </Grid>
+        </Border>
+    </Grid>
+</UserControl>
